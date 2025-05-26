@@ -1,12 +1,21 @@
-import React from 'react'
-import Header from './Header'
+import React from "react";
+import Header from "./Header";
 
-export default function HeroHead({text}) {
+export default function HeroHead({ text }) {
+    const IMG_URI = import.meta.env.VITE_BG_URI;
   return (
     <div>
-        <header className="bg-gradient-to-r p-32 from-purple-600 to-indigo-700  relative c-bg-img overflow-hidden">
+      <header
+        className="p-32 relative overflow-hidden"
+        style={{
+          backgroundImage: ` linear-gradient(to right, #9d1df8bb, #4026e8be), url(${IMG_URI}/img/books1.jpg)`,
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
         {/* Navigation */}
-        <Header calr="text-white"/>
+        <Header calr="text-white" />
 
         {/* Hero Section */}
         <div className="relative z-10 text-center py-20 px-4 text-white">
@@ -27,5 +36,5 @@ export default function HeroHead({text}) {
         </div>
       </header>
     </div>
-  )
+  );
 }

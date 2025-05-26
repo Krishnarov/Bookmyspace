@@ -176,8 +176,10 @@ function Home() {
         "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&h=300&fit=crop",
     },
   ];
-  //  const [isNavVisible, setIsNavVisible] = useState(true);
+  const [isNavVisible, setIsNavVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const [Theme, setTheme] = useState("dark");
+  useEffect(()=>setTheme(localStorage.getItem("theme")))
 
   const { scrollY } = useScroll();
   const y1 = useTransform(scrollY, [0, 300], [0, -50]);
@@ -194,12 +196,12 @@ function Home() {
       }
 
       setLastScrollY(currentScrollY);
+      
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY]);
-
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -244,7 +246,7 @@ function Home() {
   };
   const [currentSlide, setCurrentSlide] = useState(0);
   const [direction, setDirection] = useState(0);
-
+  const IMG_URI = import.meta.env.VITE_BG_URI;
   const testimonials = [
     {
       id: 1,
@@ -396,158 +398,627 @@ function Home() {
   };
   return (
     <div className="overflow-hidden">
-    <Header />
-    {/* Hero Section */}
-    <section className="relative">
-      {/* Background Elements */}
-      <div className="absolute bg-green-element">
-        <div className="w-full h-full bg-gradient-to-bl rounded-full"></div>
-      </div>
+      <Header />
+      {/* Hero Section */}
+      <section className="relative min-h-screen">
+        {/* Background Elements */}
+        <div className="absolute bg-green-element">
+          <div className="w-full h-full bg-gradient-to-bl rounded-full"></div>
+        </div>
 
-      {/* Purple blob bottom left */}
-      <motion.div
-        animate={{
-          y: [50, 60, 50],
-          x: [-0, -55, -50],
-        }}
-        transition={{
-          duration: 2,
-          ease: "easeInOut",
-          repeat: Infinity,
-          repeatType: "mirror",
-        }}
-        className="absolute bottom-0 right-[50%] w-48 h-48 "
-      >
-        <img src="./img/hm4-slider-shape2.png" alt="" />
-      </motion.div>
-      <motion.div
-        animate={{
-          y: [50, 60, 50],
-          x: [-50, -55, -50],
-          opacity: 0.7,
-        }}
-        transition={{
-          duration: 2,
-          ease: "easeInOut",
-          repeat: Infinity,
-          repeatType: "mirror",
-        }}
-        className="absolute bottom-0 left-0 w-48 h-48 bg-purple-300 rounded-full Purpleblob"
-      />
-      {/* Decorative dots */}
-      <div className="absolute bottom-20 right-20 grid grid-cols-4 gap-2">
-        {[...Array(16)].map((_, i) => (
-          <div
-            key={i}
-            className="w-2 h-2 bg-emerald-200 rounded-full opacity-50"
-          ></div>
-        ))}
-      </div>
+        {/* Purple blob bottom left */}
+        <motion.div
+          animate={{
+            y: [50, 60, 50],
+            x: [-0, -55, -50],
+          }}
+          transition={{
+            duration: 2,
+            ease: "easeInOut",
+            repeat: Infinity,
+            repeatType: "mirror",
+          }}
+          className="absolute bottom-[20%] right-[50%] w-48 h-48 "
+        >
+          <img src="./img/hm4-slider-shape2.png" alt="" />
+        </motion.div>
+        <motion.div
+          animate={{
+            y: [50, 60, 50],
+            x: [-50, -55, -50],
+            opacity: 0.7,
+          }}
+          transition={{
+            duration: 2,
+            ease: "easeInOut",
+            repeat: Infinity,
+            repeatType: "mirror",
+          }}
+          className="absolute bottom-[10%] left-0 w-48 h-48 bg-purple-300 rounded-full Purpleblob"
+        />
+        {/* Decorative dots */}
+        <div className="absolute bottom-20 right-20 grid grid-cols-4 gap-2">
+          {[...Array(16)].map((_, i) => (
+            <div
+              key={i}
+              className="w-2 h-2 bg-emerald-200 rounded-full opacity-50"
+            ></div>
+          ))}
+        </div>
 
-      {/* Plus icons */}
-      <div className="absolute bottom-10 right-10 text-pink-400 text-2xl">+</div>
-      <div className="absolute top-20 right-32 text-pink-400 text-2xl">+</div>
+        {/* Plus icons */}
+        <div className="absolute bottom-10 right-10 text-pink-400 text-2xl">
+          +
+        </div>
+        <div className="absolute top-20 right-32 text-pink-400 text-2xl">+</div>
 
-      <div className="relative z-10 container mx-auto px-6 py-20">
-        <div className="grid lg:grid-cols-2 gap-12 items-center mt-20">
-          {/* Left Content */}
-          <motion.div 
-            className="space-y-8"
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <div className="space-y-4">
-              <p className="text-pink-500 font-semibold tracking-wider text-sm">
-                LEARN WITH Book my space
-              </p>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
-                Start Learning{" "}
-                <span className="text-gray-800">Web Design</span> In Book my
-                space Today
-              </h1>
-              <p className="text-gray-600 text-lg leading-relaxed max-w-md">
-                Nullam at elementesque auctor dui. Donec non nunc im veniam,
-                quis nostrud exercitation
-              </p>
-            </div>
+        <div className="relative z-10 container mx-auto px-6 py-20">
+          <div className="grid lg:grid-cols-2 gap-12 items-center mt-20">
+            {/* Left Content */}
+            <motion.div
+              className="space-y-8"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <div className="space-y-4">
+                <p className="text-pink-500 font-semibold tracking-wider text-sm">
+                  LEARN WITH Book my space
+                </p>
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-gray-50 leading-tight">
+                  Start Learning{" "}
+                  <span className="text-gray-700 dark:text-gray-200">
+                    Web Design
+                  </span>{" "}
+                  In Book my space Today
+                </h1>
+                <p className="text-gray-600 dark:text-gray-50 text-lg leading-relaxed max-w-md">
+                  Nullam at elementesque auctor dui. Donec non nunc im veniam,
+                  quis nostrud exercitation
+                </p>
+              </div>
 
-            <div className="flex items-center space-x-4">
-              <button className="hero-signup text-white px-8 py-4 rounded-full font-semibold transition-colors">
-                SIGN UP
-              </button>
-              <button className="bg-pink-500 hover:bg-pink-600 text-white w-14 h-14 rounded-full flex items-center justify-center transition-colors">
-                <Play className="w-6 h-6 ml-1" fill="white" />
-              </button>
-            </div>
-          </motion.div>
+              <div className="flex items-center space-x-4">
+                <button className="hero-signup text-white px-8 py-4 rounded-full font-semibold transition-colors">
+                  SIGN UP
+                </button>
+                <button className="bg-pink-500 hover:bg-pink-600 text-white w-14 h-14 rounded-full flex items-center justify-center transition-colors">
+                  <Play className="w-6 h-6 ml-1" fill="white" />
+                </button>
+              </div>
+            </motion.div>
 
-          {/* Right Content - Laptop Mockup */}
-          <motion.div 
-            className="relative"
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            viewport={{ once: true }}
-          >
-            <div className="bg-white rounded-t-2xl p-2 shadow-2xl transform rotate-2">
-              <div className="bg-white rounded-t-xl overflow-hidden">
-                {/* Browser Bar */}
-                <div className="bg-gray-100 px-4 py-2 flex items-center space-x-2">
-                  <div className="flex space-x-1">
-                    <div className="w-3 h-3 bg-red-400 rounded-full"></div>
-                    <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
-                    <div className="w-3 h-3 bg-green-400 rounded-full"></div>
-                  </div>
-                </div>
-
-                {/* Screen Content */}
-                <div className="bg-gradient-to-br from-gray-100 to-gray-200 p-6 h-80 relative">
-                  {/* Header in mockup */}
-                  <div className="flex items-center justify-between mb-6">
-                    <div className="flex items-center space-x-2">
-                      <div className="w-6 h-6 bg-pink-500 rounded"></div>
-                      <span className="font-bold text-sm">Book my space</span>
-                    </div>
-                    <div className="flex space-x-4 text-xs">
-                      <span>YOUR COURSES</span>
-                      <span>EXPLORE</span>
-                      <span>FAST</span>
-                      <span>SUPPORT</span>
-                      <div className="w-6 h-6 bg-gray-400 rounded-full"></div>
+            {/* Right Content - Laptop Mockup */}
+            <motion.div
+              className="relative"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
+              <div className="bg-white dark:bg-gray-600 rounded-t-2xl p-2 shadow-2xl transform rotate-2">
+                <div className="bg-white  dark:bg-gray-600  rounded-t-xl overflow-hidden">
+                  {/* Browser Bar */}
+                  <div className="bg-gray-100  dark:bg-gray-600 px-4 py-2 flex items-center space-x-2">
+                    <div className="flex space-x-1">
+                      <div className="w-3 h-3 bg-red-400 rounded-full"></div>
+                      <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
+                      <div className="w-3 h-3 bg-green-400 rounded-full"></div>
                     </div>
                   </div>
 
-                  {/* Main content in mockup */}
-                  <div className="flex items-center space-x-6">
-                    <img src="./img/girl-b2.png" className="w-60" alt="" />
-                    <div className="flex-1">
-                      <h2 className="text-2xl font-bold text-gray-800 mb-2">
-                        Mastering
-                      </h2>
-                      <h3 className="text-xl font-bold text-gray-800 mb-1">
-                        HTML & CSS
-                      </h3>
-                      <p className="text-lg text-gray-800 mb-4">in 30 Days</p>
-                      <button className="bg-pink-500 text-white px-4 py-2 rounded text-sm font-medium">
-                        Enrol Now
-                      </button>
+                  {/* Screen Content */}
+                  <div className="bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900 p-6 h-80 relative">
+                    {/* Header in mockup */}
+                    <div className="flex items-center justify-between mb-6">
+                      <div className="flex items-center space-x-2">
+                        <div className="w-6 h-6 bg-pink-500 rounded"></div>
+                        <span className="font-bold text-sm">Book my space</span>
+                      </div>
+                      <div className="flex space-x-4 text-xs">
+                        <span>YOUR COURSES</span>
+                        <span>EXPLORE</span>
+                        <span>FAST</span>
+                        <span>SUPPORT</span>
+                        <div className="w-6 h-6 bg-gray-400 rounded-full"></div>
+                      </div>
+                    </div>
+
+                    {/* Main content in mockup */}
+                    <div className="flex items-center space-x-6">
+                      <img src="./img/girl-b2.png" className="w-60" alt="" />
+                      <div className="flex-1">
+                        <h2 className="text-2xl font-bold text-gray-800 dark:text-gray-50 mb-2">
+                          Mastering
+                        </h2>
+                        <h3 className="text-xl font-bold text-gray-800 dark:text-gray-50 mb-1">
+                          HTML & CSS
+                        </h3>
+                        <p className="text-lg text-gray-800 dark:text-gray-50 mb-4">
+                          in 30 Days
+                        </p>
+                        <button className="bg-pink-500 text-white px-4 py-2 rounded text-sm font-medium">
+                          Enrol Now
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Bottom Section */}
+      <section
+        className={`bg-white dark:bg-gray-700 py-20 m w-full `}
+        style={{
+          backgroundImage:
+            Theme === "dark"
+              ? "none"
+              : `url(${import.meta.env.VITE_BG_URI}/img/home4-course-bg.png)`,
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
+        <div className="container mx-auto px-6">
+          <motion.div
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <p className="text-pink-500 font-semibold tracking-wider text-sm mb-4">
+              WE ARE AWESOME
+            </p>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-gray-900 dark:text-white mx-auto max-w-2xl">
+              <span className="font-black">22 Years</span> Experience in{" "}
+              <span className="font-black">Education</span> and{" "}
+              <span className="font-black">Teaching</span>
+            </h2>
+            <p className="text-gray-600 dark:text-gray-50 mt-6 mx-auto max-w-2xl">
+              Nullam at elementum adque auctor dui. Donec non nunc sodales massa
+              finibus impe tom aer majhe keu ralet.
+            </p>
+          </motion.div>
+
+          <motion.div
+            className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-20"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.6, staggerChildren: 0.2 }}
+            viewport={{ once: true }}
+          >
+            <motion.div
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: { opacity: 1, y: 0 },
+              }}
+            >
+              <TiltCard>
+                <div className="bg-white dark:bg-gray-900 py-20 px-10">
+                  <div className="flex justify-center pb-10 ">
+                    <img src="./img/hm4-intro-icon1.png" alt="" />
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">
+                    Learn Everything
+                  </h3>
+                  <p className="text-gray-600 dark:text-gray-50 mb-6">
+                    Pore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                    nostrud ullamo labo papris nisi uea
+                  </p>
+                  <a
+                    href="#"
+                    className="text-pink-500 font-semibold hover:text-pink-700 transition-colors duration-300"
+                  >
+                    READ MORE
+                  </a>
+                </div>
+              </TiltCard>
+            </motion.div>
+
+            <motion.div
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: { opacity: 1, y: 0, transition: { delay: 0.2 } },
+              }}
+            >
+              <TiltCard>
+                <div className="bg-white dark:bg-gray-900 py-20 px-10">
+                  <div className="flex justify-center pb-10">
+                    <img src="./img/hm4-intro-icon2.png" alt="" />
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">
+                    Top Quality Education
+                  </h3>
+                  <p className="text-gray-600 dark:text-gray-50 mb-6">
+                    Pore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                    nostrud ullamo labo papris nisi uea
+                  </p>
+                  <a
+                    href="#"
+                    className="text-pink-500 font-semibold hover:text-pink-700 transition-colors duration-300 "
+                  >
+                    READ MORE
+                  </a>
+                </div>
+              </TiltCard>
+            </motion.div>
+
+            <motion.div
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: { opacity: 1, y: 0, transition: { delay: 0.4 } },
+              }}
+            >
+              <TiltCard>
+                <div className="bg-white dark:bg-gray-900 py-20 px-10">
+                  <div className="flex justify-center pb-10">
+                    <img src="./img/hm4-intro-icon3.png" alt="" />
+                  </div>
+                  <h3 className="text-xl font-bold dark:text-white text-gray-900 mb-4">
+                    Get Certified
+                  </h3>
+                  <p className="text-gray-600 dark:text-gray-50 mb-6">
+                    Pore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                    nostrud ullamo labo papris nisi uea
+                  </p>
+                  <a
+                    href="#"
+                    className="text-pink-500 font-semibold hover:text-pink-700 transition-colors duration-300"
+                  >
+                    READ MORE
+                  </a>
+                </div>
+              </TiltCard>
+            </motion.div>
+          </motion.div>
+
+          {/* Course Category Section with Animated Grid */}
+          <motion.div
+            className="text-center mb-16 mt-24"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <motion.h2
+              className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mx-auto max-w-2xl"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              Pick A<span className="font-black"> Course</span> By{" "}
+              <span className="font-black">Category</span>
+            </motion.h2>
+            <motion.p
+              className="text-gray-600 mt-6 mx-auto max-w-2xl"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
+              Nullam at elementum oditesque auctor dui. Donec non nunc sodales
+              massa finibus imperdiet.
+            </motion.p>
+          </motion.div>
+
+          {/* Animated Course Grid */}
+          <div className="container mx-auto px-6">
+            <motion.div
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
+              {/* Programming - Takes full height on left */}
+              <div className="lg:row-span-2">
+                <CourseCard
+                  title={courses[0].title}
+                  courseCount={courses[0].courseCount}
+                  bgColor={courses[0].bgColor}
+                  bgImg={courses[0].bgImg}
+                  delay={0.1}
+                  className="h-full"
+                />
+              </div>
+
+              {/* Development */}
+              <CourseCard
+                title={courses[1].title}
+                courseCount={courses[1].courseCount}
+                bgColor={courses[1].bgColor}
+                bgImg={courses[1].bgImg}
+                delay={0.2}
+              />
+
+              {/* Interior */}
+              <div className="lg:row-span-2">
+                <CourseCard
+                  title={courses[2].title}
+                  courseCount={courses[2].courseCount}
+                  bgColor={courses[2].bgColor}
+                  bgImg={courses[2].bgImg}
+                  delay={0.3}
+                  className="h-full"
+                />
+              </div>
+
+              {/* Health */}
+              <CourseCard
+                title={courses[3].title}
+                courseCount={courses[3].courseCount}
+                bgColor={courses[3].bgColor}
+                bgImg={courses[3].bgImg}
+                delay={0.4}
+              />
+
+              {/* Business */}
+              <div className="lg:row-span-2">
+                <CourseCard
+                  title={courses[4].title}
+                  courseCount={courses[4].courseCount}
+                  bgColor={courses[4].bgColor}
+                  bgImg={courses[4].bgImg}
+                  delay={0.5}
+                  className="h-full"
+                />
+              </div>
+              {/* Design - Takes full height */}
+              <div className="lg:row-span-2">
+                <CourseCard
+                  title={courses[5].title}
+                  courseCount={courses[5].courseCount}
+                  bgColor={courses[5].bgColor}
+                  bgImg={courses[5].bgImg}
+                  delay={0.6}
+                  className="h-96"
+                />
+              </div>
+              {/* Photography */}
+              <CourseCard
+                title={courses[6].title}
+                courseCount={courses[6].courseCount}
+                bgColor={courses[6].bgColor}
+                bgImg={courses[6].bgImg}
+                delay={0.7}
+              />
+
+              {/* Music - Takes full height on right */}
+              <CourseCard
+                title={courses[7].title}
+                courseCount={courses[7].courseCount}
+                bgColor={courses[7].bgColor}
+                bgImg={courses[7].bgImg}
+                delay={0.8}
+                className=""
+              />
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        className=""
+        style={{
+
+          backgroundImage:
+            Theme === "dark"
+              ? "none"
+              : `url(${import.meta.env.VITE_BG_URI}/img/home4-about-bg.png)`,
+          backgroundRepeat: "no-repeat",
+        }}
+      >
+        <div className="min-h-screen relative overflow-hidden">
+          {/* Floating Background Elements */}
+
+          {/* Main Content */}
+          <motion.div
+            className="pt-24 pb-16 px-6"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            <div className="max-w-7xl mx-auto">
+              <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[80vh]">
+                {/* Images Section */}
+                <motion.div
+                  className="relative"
+                  variants={imageVariants}
+                  style={{ y: y1 }}
+                >
+                  <div className="relative">
+                    {/* Main large image */}
+                    <motion.div
+                      className="relative z-10"
+                      whileHover={{ scale: 1.02 }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      <img
+                        src="./img/home4-about-img2.jpg"
+                        alt="Woman learning with laptop"
+                        className="w-80 h-96 object-cover rounded shadow"
+                      />
+                    </motion.div>
+                    <div className=" absolute left-0 ">
+                      <img src="./img/home4-about-dots.png" alt="" />
+                    </div>
+                    {/* Overlapping smaller image */}
+                    <motion.div
+                      className="absolute -bottom-8 right-20 z-20"
+                      style={{ y: y2 }}
+                      whileHover={{ scale: 1.05, rotate: 2 }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      <img
+                        src="./img/home4-about-img1.jpg"
+                        alt="Student with books"
+                        className="w-64 h-80 object-cover shadow border-4 border-white"
+                      />
+                    </motion.div>
+
+                    {/* Floating card */}
+                    <motion.div
+                      className="absolute bottom-8 -left-4 bg-white rounded-2xl p-4 shadow-lg z-30"
+                      animate={{
+                        y: [0, -10, 0],
+                        rotate: [-2, 2, -2],
+                      }}
+                      transition={{
+                        duration: 4,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                      }}
+                    >
+                      <div className="flex items-center space-x-2">
+                        <div className="w-8 h-8 bg-gradient-to-r from-green-400 to-blue-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
+                          ✓
+                        </div>
+                        <span className="text-sm font-medium text-gray-700">
+                          Course Completed!
+                        </span>
+                      </div>
+                    </motion.div>
+                    <motion.div
+                      className="absolute -top-20 -left-4 z-30"
+                      animate={{
+                        rotate: [-2, 2, -2],
+                        y: [50, 60, 50],
+                        x: [-50, -55, -50],
+                        opacity: 0.7,
+                      }}
+                      transition={{
+                        duration: 4,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                      }}
+                    >
+                      <img src="./img/hm4-slider-shape2.png" alt="" />
+                    </motion.div>
+                    <motion.div
+                      className="absolute -top-20 -right-4 z-30"
+                      animate={{
+                        rotate: [-2, 2, -2],
+                        y: [50, 60, 50],
+                        x: [-50, -55, -50],
+                        opacity: 0.7,
+                      }}
+                      transition={{
+                        duration: 4,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                      }}
+                    >
+                      <img src="./img/hm4-slider-shape1.png" alt="" />
+                    </motion.div>
+                  </div>
+                </motion.div>
+
+                {/* Content Section */}
+                <motion.div
+                  className="space-y-8"
+                  variants={textVariants}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                >
+                  <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6 }}
+                    viewport={{ once: true }}
+                  >
+                    <motion.p
+                      className="text-red-500 font-semibold text-sm tracking-wider uppercase mb-4"
+                      initial={{ opacity: 0 }}
+                      whileInView={{ opacity: 1 }}
+                      transition={{ delay: 0.2 }}
+                      viewport={{ once: true }}
+                    >
+                      Grow Up Your Skill
+                    </motion.p>
+
+                    <motion.h1
+                      className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight"
+                      initial={{ opacity: 0, y: 50 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.8, delay: 0.3 }}
+                      viewport={{ once: true }}
+                    >
+                      Learn Anything You{" "}
+                      <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
+                        Want Today
+                      </span>
+                    </motion.h1>
+                  </motion.div>
+
+                  <motion.div
+                    className="space-y-4"
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.5 }}
+                    viewport={{ once: true }}
+                  >
+                    <p className="text-gray-600 text-lg leading-relaxed">
+                      Discover unlimited learning opportunities with our
+                      comprehensive platform. Master new skills, advance your
+                      career, and unlock your potential with expert-led courses
+                      designed for modern learners.
+                    </p>
+
+                    <p className="text-gray-600 text-lg leading-relaxed">
+                      Join thousands of successful learners who have transformed
+                      their careers through our innovative learning approach and
+                      personalized guidance.
+                    </p>
+                  </motion.div>
+                  <button className="hero-signup text-white px-8 py-4 rounded-full font-semibold transition-colors">
+                    SIGN UP
+                  </button>
+
+                  {/* Stats */}
+                  <motion.div
+                    className="flex flex-wrap gap-8 pt-8"
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.8 }}
+                    viewport={{ once: true }}
+                  >
+                    {[
+                      { number: "50K+", label: "Students" },
+                      { number: "100+", label: "Courses" },
+                      { number: "98%", label: "Success Rate" },
+                    ].map((stat, index) => (
+                      <motion.div
+                        key={index}
+                        className="text-center"
+                        whileHover={{ scale: 1.1 }}
+                        transition={{ duration: 0.3 }}
+                      >
+                        <div className="text-2xl font-bold text-gray-900">
+                          {stat.number}
+                        </div>
+                        <div className="text-gray-600 text-sm">
+                          {stat.label}
+                        </div>
+                      </motion.div>
+                    ))}
+                  </motion.div>
+                </motion.div>
+              </div>
             </div>
           </motion.div>
         </div>
-      </div>
-    </section>
 
-    {/* Bottom Section */}
-    <section className="bg-white bg-img-home py-20 mt-40 w-full">
-      <div className="container mx-auto px-6">
-        <motion.div 
-          className="text-center mb-16"
+        <motion.div
+          className="text-center mb-16 mt-20"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -556,716 +1027,315 @@ function Home() {
           <p className="text-pink-500 font-semibold tracking-wider text-sm mb-4">
             WE ARE AWESOME
           </p>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mx-auto max-w-2xl">
-            <span className="font-black">22 Years</span> Experience in{" "}
-            <span className="font-black">Education</span> and{" "}
-            <span className="font-black">Teaching</span>
+          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mx-auto max-w-2xl">
+            <span className="font-black">World Class</span> Educatoin for{" "}
+            <span className="font-black">Everyone</span>
           </h2>
           <p className="text-gray-600 mt-6 mx-auto max-w-2xl">
             Nullam at elementum adque auctor dui. Donec non nunc sodales massa
             finibus impe tom aer majhe keu ralet.
           </p>
         </motion.div>
-
-        <motion.div 
-          className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-20"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.6, staggerChildren: 0.2 }}
-          viewport={{ once: true }}
-        >
-          <motion.div
-            variants={{
-              hidden: { opacity: 0, y: 20 },
-              visible: { opacity: 1, y: 0 }
-            }}
-          >
-            <TiltCard>
-              <div className="bg-white py-20 px-10">
-                <div className="flex justify-center pb-10 ">
-                  <img src="./img/hm4-intro-icon1.png" alt="" />
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-4">
-                  Learn Everything
-                </h3>
-                <p className="text-gray-600 mb-6">
-                  Pore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                  nostrud ullamo labo papris nisi uea
-                </p>
-                <a
-                  href="#"
-                  className="text-pink-500 font-semibold hover:text-pink-700 transition-colors duration-300"
-                >
-                  READ MORE
-                </a>
-              </div>
-            </TiltCard>
-          </motion.div>
-
-          <motion.div
-            variants={{
-              hidden: { opacity: 0, y: 20 },
-              visible: { opacity: 1, y: 0, transition: { delay: 0.2 } }
-            }}
-          >
-            <TiltCard>
-              <div className="bg-white py-20 px-10">
-                <div className="flex justify-center pb-10">
-                  <img src="./img/hm4-intro-icon2.png" alt="" />
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-4">
-                  Top Quality Education
-                </h3>
-                <p className="text-gray-600 mb-6">
-                  Pore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                  nostrud ullamo labo papris nisi uea
-                </p>
-                <a
-                  href="#"
-                  className="text-pink-500 font-semibold hover:text-pink-700 transition-colors duration-300 "
-                >
-                  READ MORE
-                </a>
-              </div>
-            </TiltCard>
-          </motion.div>
-
-          <motion.div
-            variants={{
-              hidden: { opacity: 0, y: 20 },
-              visible: { opacity: 1, y: 0, transition: { delay: 0.4 } }
-            }}
-          >
-            <TiltCard>
-              <div className="bg-white py-20 px-10">
-                <div className="flex justify-center pb-10">
-                  <img src="./img/hm4-intro-icon3.png" alt="" />
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-4">
-                  Get Certified
-                </h3>
-                <p className="text-gray-600 mb-6">
-                  Pore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                  nostrud ullamo labo papris nisi uea
-                </p>
-                <a
-                  href="#"
-                  className="text-pink-500 font-semibold hover:text-pink-700 transition-colors duration-300"
-                >
-                  READ MORE
-                </a>
-              </div>
-            </TiltCard>
-          </motion.div>
-        </motion.div>
-
-        {/* Course Category Section with Animated Grid */}
-        <motion.div 
-          className="text-center mb-16 mt-24"
+        <motion.div
+          className="flex flex-col lg:flex-row mt-32"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <motion.h2
-            className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mx-auto max-w-2xl"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-          >
-            Pick A<span className="font-black"> Course</span> By{" "}
-            <span className="font-black">Category</span>
-          </motion.h2>
-          <motion.p
-            className="text-gray-600 mt-6 mx-auto max-w-2xl"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            viewport={{ once: true }}
-          >
-            Nullam at elementum oditesque auctor dui. Donec non nunc sodales
-            massa finibus imperdiet.
-          </motion.p>
+          <div className="w-full lg:w-[50%] px-6 lg:pl-32 lg:pr-10">
+            <div>
+              <img src="./img/hm4-feature-icon1.jpg" alt="" />
+            </div>
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl pt-5">
+              Award winning course management
+            </h1>
+            <p className="pt-10 text-lg">
+              Ampor incididunt ut labore et dolore magna aliqua. Ut enim ad
+              minim Lorem ipsum dolor sit amet, consectetur adipisicing elit sed
+              do eiusmod tempor incididunt ut labore et dolore conse ctetur
+              adipisicing elit, sed do eiusmod tempor.
+            </p>
+          </div>
+          <div className="w-full lg:w-[50%] mt-10 lg:mt-0">
+            <img src="./img/home4-feature-img1.png" alt="" className="w-full" />
+          </div>
         </motion.div>
-
-        {/* Animated Course Grid */}
-        <div className="container mx-auto px-6">
-          <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            viewport={{ once: true }}
-          >
-            {/* Programming - Takes full height on left */}
-            <div className="lg:row-span-2">
-              <CourseCard
-                title={courses[0].title}
-                courseCount={courses[0].courseCount}
-                bgColor={courses[0].bgColor}
-                bgImg={courses[0].bgImg}
-                delay={0.1}
-                className="h-full"
-              />
-            </div>
-
-            {/* Development */}
-            <CourseCard
-              title={courses[1].title}
-              courseCount={courses[1].courseCount}
-              bgColor={courses[1].bgColor}
-              bgImg={courses[1].bgImg}
-              delay={0.2}
-            />
-
-            {/* Interior */}
-            <div className="lg:row-span-2">
-              <CourseCard
-                title={courses[2].title}
-                courseCount={courses[2].courseCount}
-                bgColor={courses[2].bgColor}
-                bgImg={courses[2].bgImg}
-                delay={0.3}
-                className="h-full"
-              />
-            </div>
-
-            {/* Health */}
-            <CourseCard
-              title={courses[3].title}
-              courseCount={courses[3].courseCount}
-              bgColor={courses[3].bgColor}
-              bgImg={courses[3].bgImg}
-              delay={0.4}
-            />
-
-            {/* Business */}
-            <div className="lg:row-span-2">
-              <CourseCard
-                title={courses[4].title}
-                courseCount={courses[4].courseCount}
-                bgColor={courses[4].bgColor}
-                bgImg={courses[4].bgImg}
-                delay={0.5}
-                className="h-full"
-              />
-            </div>
-            {/* Design - Takes full height */}
-            <div className="lg:row-span-2">
-              <CourseCard
-                title={courses[5].title}
-                courseCount={courses[5].courseCount}
-                bgColor={courses[5].bgColor}
-                bgImg={courses[5].bgImg}
-                delay={0.6}
-                className="h-96"
-              />
-            </div>
-            {/* Photography */}
-            <CourseCard
-              title={courses[6].title}
-              courseCount={courses[6].courseCount}
-              bgColor={courses[6].bgColor}
-              bgImg={courses[6].bgImg}
-              delay={0.7}
-            />
-
-            {/* Music - Takes full height on right */}
-            <CourseCard
-              title={courses[7].title}
-              courseCount={courses[7].courseCount}
-              bgColor={courses[7].bgColor}
-              bgImg={courses[7].bgImg}
-              delay={0.8}
-              className=""
-            />
-          </motion.div>
-        </div>
-      </div>
-    </section>
-
-    <section className="bg-img-home1">
-      <div className="min-h-screen relative overflow-hidden">
-        {/* Floating Background Elements */}
-
-        {/* Main Content */}
         <motion.div
-          className="pt-24 pb-16 px-6"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
+          className="flex flex-col lg:flex-row-reverse mt-20 lg:mt-40"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
           viewport={{ once: true }}
         >
-          <div className="max-w-7xl mx-auto">
-            <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[80vh]">
-              {/* Images Section */}
-              <motion.div
-                className="relative"
-                variants={imageVariants}
-                style={{ y: y1 }}
-              >
-                <div className="relative">
-                  {/* Main large image */}
-                  <motion.div
-                    className="relative z-10"
-                    whileHover={{ scale: 1.02 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    <img
-                      src="./img/home4-about-img2.jpg"
-                      alt="Woman learning with laptop"
-                      className="w-80 h-96 object-cover rounded shadow"
-                    />
-                  </motion.div>
-                  <div className=" absolute left-0 ">
-                    <img src="./img/home4-about-dots.png" alt="" />
-                  </div>
-                  {/* Overlapping smaller image */}
-                  <motion.div
-                    className="absolute -bottom-8 right-20 z-20"
-                    style={{ y: y2 }}
-                    whileHover={{ scale: 1.05, rotate: 2 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    <img
-                      src="./img/home4-about-img1.jpg"
-                      alt="Student with books"
-                      className="w-64 h-80 object-cover shadow border-4 border-white"
-                    />
-                  </motion.div>
-
-                  {/* Floating card */}
-                  <motion.div
-                    className="absolute bottom-8 -left-4 bg-white rounded-2xl p-4 shadow-lg z-30"
-                    animate={{
-                      y: [0, -10, 0],
-                      rotate: [-2, 2, -2],
-                    }}
-                    transition={{
-                      duration: 4,
-                      repeat: Infinity,
-                      ease: "easeInOut",
-                    }}
-                  >
-                    <div className="flex items-center space-x-2">
-                      <div className="w-8 h-8 bg-gradient-to-r from-green-400 to-blue-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
-                        ✓
-                      </div>
-                      <span className="text-sm font-medium text-gray-700">
-                        Course Completed!
-                      </span>
-                    </div>
-                  </motion.div>
-                  <motion.div
-                    className="absolute -top-20 -left-4 z-30"
-                    animate={{
-                      rotate: [-2, 2, -2],
-                      y: [50, 60, 50],
-                      x: [-50, -55, -50],
-                      opacity: 0.7,
-                    }}
-                    transition={{
-                      duration: 4,
-                      repeat: Infinity,
-                      ease: "easeInOut",
-                    }}
-                  >
-                    <img src="./img/hm4-slider-shape2.png" alt="" />
-                  </motion.div>
-                  <motion.div
-                    className="absolute -top-20 -right-4 z-30"
-                    animate={{
-                      rotate: [-2, 2, -2],
-                      y: [50, 60, 50],
-                      x: [-50, -55, -50],
-                      opacity: 0.7,
-                    }}
-                    transition={{
-                      duration: 4,
-                      repeat: Infinity,
-                      ease: "easeInOut",
-                    }}
-                  >
-                    <img src="./img/hm4-slider-shape1.png" alt="" />
-                  </motion.div>
-                </div>
-              </motion.div>
-
-              {/* Content Section */}
-              <motion.div 
-                className="space-y-8" 
-                variants={textVariants}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-              >
-                <motion.div
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6 }}
-                  viewport={{ once: true }}
-                >
-                  <motion.p
-                    className="text-red-500 font-semibold text-sm tracking-wider uppercase mb-4"
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    transition={{ delay: 0.2 }}
-                    viewport={{ once: true }}
-                  >
-                    Grow Up Your Skill
-                  </motion.p>
-
-                  <motion.h1
-                    className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight"
-                    initial={{ opacity: 0, y: 50 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.3 }}
-                    viewport={{ once: true }}
-                  >
-                    Learn Anything You{" "}
-                    <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
-                      Want Today
-                    </span>
-                  </motion.h1>
-                </motion.div>
-
-                <motion.div
-                  className="space-y-4"
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.5 }}
-                  viewport={{ once: true }}
-                >
-                  <p className="text-gray-600 text-lg leading-relaxed">
-                    Discover unlimited learning opportunities with our
-                    comprehensive platform. Master new skills, advance your
-                    career, and unlock your potential with expert-led courses
-                    designed for modern learners.
-                  </p>
-
-                  <p className="text-gray-600 text-lg leading-relaxed">
-                    Join thousands of successful learners who have transformed
-                    their careers through our innovative learning approach and
-                    personalized guidance.
-                  </p>
-                </motion.div>
-                <button className="hero-signup text-white px-8 py-4 rounded-full font-semibold transition-colors">
-                  SIGN UP
-                </button>
-
-                {/* Stats */}
-                <motion.div
-                  className="flex flex-wrap gap-8 pt-8"
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.8 }}
-                  viewport={{ once: true }}
-                >
-                  {[
-                    { number: "50K+", label: "Students" },
-                    { number: "100+", label: "Courses" },
-                    { number: "98%", label: "Success Rate" },
-                  ].map((stat, index) => (
-                    <motion.div
-                      key={index}
-                      className="text-center"
-                      whileHover={{ scale: 1.1 }}
-                      transition={{ duration: 0.3 }}
-                    >
-                      <div className="text-2xl font-bold text-gray-900">
-                        {stat.number}
-                      </div>
-                      <div className="text-gray-600 text-sm">
-                        {stat.label}
-                      </div>
-                    </motion.div>
-                  ))}
-                </motion.div>
-              </motion.div>
+          <div className="w-full lg:w-[50%] px-6 lg:pl-10 lg:pr-32">
+            <div>
+              <img src="./img/hm4-feature-icon2.jpg" alt="" />
             </div>
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl pt-5">
+              Learn anything from anywhere anytime
+            </h1>
+            <p className="pt-10 text-lg">
+              Ampor incididunt ut labore et dolore magna aliqua. Ut enim ad
+              minim Lorem ipsum dolor sit amet, consectetur adipisicing elit sed
+              do eiusmod tempor incididunt ut labore et dolore conse ctetur
+              adipisicing elit, sed do eiusmod tempor.
+            </p>
+          </div>
+          <div className="w-full lg:w-[50%] mt-10 lg:mt-0">
+            <img src="./img/hm4-feature-img2.png" alt="" className="w-full" />
           </div>
         </motion.div>
-      </div>
+        <motion.div
+          className="flex flex-col lg:flex-row mt-20 lg:mt-32"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          viewport={{ once: true }}
+        >
+          <div className="w-full lg:w-[50%] px-6 lg:pl-32 lg:pr-10">
+            <div>
+              <img src="./img/hm4-feature-icon3.jpg" alt="" />
+            </div>
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl pt-5">
+              Certification for solid developemnt of your career
+            </h1>
+            <p className="pt-10 text-lg">
+              Ampor incididunt ut labore et dolore magna aliqua. Ut enim ad
+              minim Lorem ipsum dolor sit amet, consectetur adipisicing elit sed
+              do eiusmod tempor incididunt ut labore et dolore conse ctetur
+              adipisicing elit, sed do eiusmod tempor.
+            </p>
+          </div>
+          <div className="w-full lg:w-[50%] mt-10 lg:mt-0">
+            <img src="./img/hm4-feature-img3.png" alt="" className="w-full" />
+          </div>
+        </motion.div>
+      </section>
+      <section
+        className=" overflow-hidden lg:h-screen mt-20"
+        style={{
+          
+          backgroundImage:
+            Theme === "dark"
+              ? "none"
+              : `url(${import.meta.env.VITE_BG_URI}/img/home4-fact-bg.png)`,
 
-      <motion.div 
-        className="text-center mb-16 mt-20"
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
+          backgroundRepeat: "no-repeat",
+        }}
       >
-        <p className="text-pink-500 font-semibold tracking-wider text-sm mb-4">
-          WE ARE AWESOME
-        </p>
-        <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mx-auto max-w-2xl">
-          <span className="font-black">World Class</span> Educatoin for{" "}
-          <span className="font-black">Everyone</span>
-        </h2>
-        <p className="text-gray-600 mt-6 mx-auto max-w-2xl">
-          Nullam at elementum adque auctor dui. Donec non nunc sodales massa
-          finibus impe tom aer majhe keu ralet.
-        </p>
-      </motion.div>
-      <motion.div 
-        className="flex flex-col lg:flex-row mt-32"
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
-      >
-        <div className="w-full lg:w-[50%] px-6 lg:pl-32 lg:pr-10">
-          <div>
-            <img src="./img/hm4-feature-icon1.jpg" alt="" />
+        <motion.div
+          className="relative mt-42 mb-20"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <div className="hidden lg:block absolute left-[4%] top-[46%]">
+            <img
+              className="rounded-circle"
+              src="./img/home4-fact-img1.jpg"
+              alt=""
+            />
           </div>
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl pt-5">Award winning course management</h1>
-          <p className="pt-10 text-lg">
-            Ampor incididunt ut labore et dolore magna aliqua. Ut enim ad
-            minim Lorem ipsum dolor sit amet, consectetur adipisicing elit sed
-            do eiusmod tempor incididunt ut labore et dolore conse ctetur
-            adipisicing elit, sed do eiusmod tempor.
-          </p>
-        </div>
-        <div className="w-full lg:w-[50%] mt-10 lg:mt-0">
-          <img src="./img/home4-feature-img1.png" alt="" className="w-full" />
-        </div>
-      </motion.div>
-      <motion.div 
-        className="flex flex-col lg:flex-row-reverse mt-20 lg:mt-40"
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.2 }}
-        viewport={{ once: true }}
-      >
-        <div className="w-full lg:w-[50%] px-6 lg:pl-10 lg:pr-32">
-          <div>
-            <img src="./img/hm4-feature-icon2.jpg" alt="" />
+          <div className="hidden lg:block absolute left-[15%] top-[22%]">
+            <img
+              className="rounded-circle"
+              src="./img/home4-fact-img2.jpg"
+              alt=""
+            />
           </div>
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl pt-5">
-            Learn anything from anywhere anytime
-          </h1>
-          <p className="pt-10 text-lg">
-            Ampor incididunt ut labore et dolore magna aliqua. Ut enim ad
-            minim Lorem ipsum dolor sit amet, consectetur adipisicing elit sed
-            do eiusmod tempor incididunt ut labore et dolore conse ctetur
-            adipisicing elit, sed do eiusmod tempor.
-          </p>
-        </div>
-        <div className="w-full lg:w-[50%] mt-10 lg:mt-0">
-          <img src="./img/hm4-feature-img2.png" alt="" className="w-full" />
-        </div>
-      </motion.div>
-      <motion.div 
-        className="flex flex-col lg:flex-row mt-20 lg:mt-32"
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.4 }}
-        viewport={{ once: true }}
-      >
-        <div className="w-full lg:w-[50%] px-6 lg:pl-32 lg:pr-10">
-          <div>
-            <img src="./img/hm4-feature-icon3.jpg" alt="" />
+          <div className="hidden lg:block absolute left-[24%] top-[45%]">
+            <img
+              className="rounded-circle"
+              src="./img/home4-fact-img3.jpg"
+              alt=""
+            />
           </div>
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl pt-5">
-            Certification for solid developemnt of your career
-          </h1>
-          <p className="pt-10 text-lg">
-            Ampor incididunt ut labore et dolore magna aliqua. Ut enim ad
-            minim Lorem ipsum dolor sit amet, consectetur adipisicing elit sed
-            do eiusmod tempor incididunt ut labore et dolore conse ctetur
-            adipisicing elit, sed do eiusmod tempor.
+          <div className="hidden lg:block absolute left-[29%] top-[9%]">
+            <img
+              className="rounded-circle"
+              src="./img/home4-fact-img4.jpg"
+              alt=""
+            />
+          </div>
+          <div className="hidden lg:block absolute left-[38%] top-[40%]">
+            <img
+              className="rounded-circle"
+              src="./img/home4-fact-img5.jpg"
+              alt=""
+            />
+          </div>
+          <div className="hidden lg:block absolute left-[39%] top-[15%]">
+            <img
+              className="rounded-circle"
+              src="./img/home4-fact-img6.jpg"
+              alt=""
+            />
+          </div>
+          <div className="hidden lg:block absolute left-[41%] bottom-[0%]">
+            <img
+              className="rounded-circle"
+              src="./img/home4-fact-img7.jpg"
+              alt=""
+            />
+          </div>
+          <div className="hidden lg:block absolute right-[49%] top-[20%]">
+            <img
+              className="rounded-circle"
+              src="./img/home4-fact-img8.jpg"
+              alt=""
+            />
+          </div>
+          <div className="hidden lg:block absolute rigth-[42%] bottom-[22%]">
+            <img
+              className="rounded-circle"
+              src="./img/home4-fact-img9.jpg"
+              alt=""
+            />
+          </div>
+          <div className="hidden lg:block absolute right-[38%] top-[0%]">
+            <img
+              className="rounded-circle"
+              src="./img/home4-fact-img10.jpg"
+              alt=""
+            />
+          </div>
+          <div className="hidden lg:block absolute right-[33%] bottom-[12%]">
+            <img
+              className="rounded-circle"
+              src="./img/home4-fact-img11.jpg"
+              alt=""
+            />
+          </div>
+          <div className="hidden lg:block absolute right-[28%] top-[15%]">
+            <img
+              className="rounded-circle"
+              src="./img/home4-fact-img12.jpg"
+              alt=""
+            />
+          </div>
+          <div className="hidden lg:block absolute right-[15%] top-[40%]">
+            <img
+              className="rounded-circle"
+              src="./img/home4-fact-img14.jpg"
+              alt=""
+            />
+          </div>
+          <div className="hidden lg:block absolute right-[9%] top-[20%]">
+            <img
+              className="rounded-circle"
+              src="./img/home4-fact-img15.jpg"
+              alt=""
+            />
+          </div>
+          <div className="hidden lg:block absolute right-[2%] top-[30%]">
+            <img
+              className="rounded-circle"
+              src="./img/home4-fact-img16.jpg"
+              alt=""
+            />
+          </div>
+        </motion.div>
+        <motion.div
+          className="text-center mb-16 mt-20 lg:mt-96"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
+          <p className="text-pink-500 font-semibold tracking-wider text-sm mb-4">
+            WE ARE AWESOME
           </p>
-        </div>
-        <div className="w-full lg:w-[50%] mt-10 lg:mt-0">
-          <img src="./img/hm4-feature-img3.png" alt="" className="w-full" />
-        </div>
-      </motion.div>
-    </section>
-    <section className="bg-img-home2 overflow-hidden lg:h-screen mt-20">
-      <motion.div 
-        className="relative mt-42 mb-20"
+          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mx-auto max-w-2xl">
+            Join Over <span className="font-black">5 Million</span>Students
+          </h2>
+          <p className="text-gray-600 mt-6 mx-auto max-w-2xl">
+            Nullam at elementum adque auctor dui. Donec non nunc sodales massa
+            finibus impe tom aer majhe keu ralet.
+          </p>
+          <motion.div
+            className="flex flex-col sm:flex-row justify-around mt-20 gap-8 sm:gap-0"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ staggerChildren: 0.2 }}
+            viewport={{ once: true }}
+          >
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+            >
+              <h1 className="text-4xl sm:text-5xl font-bold text-green-400">
+                1008
+              </h1>
+              <p>Online Courses</p>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              <h1 className="text-4xl sm:text-5xl font-bold text-pink-400">
+                225
+              </h1>
+              <p>Total Instructor</p>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+            >
+              <h1 className="text-4xl sm:text-5xl font-bold text-blue-400">
+                500K
+              </h1>
+              <p>Students Worldwide</p>
+            </motion.div>
+          </motion.div>
+        </motion.div>
+      </section>
+      <motion.section
+        className=" w-full min-h-[50vh] flex items-center justify-center"
+        style={{
+            backgroundImage:
+            Theme === "dark"
+              ? "none"
+              : `linear-gradient(to right, #9d1df8bb, #4026e8be), url(${IMG_URI}/img/home4-banner-bg-style.png)`,
+
+          // backgroundImage: `linear-gradient(to right, #9d1df8bb, #4026e8be), url(${IMG_URI}/img/home4-banner-bg-style.png)`,
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
       >
-        <div className="hidden lg:block absolute left-[4%] top-[46%]">
-          <img
-            className="rounded-circle"
-            src="./img/home4-fact-img1.jpg"
-            alt=""
-          />
+        <div className="text-center max-w-3xl px-4">
+          <p className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-white mb-8">
+            Don't Waste Your Time. Take Admission in Larna Today and Start
+            Learning Anything You Love from Anywhere!
+          </p>
+          <button className="hero-signup text-white px-8 py-4 rounded-full font-semibold transition-colors">
+            SIGN UP
+          </button>
         </div>
-        <div className="hidden lg:block absolute left-[15%] top-[22%]">
-          <img
-            className="rounded-circle"
-            src="./img/home4-fact-img2.jpg"
-            alt=""
-          />
-        </div>
-        <div className="hidden lg:block absolute left-[24%] top-[45%]">
-          <img
-            className="rounded-circle"
-            src="./img/home4-fact-img3.jpg"
-            alt=""
-          />
-        </div>
-        <div className="hidden lg:block absolute left-[29%] top-[9%]">
-          <img
-            className="rounded-circle"
-            src="./img/home4-fact-img4.jpg"
-            alt=""
-          />
-        </div>
-        <div className="hidden lg:block absolute left-[38%] top-[40%]">
-          <img
-            className="rounded-circle"
-            src="./img/home4-fact-img5.jpg"
-            alt=""
-          />
-        </div>
-        <div className="hidden lg:block absolute left-[39%] top-[15%]">
-          <img
-            className="rounded-circle"
-            src="./img/home4-fact-img6.jpg"
-            alt=""
-          />
-        </div>
-        <div className="hidden lg:block absolute left-[41%] bottom-[0%]">
-          <img
-            className="rounded-circle"
-            src="./img/home4-fact-img7.jpg"
-            alt=""
-          />
-        </div>
-        <div className="hidden lg:block absolute right-[49%] top-[20%]">
-          <img
-            className="rounded-circle"
-            src="./img/home4-fact-img8.jpg"
-            alt=""
-          />
-        </div>
-        <div className="hidden lg:block absolute rigth-[42%] bottom-[22%]">
-          <img
-            className="rounded-circle"
-            src="./img/home4-fact-img9.jpg"
-            alt=""
-          />
-        </div>
-        <div className="hidden lg:block absolute right-[38%] top-[0%]">
-          <img
-            className="rounded-circle"
-            src="./img/home4-fact-img10.jpg"
-            alt=""
-          />
-        </div>
-        <div className="hidden lg:block absolute right-[33%] bottom-[12%]">
-          <img
-            className="rounded-circle"
-            src="./img/home4-fact-img11.jpg"
-            alt=""
-          />
-        </div>
-        <div className="hidden lg:block absolute right-[28%] top-[15%]">
-          <img
-            className="rounded-circle"
-            src="./img/home4-fact-img12.jpg"
-            alt=""
-          />
-        </div>
-        <div className="hidden lg:block absolute right-[15%] top-[40%]">
-          <img
-            className="rounded-circle"
-            src="./img/home4-fact-img14.jpg"
-            alt=""
-          />
-        </div>
-        <div className="hidden lg:block absolute right-[9%] top-[20%]">
-          <img
-            className="rounded-circle"
-            src="./img/home4-fact-img15.jpg"
-            alt=""
-          />
-        </div>
-        <div className="hidden lg:block absolute right-[2%] top-[30%]">
-          <img
-            className="rounded-circle"
-            src="./img/home4-fact-img16.jpg"
-            alt=""
-          />
-        </div>
-      </motion.div>
-      <motion.div 
-        className="text-center mb-16 mt-20 lg:mt-96"
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
-      >
-        <p className="text-pink-500 font-semibold tracking-wider text-sm mb-4">
-          WE ARE AWESOME
-        </p>
-        <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mx-auto max-w-2xl">
-          Join Over <span className="font-black">5 Million</span>Students
-        </h2>
-        <p className="text-gray-600 mt-6 mx-auto max-w-2xl">
-          Nullam at elementum adque auctor dui. Donec non nunc sodales massa
-          finibus impe tom aer majhe keu ralet.
-        </p>
-        <motion.div 
-          className="flex flex-col sm:flex-row justify-around mt-20 gap-8 sm:gap-0"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ staggerChildren: 0.2 }}
-          viewport={{ once: true }}
-        >
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <h1 className="text-4xl sm:text-5xl font-bold text-green-400">1008</h1>
-            <p>Online Courses</p>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            <h1 className="text-4xl sm:text-5xl font-bold text-pink-400">225</h1>
-            <p>Total Instructor</p>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-          >
-            <h1 className="text-4xl sm:text-5xl font-bold text-blue-400">500K</h1>
-            <p>Students Worldwide</p>
-          </motion.div>
-        </motion.div>
-      </motion.div>
-    </section>
-    <motion.section 
-      className="h-bg-img w-full min-h-[50vh] flex items-center justify-center"
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      transition={{ duration: 0.8 }}
-      viewport={{ once: true }}
-    >
-      <div className="text-center max-w-3xl px-4">
-        <p className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-white mb-8">
-          Don't Waste Your Time. Take Admission in Larna Today and Start
-          Learning Anything You Love from Anywhere!
-        </p>
-        <button className="hero-signup text-white px-8 py-4 rounded-full font-semibold transition-colors">
-          SIGN UP
-        </button>
-      </div>
-    </motion.section>
+      </motion.section>
 
-      <section className="bg-img-home3">
-        <div className="bg-gray-50 py-16 px-4 overflow-hidden">
+      <section
+        className=""
+        style={{
+           backgroundImage:
+            Theme === "dark"
+              ? "none"
+              : `url(${import.meta.env.VITE_BG_URI}/img/hm4-testimonial-dotted.png)`,
+
+
+          backgroundRepeat: "no-repeat",
+        }}
+      >
+        <div className=" py-16 px-4 overflow-hidden">
           <div className="max-w-7xl mx-auto">
             {/* Header */}
             <motion.div

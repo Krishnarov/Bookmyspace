@@ -24,26 +24,7 @@
   background-image: -webkit-linear-gradient(-30deg, rgb(132, 250, 176) 0%, rgb(143, 211, 244) 100%);
   border-radius: 100%;
 }
-.bg-img-home{
-    background-image: url("./img/home4-course-bg.png");
-    background-repeat: no-repeat;
 
-}
-.bg-img-home1{
-    background-image: url("./img/home4-about-bg.png");
-    background-repeat: no-repeat;
-
-}
-.bg-img-home2{
-    background-image: url("./img/home4-fact-bg.png");
-    background-repeat: no-repeat;
-
-}
-.bg-img-home3{
-    background-image: url("./img/hm4-testimonial-dotted.png");
-    background-repeat: no-repeat;
-
-}
 
 .Purpleblob{
     background-image: -webkit-linear-gradient(90deg, rgb(251, 194, 235) 0%, rgb(166, 193, 238) 100%);
@@ -68,19 +49,4 @@
 .t-w{
   color:white !important;
 }
-.c-bg-img {
-  background-image: 
-    linear-gradient(to right, #9d1df8bb, #4026e8be), 
-    url("./img/books1.jpg");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-.h-bg-img {
-  background-image: 
-    linear-gradient(to right, #9d1df8bb, #4026e8be), 
-    url("./img/home4-banner-bg-style.png");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
+
