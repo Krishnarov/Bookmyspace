@@ -1,0 +1,111 @@
+import React from 'react';
+import { Facebook, Twitter, Linkedin } from 'lucide-react';
+
+const HomeFooter = () => {
+  const partners = [
+    { name: 'Arillina Academy', logo: '🅰️' },
+    { name: 'Hub Edumart', logo: '🏫' },
+    { name: 'Odekha Academy', logo: '📚' },
+    { name: 'Selectia Education', logo: '🎓' },
+    { name: 'BrainUp', logo: '🧠' },
+    { name: 'Educating Learning Center', logo: '📖' }
+  ];
+
+  return (
+    <footer className="bg-gray-50 py-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Partner Logos */}
+        <div className="mb-16">
+          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
+            {partners.map((partner, index) => (
+              <div key={index} className="flex items-center space-x-2 text-gray-600">
+                <span className="text-2xl">{partner.logo}</span>
+                <span className="font-medium text-sm md:text-base">{partner.name}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Main Footer Content */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-16">
+          {/* Left Section - Brand */}
+          <div className="lg:col-span-1">
+            <div className="flex items-center space-x-2 mb-6">
+              <div className="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center">
+                <span className="text-white font-bold text-sm">⚓</span>
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900">Larna</h3>
+            </div>
+            
+            <p className="text-gray-600 mb-6 leading-relaxed">
+              Aexerc itation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis 
+              aute irure dolor in repr henderit in volu ptate velit esse cillum dolore
+            </p>
+
+            {/* Social Links */}
+            <div className="flex space-x-4">
+              <a href="#" className="w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors">
+                <Facebook size={18} />
+              </a>
+              <a href="#" className="w-10 h-10 bg-blue-400 text-white rounded-full flex items-center justify-center hover:bg-blue-500 transition-colors">
+                <Twitter size={18} />
+              </a>
+              <a href="#" className="w-10 h-10 bg-red-500 text-white rounded-full flex items-center justify-center hover:bg-red-600 transition-colors">
+                <span className="text-sm font-bold">G+</span>
+              </a>
+              <a href="#" className="w-10 h-10 bg-blue-700 text-white rounded-full flex items-center justify-center hover:bg-blue-800 transition-colors">
+                <Linkedin size={18} />
+              </a>
+            </div>
+          </div>
+
+          {/* Center Section - Important Links */}
+          <div className="lg:col-span-1">
+            <h4 className="text-lg font-semibold text-gray-900 mb-6">IMPORTANT LINKS</h4>
+            <div className="grid grid-cols-2 gap-y-3 gap-x-8">
+              <a href="#" className="text-gray-600 hover:text-gray-900 transition-colors">All Courses</a>
+              <a href="#" className="text-gray-600 hover:text-gray-900 transition-colors">About Us</a>
+              <a href="#" className="text-gray-600 hover:text-gray-900 transition-colors">Instructors</a>
+              <a href="#" className="text-gray-600 hover:text-gray-900 transition-colors">Careers</a>
+              <a href="#" className="text-gray-600 hover:text-gray-900 transition-colors">Premium Plans</a>
+              <a href="#" className="text-gray-600 hover:text-gray-900 transition-colors">FAQ & Help</a>
+              <a href="#" className="text-gray-600 hover:text-gray-900 transition-colors">Blogs</a>
+              <a href="#" className="text-gray-600 hover:text-gray-900 transition-colors">Certificate</a>
+              <a href="#" className="text-gray-600 hover:text-gray-900 transition-colors">Resources</a>
+            </div>
+          </div>
+
+          {/* Right Section - Illustration */}
+          <div className="lg:col-span-1 flex justify-center lg:justify-end">
+            <div className="relative">
+              {/* Student Illustration */}
+                <img src="./img/home4-footer-img.png" alt="" />
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom Section */}
+        <div className="mt-16 pt-8 border-t border-gray-200">
+          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+            <p className="text-gray-600 text-sm">
+              All rights reserved <span className="font-semibold">eThemeStudio</span> © 2023
+            </p>
+            
+            <div className="flex space-x-6">
+              <a href="#" className="text-gray-600 hover:text-gray-900 text-sm transition-colors">Terms & Condition</a>
+              <a href="#" className="text-gray-600 hover:text-gray-900 text-sm transition-colors">Privacy</a>
+              <a href="#" className="text-gray-600 hover:text-gray-900 text-sm transition-colors">Cookies</a>
+            </div>
+
+            {/* Scroll to top button */}
+            <button className="w-8 h-8 bg-red-500 text-white rounded-sm flex items-center justify-center hover:bg-red-600 transition-colors">
+              ↑
+            </button>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default HomeFooter;
