@@ -697,7 +697,7 @@ function Home() {
               <span className="font-black">Category</span>
             </motion.h2>
             <motion.p
-              className="text-gray-600 mt-6 mx-auto max-w-2xl"
+              className="text-gray-600 dark:text-white mt-6 mx-auto max-w-2xl"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
