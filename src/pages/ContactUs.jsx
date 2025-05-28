@@ -1,12 +1,3 @@
-// import React from 'react'
-
-// function ContactUs() {
-//   return (
-//     <div>ContactUs</div>
-//   )
-// }
-
-// export default ContactUs
 import React, { useState } from "react";
 import {
   MapPin,
@@ -48,22 +39,22 @@ export default function ContactUs() {
   };
 
   return (
-    <div className="">
+    <div className="dark">
       {/* Header */}
       <HeroHead text={"Contact us"} />
 
-      <div className="min-h-screen bg-gray-50 py-12 px-4">
+      <div className="min-h-screen bg-gray-50 dark:bg-gray-900 py-12 px-4">
         <div className="max-w-6xl mx-auto">
           {/* Contact Info Cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
             {/* Address Card */}
             <TiltCard>
-              <div  className="bg-gradient-to-br from-green-300 to-green-600 h-full p-8 text-center text-white shadow-lg hover:shadow-xl transition-shadow duration-300">
-                <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Phone className="w-8 h-8 text-green-500" />
+              <div  className="bg-gradient-to-br from-green-300 to-green-600 dark:from-green-400 dark:to-green-700 h-full p-8 text-center text-white shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <div className="w-16 h-16 bg-white dark:bg-gray-800 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Phone className="w-8 h-8 text-green-500 dark:text-green-400" />
                 </div>
                 <h3 className="text-xl font-semibold mb-3">Phone</h3>
-                <p className="text-green-50">
+                <p className="text-green-50 dark:text-green-100">
                   7800080503
 
                 </p>
@@ -72,23 +63,23 @@ export default function ContactUs() {
 
             {/* Email Card */}
             <TiltCard>
-            <div className="bg-gradient-to-br from-pink-300 to-pink-600  p-8 h-full text-center text-white shadow-lg hover:shadow-xl transition-shadow duration-300">
-              <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-4">
-                <Mail className="w-8 h-8 text-pink-500" />
+            <div className="bg-gradient-to-br from-pink-300 to-pink-600 dark:from-pink-400 dark:to-pink-700  p-8 h-full text-center text-white shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <div className="w-16 h-16 bg-white dark:bg-gray-800 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Mail className="w-8 h-8 text-pink-500 dark:text-pink-400" />
               </div>
               <h3 className="text-xl font-semibold mb-3">Email</h3>
-              <p className="text-pink-50">Bookmyspace.today@gmail.com</p>
+              <p className="text-pink-50 dark:text-pink-100">Bookmyspace.today@gmail.com</p>
             </div>
             </TiltCard>
           </div>
 
           {/* Contact Form Section */}
-          <div className=" p-8 md:p-12">
+          <div className=" p-2 md:p-12">
             <div className="text-center mb-8">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-gray-100 mb-4">
                 Feel free to send us a message
               </h2>
-              <p className="text-gray-600 text-lg">
+              <p className="text-gray-600 dark:text-gray-300 text-lg">
                 We always want to hear from you. We will response with in 24
                 hours.
               </p>
@@ -103,7 +94,7 @@ export default function ContactUs() {
                     placeholder="Your Name *"
                     value={formData.name}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all duration-200 text-gray-700 placeholder-gray-400"
+                    className="w-full px-4 py-4 border border-gray-300 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-100 rounded-lg focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 focus:border-transparent outline-none transition-all duration-200 text-gray-700 placeholder-gray-400 dark:placeholder-gray-500"
                   />
                 </div>
                 <div>
@@ -113,7 +104,7 @@ export default function ContactUs() {
                     placeholder="Your Email *"
                     value={formData.email}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all duration-200 text-gray-700 placeholder-gray-400"
+                    className="w-full px-4 py-4 border border-gray-300 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-100 rounded-lg focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 focus:border-transparent outline-none transition-all duration-200 text-gray-700 placeholder-gray-400 dark:placeholder-gray-500"
                   />
                 </div>
               </div>
@@ -125,14 +116,14 @@ export default function ContactUs() {
                   value={formData.query}
                   onChange={handleInputChange}
                   rows={6}
-                  className="w-full px-4 py-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all duration-200 text-gray-700 placeholder-gray-400 resize-vertical"
+                  className="w-full px-4 py-4 border border-gray-300 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-100 rounded-lg focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 focus:border-transparent outline-none transition-all duration-200 text-gray-700 placeholder-gray-400 dark:placeholder-gray-500 resize-vertical"
                 />
               </div>
 
               <div className="text-center">
                 <button
                   onClick={handleSubmit}
-                  className="bg-gradient-to-r from-pink-500 to-pink-600 text-white px-12 py-4 rounded-lg font-semibold text-lg hover:from-pink-600 hover:to-pink-700 transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl"
+                  className="bg-gradient-to-r from-pink-500 to-pink-600 dark:from-pink-600 dark:to-pink-700 text-white px-12 w-full py-4 rounded-lg font-semibold text-lg hover:from-pink-600 hover:to-pink-700 dark:hover:from-pink-700 dark:hover:to-pink-800 transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl"
                 >
                   SUBMIT
                 </button>
@@ -142,24 +133,7 @@ export default function ContactUs() {
         </div>
       </div>
 
-      {/* Map Section */}
-      {/* <section className="py-8 px-4 bg-gray-100">
-        <div className="max-w-7xl mx-auto">
-          <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-            <div className="h-96 bg-gradient-to-br from-green-100 to-blue-100 flex items-center justify-center">
 
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3557.9638590228838!2d80.94701827603879!3d26.904642076651996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399bfd90f852511b%3A0xea3004cdf494ecbb!2sDigiCoders%20Technologies%20Private%20Limited%2C%20Best%20Software%2FWebsite%2FMobile%20App%20Development%20Company%20in%20Lucknow!5e0!3m2!1sen!2sin!4v1748071501788!5m2!1sen!2sin"
-                width="100%"
-                height="400"
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"
-              ></iframe>
-
-            </div>
-          </div>
-        </div>
-      </section> */}
       <Footer />
     </div>
   );

@@ -179,7 +179,7 @@ function Home() {
   const [isNavVisible, setIsNavVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [Theme, setTheme] = useState("dark");
-  useEffect(()=>setTheme(localStorage.getItem("theme")))
+  useEffect(() => setTheme(localStorage.getItem("theme")));
 
   const { scrollY } = useScroll();
   const y1 = useTransform(scrollY, [0, 300], [0, -50]);
@@ -196,7 +196,6 @@ function Home() {
       }
 
       setLastScrollY(currentScrollY);
-      
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
@@ -807,7 +806,6 @@ function Home() {
       <section
         className=""
         style={{
-
           backgroundImage:
             Theme === "dark"
               ? "none"
@@ -946,7 +944,7 @@ function Home() {
                     </motion.p>
 
                     <motion.h1
-                      className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight"
+                      className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white leading-tight"
                       initial={{ opacity: 0, y: 50 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.8, delay: 0.3 }}
@@ -966,14 +964,14 @@ function Home() {
                     transition={{ duration: 0.6, delay: 0.5 }}
                     viewport={{ once: true }}
                   >
-                    <p className="text-gray-600 text-lg leading-relaxed">
+                    <p className="text-gray-600 dark:text-gray-50 text-lg leading-relaxed">
                       Discover unlimited learning opportunities with our
                       comprehensive platform. Master new skills, advance your
                       career, and unlock your potential with expert-led courses
                       designed for modern learners.
                     </p>
 
-                    <p className="text-gray-600 text-lg leading-relaxed">
+                    <p className="text-gray-600 dark:text-gray-50 text-lg leading-relaxed">
                       Join thousands of successful learners who have transformed
                       their careers through our innovative learning approach and
                       personalized guidance.
@@ -1002,10 +1000,10 @@ function Home() {
                         whileHover={{ scale: 1.1 }}
                         transition={{ duration: 0.3 }}
                       >
-                        <div className="text-2xl font-bold text-gray-900">
+                        <div className="text-2xl font-bold text-gray-900 dark:text-white ">
                           {stat.number}
                         </div>
-                        <div className="text-gray-600 text-sm">
+                        <div className="text-gray-600 dark:text-white  text-sm">
                           {stat.label}
                         </div>
                       </motion.div>
@@ -1027,11 +1025,11 @@ function Home() {
           <p className="text-pink-500 font-semibold tracking-wider text-sm mb-4">
             WE ARE AWESOME
           </p>
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mx-auto max-w-2xl">
+          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white  mx-auto max-w-2xl">
             <span className="font-black">World Class</span> Educatoin for{" "}
             <span className="font-black">Everyone</span>
           </h2>
-          <p className="text-gray-600 mt-6 mx-auto max-w-2xl">
+          <p className="text-gray-600 dark:text-gray-50 mt-6 mx-auto max-w-2xl">
             Nullam at elementum adque auctor dui. Donec non nunc sodales massa
             finibus impe tom aer majhe keu ralet.
           </p>
@@ -1115,12 +1113,13 @@ function Home() {
       <section
         className=" overflow-hidden lg:h-screen mt-20"
         style={{
-          
-          backgroundImage:
-            Theme === "dark"
-              ? "none"
-              : `url(${import.meta.env.VITE_BG_URI}/img/home4-fact-bg.png)`,
-
+          // backgroundImage:
+          //   Theme === "dark"
+          //     ? "none"
+          //     : `url(${import.meta.env.VITE_BG_URI}/img/home4-fact-bg.png)`,
+          backgroundImage: `url(${
+            import.meta.env.VITE_BG_URI
+          }/img/home4-fact-bg.png)`,
           backgroundRepeat: "no-repeat",
         }}
       >
@@ -1247,10 +1246,10 @@ function Home() {
           <p className="text-pink-500 font-semibold tracking-wider text-sm mb-4">
             WE ARE AWESOME
           </p>
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mx-auto max-w-2xl">
+          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mx-auto max-w-2xl">
             Join Over <span className="font-black">5 Million</span>Students
           </h2>
-          <p className="text-gray-600 mt-6 mx-auto max-w-2xl">
+          <p className="text-gray-600 dark:text-gray-50 mt-6 mx-auto max-w-2xl">
             Nullam at elementum adque auctor dui. Donec non nunc sodales massa
             finibus impe tom aer majhe keu ralet.
           </p>
@@ -1295,14 +1294,9 @@ function Home() {
         </motion.div>
       </section>
       <motion.section
-        className=" w-full min-h-[50vh] flex items-center justify-center"
+        className="w-full min-h-[50vh] flex items-center justify-center"
         style={{
-            backgroundImage:
-            Theme === "dark"
-              ? "none"
-              : `linear-gradient(to right, #9d1df8bb, #4026e8be), url(${IMG_URI}/img/home4-banner-bg-style.png)`,
-
-          // backgroundImage: `linear-gradient(to right, #9d1df8bb, #4026e8be), url(${IMG_URI}/img/home4-banner-bg-style.png)`,
+          backgroundImage: `linear-gradient(to right, #9d1df8bb, #4026e8be), url(${IMG_URI}/img/home4-banner-bg-style.png)`,
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
           backgroundPosition: "center",
@@ -1324,18 +1318,16 @@ function Home() {
       </motion.section>
 
       <section
-        className=""
+        className="bg-white dark:bg-gray-900 transition-colors duration-300"
         style={{
-           backgroundImage:
+          backgroundImage:
             Theme === "dark"
               ? "none"
               : `url(${import.meta.env.VITE_BG_URI}/img/hm4-testimonial-dotted.png)`,
-
-
           backgroundRepeat: "no-repeat",
         }}
       >
-        <div className=" py-16 px-4 overflow-hidden">
+        <div className="py-16 px-4 overflow-hidden">
           <div className="max-w-7xl mx-auto">
             {/* Header */}
             <motion.div
@@ -1344,10 +1336,10 @@ function Home() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
             >
-              <h2 className="text-4xl font-bold text-gray-900 mb-4">
-                What Our <span className="text-black">Students</span> Say
+              <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4 transition-colors duration-300">
+                What Our <span className="text-gray-900 dark:text-gray-100">Students</span> Say
               </h2>
-              <p className="text-gray-600 max-w-2xl mx-auto">
+              <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto transition-colors duration-300">
                 Nullam at elementum odque auctor dui. Donec non nunc sodales
                 massa finibus impe tornaer majhe keu rdiet.
               </p>
@@ -1358,10 +1350,9 @@ function Home() {
               {/* Navigation Arrows */}
               <motion.button
                 onClick={prevSlide}
-                className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-20 bg-white rounded-full p-3 shadow-lg"
+                className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-20 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 rounded-full p-3 shadow-lg transition-colors duration-300"
                 whileHover={{
                   scale: 1.1,
-                  backgroundColor: "#f9fafb",
                   boxShadow:
                     "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
                 }}
@@ -1371,15 +1362,14 @@ function Home() {
                 transition={{ delay: 0.5 }}
                 aria-label="Previous testimonials"
               >
-                <ChevronLeft className="w-6 h-6 text-gray-600" />
+                <ChevronLeft className="w-6 h-6 text-gray-600 dark:text-gray-300" />
               </motion.button>
 
               <motion.button
                 onClick={nextSlide}
-                className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-20 bg-white rounded-full p-3 shadow-lg"
+                className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-20 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 rounded-full p-3 shadow-lg transition-colors duration-300"
                 whileHover={{
                   scale: 1.1,
-                  backgroundColor: "#f9fafb",
                   boxShadow:
                     "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
                 }}
@@ -1389,7 +1379,7 @@ function Home() {
                 transition={{ delay: 0.5 }}
                 aria-label="Next testimonials"
               >
-                <ChevronRight className="w-6 h-6 text-gray-600" />
+                <ChevronRight className="w-6 h-6 text-gray-600 dark:text-gray-300" />
               </motion.button>
 
               {/* Testimonials Slider */}
@@ -1417,18 +1407,18 @@ function Home() {
                         initial="hidden"
                         animate="visible"
                         whileHover="hover"
-                        className="bg-white rounded-xl p-8 shadow-lg relative cursor-pointer group"
+                        className="bg-white dark:bg-gray-800 rounded-xl p-8 shadow-lg hover:shadow-xl dark:shadow-gray-900/20 relative cursor-pointer group transition-all duration-300 border border-gray-100 dark:border-gray-700"
                       >
                         {/* Animated Background Gradient */}
                         <motion.div
-                          className="absolute inset-0 bg-gradient-to-br from-blue-50 to-purple-50 rounded-xl opacity-0 group-hover:opacity-100"
+                          className="absolute inset-0 bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-700/50 dark:to-gray-600/50 rounded-xl opacity-0 group-hover:opacity-100"
                           transition={{ duration: 0.3 }}
                         />
 
                         <div className="relative z-10">
                           {/* Animated Quote Icon */}
                           <motion.div
-                            className="text-6xl text-gray-200 font-serif mb-4 leading-none"
+                            className="text-6xl text-gray-200 dark:text-gray-600 font-serif mb-4 leading-none transition-colors duration-300"
                             initial={{ scale: 0, rotate: -180 }}
                             animate={{ scale: 1, rotate: 0 }}
                             transition={{
@@ -1442,7 +1432,7 @@ function Home() {
 
                           {/* Title */}
                           <motion.h3
-                            className="text-xl font-semibold text-gray-900 mb-4"
+                            className="text-xl font-semibold text-gray-900 dark:text-white mb-4 transition-colors duration-300"
                             initial={{ opacity: 0, x: -20 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ delay: index * 0.1 + 0.4 }}
@@ -1452,7 +1442,7 @@ function Home() {
 
                           {/* Content */}
                           <motion.p
-                            className="text-gray-600 mb-6 leading-relaxed"
+                            className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed transition-colors duration-300"
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             transition={{ delay: index * 0.1 + 0.5 }}
@@ -1483,7 +1473,7 @@ function Home() {
                             <motion.img
                               src={testimonial.avatar}
                               alt={testimonial.name}
-                              className="w-12 h-12 rounded-full object-cover border-2 border-transparent"
+                              className="w-12 h-12 rounded-full object-cover border-2 border-transparent ring-2 ring-gray-200 dark:ring-gray-600 transition-all duration-300"
                               whileHover={{
                                 scale: 1.1,
                                 borderColor: "#3b82f6",
@@ -1491,10 +1481,10 @@ function Home() {
                               transition={{ duration: 0.2 }}
                             />
                             <div>
-                              <h4 className="font-semibold text-gray-900 text-sm">
+                              <h4 className="font-semibold text-gray-900 dark:text-white text-sm transition-colors duration-300">
                                 {testimonial.name}
                               </h4>
-                              <p className="text-gray-500 text-sm">
+                              <p className="text-gray-500 dark:text-gray-400 text-sm transition-colors duration-300">
                                 {testimonial.role}
                               </p>
                             </div>
@@ -1521,8 +1511,8 @@ function Home() {
                       onClick={() => goToSlide(index)}
                       className={`h-3 rounded-full transition-all duration-300 ${
                         index === currentSlide
-                          ? "bg-gray-800 w-8"
-                          : "bg-gray-300 w-3 hover:bg-gray-400"
+                          ? "bg-gray-800 dark:bg-gray-300 w-8"
+                          : "bg-gray-300 dark:bg-gray-600 w-3 hover:bg-gray-400 dark:hover:bg-gray-500"
                       }`}
                       whileHover={{ scale: 1.2 }}
                       whileTap={{ scale: 0.9 }}

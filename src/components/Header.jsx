@@ -14,69 +14,34 @@ import {
 } from "lucide-react";
 import routes from "../route/routes";
 import { Link } from "react-router-dom";
-
+import { useTheme } from "../context/ThemeContext.jsx";
 function Header({ calr }) {
+
   const [scrolled, setScrolled] = useState(false);
-  const [theme, setTheme] = useState("light");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { theme, toggleTheme } = useTheme(); // <-- Get from context
 
-  // Initialize theme on component mount
-  useEffect(() => {
-    const savedTheme = localStorage.getItem("theme");
-    if (savedTheme) {
-      setTheme(savedTheme);
-    }
-  }, []);
-
-  useEffect(() => {
-    const html = document.documentElement;
-
-    if (theme === "dark") {
-      html.classList.add("dark");
-      html.setAttribute("data-theme", "dark");
-    } else {
-      html.classList.remove("dark");
-      html.setAttribute("data-theme", "light");
-    }
-
-    localStorage.setItem("theme", theme);
-  }, [theme]);
-
-  const toggleDarkMode = () => {
-    setTheme((prev) => (prev === "light" ? "dark" : "light"));
-  };
-
-  const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
-  };
-
-  const closeMobileMenu = () => {
-    setIsMobileMenuOpen(false);
-  };
-
-  // Handle scroll effect
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 10);
     };
-
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Prevent body scroll when mobile menu is open
   useEffect(() => {
     if (isMobileMenuOpen) {
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = 'unset';
+      document.body.style.overflow = "unset";
     }
-
-    // Cleanup function to reset overflow when component unmounts
     return () => {
-      document.body.style.overflow = 'unset';
+      document.body.style.overflow = "unset";
     };
   }, [isMobileMenuOpen]);
+
+  const toggleMobileMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
+  const closeMobileMenu = () => setIsMobileMenuOpen(false);
 
   return (
     <div>
@@ -85,7 +50,7 @@ function Header({ calr }) {
         className={`fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-4 transition-all duration-300 ${
           scrolled
             ? "bg-white dark:bg-gray-950 shadow-md"
-            : `bg-transparent ${calr}`
+            : `bg-transparent ${calr} `
         }`}
       >
         {/* Logo */}
@@ -93,9 +58,7 @@ function Header({ calr }) {
           <div className="w-8 h-8 bg-pink-500 rounded-lg flex items-center justify-center">
             <div className="w-4 h-4 rounded-sm bg-white dark:bg-gray-800"></div>
           </div>
-          <span className="text-2xl font-bold text-gray-900 dark:text-white">
-            Book my space
-          </span>
+          <span className="text-2xl font-bold ">Book my space</span>
         </div>
 
         {/* Desktop Navigation */}
@@ -104,7 +67,7 @@ function Header({ calr }) {
             <Link
               to={nab.path}
               key={index}
-              className="hover:text-pink-500 font-medium text-gray-700 dark:text-gray-50 transition-colors"
+              className="hover:text-pink-500 font-medium  transition-colors"
             >
               {nab.name}
             </Link>
@@ -113,10 +76,10 @@ function Header({ calr }) {
 
         {/* Desktop Right Side */}
         <div className="hidden md:flex items-center space-x-4">
-          <Search className="w-5 h-5 cursor-pointer text-gray-700 dark:text-gray-50 hover:text-pink-500 transition-colors" />
+          {/* <Search className="w-5 h-5 cursor-pointer text-gray-700 dark:text-gray-50 hover:text-pink-500 transition-colors" /> */}
 
           {/* Dark Mode Toggle Button */}
-          <button
+          {/* <button
             onClick={toggleDarkMode}
             className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
             aria-label="Toggle dark mode"
@@ -124,11 +87,22 @@ function Header({ calr }) {
             {theme === "dark" ? (
               <Sun className="w-5 h-5 text-orange-400" />
             ) : (
-              <Moon className="w-5 h-5 text-gray-700" />
+              <Moon className="w-5 h-5 hover:text-black " />
+            )}
+          </button> */}
+          <button
+            onClick={toggleTheme}
+            className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+            aria-label="Toggle dark mode"
+          >
+            {theme === "dark" ? (
+              <Sun className="w-5 h-5 text-orange-400" />
+            ) : (
+              <Moon className="w-5 h-5 text-gray-950 dark:text-gray-300" />
             )}
           </button>
 
-          <button className="hover:text-pink-500 font-medium text-gray-700 dark:text-gray-50 transition-colors">
+          <button className="hover:text-pink-500 font-medium  transition-colors">
             Login
           </button>
 
@@ -136,35 +110,30 @@ function Header({ calr }) {
             SIGN UP
           </button>
 
-          <div className="flex space-x-2">
-            <Facebook className="w-5 h-5 text-blue-600 cursor-pointer hover:text-blue-700 transition-colors" />
-            <Twitter className="w-5 h-5 text-blue-400 cursor-pointer hover:text-blue-500 transition-colors" />
-            <Youtube className="w-5 h-5 text-red-600 cursor-pointer hover:text-red-700 transition-colors" />
-            <Instagram className="w-5 h-5 text-pink-600 cursor-pointer hover:text-pink-700 transition-colors" />
-          </div>
         </div>
 
         {/* Mobile Menu Button */}
         <div className="md:hidden flex items-center space-x-2">
           {/* Mobile Dark Mode Toggle */}
-          <button
-            onClick={toggleDarkMode}
-            className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
-            aria-label="Toggle dark mode"
-          >
-            {theme === "dark" ? (
-              <Sun className="w-5 h-5 text-orange-400" />
-            ) : (
-              <Moon className="w-5 h-5 text-gray-700 dark:text-gray-300" />
-            )}
-          </button>
+         <button
+        onClick={toggleTheme}
+        className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+        aria-label="Toggle dark mode"
+      >
+        {theme === "dark" ? (
+          <Sun className="w-5 h-5 text-orange-400" />
+        ) : (
+          <Moon className="w-5 h-5 text-gray-950 dark:text-gray-300" />
+        )}
+      </button>
+
 
           <button
             onClick={toggleMobileMenu}
             className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
             aria-label="Toggle mobile menu"
           >
-            <Menu className="w-6 h-6 text-gray-700 dark:text-gray-300" />
+            <Menu className="w-6 h-6 text-gray-950 dark:text-gray-300" />
           </button>
         </div>
       </header>
@@ -172,7 +141,7 @@ function Header({ calr }) {
       {/* Mobile Side Navigation Overlay */}
       {isMobileMenuOpen && (
         <div
-          className="fixed inset-0 bg-black bg-opacity-50 z-[60] md:hidden"
+          className="fixed inset-0 bg-black bg-opacity-10 z-[60] md:hidden"
           onClick={closeMobileMenu}
         ></div>
       )}
@@ -239,7 +208,7 @@ function Header({ calr }) {
                 <User className="w-5 h-5" />
                 <span>Login</span>
               </button>
-              
+
               <button
                 onClick={closeMobileMenu}
                 className="w-full flex items-center justify-center space-x-2 bg-gradient-to-r from-pink-500 to-purple-600 text-white py-3 rounded-lg font-semibold hover:from-pink-600 hover:to-purple-700 transition-all duration-300"
@@ -252,7 +221,9 @@ function Header({ calr }) {
 
           {/* Social Links */}
           <div className="px-6 py-6 border-t dark:border-gray-700">
-            <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">Follow us on:</p>
+            <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
+              Follow us on:
+            </p>
             <div className="flex justify-center space-x-6">
               <Facebook className="w-6 h-6 text-blue-600 cursor-pointer hover:text-blue-700 transition-colors" />
               <Twitter className="w-6 h-6 text-blue-400 cursor-pointer hover:text-blue-500 transition-colors" />
