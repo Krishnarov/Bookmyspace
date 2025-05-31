@@ -213,7 +213,7 @@ console.log(theme);
             
             {/* Decorative Elements */}
             <div className="absolute -top-8 -left-4 w-0 h-0 border-l-[20px] border-l-transparent border-r-[20px] border-r-transparent border-b-[30px] border-b-cyan-400 transform rotate-12"></div>
-            <div className="absolute top-20 -right-8 text-pink-400 text-6xl">×</div>
+            <div className="absolute top-20 right-0 text-pink-400 text-6xl">×</div>
             <div className="absolute -bottom-12 left-1/4 w-4 h-4 bg-green-400 rounded-full"></div>
             
             {/* Image Container */}
@@ -588,52 +588,53 @@ console.log(theme);
         </div>
       </section>
 
-      <section className="px-20 py-10 dark:bg-gray-900">
-        <div className="flex justify-between ">
-          <div>
-            <img
-              src="./img/brand-logo1.png"
-              alt=""
-              className="dark:brightness-0 dark:invert"
-            />
-          </div>
-          <div>
-            <img
-              src="./img/brand-logo2.png"
-              alt=""
-              className="dark:brightness-0 dark:invert"
-            />
-          </div>
-          <div>
-            <img
-              src="./img/brand-logo3.png"
-              alt=""
-              className="dark:brightness-0 dark:invert"
-            />
-          </div>
-          <div>
-            <img
-              src="./img/brand-logo4.png"
-              alt=""
-              className="dark:brightness-0 dark:invert"
-            />
-          </div>
-          <div>
-            <img
-              src="./img/brand-logo5.png"
-              alt=""
-              className="dark:brightness-0 dark:invert"
-            />
-          </div>
-          <div>
-            <img
-              src="./img/brand-logo6.png"
-              alt=""
-              className="dark:brightness-0 dark:invert"
-            />
-          </div>
+      <section className="px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 py-6 sm:py-8 md:py-10 dark:bg-gray-900">
+      <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 sm:gap-6 md:gap-8 items-center justify-items-center">
+        <div className="w-full flex justify-center">
+          <img
+            src="./img/brand-logo1.png"
+            alt="Brand Logo 1"
+            className="dark:brightness-0 dark:invert max-w-full h-auto max-h-12 sm:max-h-14 md:max-h-16 object-contain"
+          />
         </div>
-      </section>
+        <div className="w-full flex justify-center">
+          <img
+            src="./img/brand-logo2.png"
+            alt="Brand Logo 2"
+            className="dark:brightness-0 dark:invert max-w-full h-auto max-h-12 sm:max-h-14 md:max-h-16 object-contain"
+          />
+        </div>
+        <div className="w-full flex justify-center">
+          <img
+            src="./img/brand-logo3.png"
+            alt="Brand Logo 3"
+            className="dark:brightness-0 dark:invert max-w-full h-auto max-h-12 sm:max-h-14 md:max-h-16 object-contain"
+          />
+        </div>
+        <div className="w-full flex justify-center">
+          <img
+            src="./img/brand-logo4.png"
+            alt="Brand Logo 4"
+            className="dark:brightness-0 dark:invert max-w-full h-auto max-h-12 sm:max-h-14 md:max-h-16 object-contain"
+          />
+        </div>
+        <div className="w-full flex justify-center">
+          <img
+            src="./img/brand-logo5.png"
+            alt="Brand Logo 5"
+            className="dark:brightness-0 dark:invert max-w-full h-auto max-h-12 sm:max-h-14 md:max-h-16 object-contain"
+          />
+        </div>
+        <div className="w-full flex justify-center">
+          <img
+            src="./img/brand-logo6.png"
+            alt="Brand Logo 6"
+            className="dark:brightness-0 dark:invert max-w-full h-auto max-h-12 sm:max-h-14 md:max-h-16 object-contain"
+          />
+        </div>
+      </div>
+    </section>
+
 
       <Footer />
     </div>

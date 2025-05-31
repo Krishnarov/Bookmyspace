@@ -455,13 +455,13 @@ function Home() {
           <div className="grid lg:grid-cols-2 gap-12 items-center mt-20">
             {/* Left Content */}
             <motion.div
-              className="space-y-8"
+              className="space-y-8 "
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <div className="space-y-4">
+              <div className="space-y-4 ">
                 <p className="text-pink-500 font-semibold tracking-wider text-sm">
                   LEARN WITH Book my space
                 </p>
@@ -490,7 +490,7 @@ function Home() {
 
             {/* Right Content - Laptop Mockup */}
             <motion.div
-              className="relative"
+              className="relative hidden md:block"
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
@@ -1016,7 +1016,7 @@ function Home() {
         </div>
 
         <motion.div
-          className="text-center mb-16 mt-20"
+          className="text-center mb-16 mt-20 px-4"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -1237,7 +1237,7 @@ function Home() {
           </div>
         </motion.div>
         <motion.div
-          className="text-center mb-16 mt-20 lg:mt-96"
+          className="text-center mb-16 mt-20 px-4 lg:mt-96"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -1331,7 +1331,7 @@ function Home() {
           <div className="max-w-7xl mx-auto">
             {/* Header */}
             <motion.div
-              className="text-center mb-12"
+              className="text-center mb-12 px-4"
               initial={{ opacity: 0, y: -30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
