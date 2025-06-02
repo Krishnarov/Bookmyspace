@@ -121,6 +121,13 @@ const CourseCard = ({
 function Home() {
   const courses = [
     {
+      title: "Find nearby libraries",
+      courseCount: "Quickly locate and book the nearest libraries around your home, coaching center, or college.",
+      bgColor: "bg-gradient-to-br from-pink-500 to-purple-600",
+      bgImg:
+        "./img/Interview.jpg",
+    },
+    {
       title: "Break the Routine",
       courseCount: "Choose a different library any day to keep your mind fresh and focused.",
       bgColor: "bg-gradient-to-br from-purple-300 to-purple-800",
@@ -156,26 +163,20 @@ function Home() {
         "./img/Location.jpg",
     },
     {
-      title: "Training Halls",
-      courseCount: 48,
+      title: "Qr Base Checkin",
+      courseCount: "Seamless entry with QR scans—fast, secure, and touch-free access to your reserved space.",
       bgColor: "bg-gradient-to-br from-cyan-500 to-blue-600",
       bgImg:
         "./img/Training.jpeg",
     },
     {
-      title: "Virtual Offices",
-      courseCount: 22,
+      title: "Guaranteed seat reservation",
+      courseCount:"Reserve your seat in advance and never worry about availability, even during peak hours.",
       bgColor: "bg-gradient-to-br from-red-500 to-pink-600",
       bgImg:
         "./img/Virtual.jpg",
     },
-    {
-      title: "Interview Rooms",
-      courseCount: 18,
-      bgColor: "bg-gradient-to-br from-pink-500 to-purple-600",
-      bgImg:
-        "./img/Interview.jpg",
-    },
+    
   ];
   const [isNavVisible, setIsNavVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
