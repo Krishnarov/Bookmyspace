@@ -11,6 +11,7 @@ import {
 } from "framer-motion";
 import TiltCard from "../components/TiltCard";
 import HomeFooter from "../components/HomeFooter";
+import { Link } from "react-router-dom";
 
 // Animated Course Card Component
 const CourseCard = ({
@@ -120,60 +121,60 @@ const CourseCard = ({
 function Home() {
   const courses = [
     {
-      title: "PROGRAMMING",
-      courseCount: 11,
+      title: "Break the Routine",
+      courseCount: "Choose a different library any day to keep your mind fresh and focused.",
       bgColor: "bg-gradient-to-br from-purple-300 to-purple-800",
       bgImg:
-        "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400&h=300&fit=crop",
+        "./img/Break.webp",
     },
     {
-      title: "DEVELOPMENT",
-      courseCount: 28,
+      title: "Per-Day Booking",
+      courseCount: "No full-month commitments. Pay only for the days you actually use.",
       bgColor: "bg-gradient-to-br from-green-300 to-green-700",
       bgImg:
-        "https://images.unsplash.com/photo-1627398242454-45a1465c2479?w=400&h=300&fit=crop",
+        "./img/Booking.jpg",
     },
     {
-      title: "INTERIOR",
-      courseCount: 22,
+      title: "Zero Wastage",
+      courseCount: "Skip a day? Don't pay. It's that simple and fair.",
       bgColor: "bg-gradient-to-br from-blue-300 to-blue-600",
       bgImg:
-        "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&h=300&fit=crop",
+        "./img/Zero.jpg",
     },
     {
-      title: "HEALTH",
-      courseCount: 22,
+      title: "Verified Study Spaces",
+      courseCount: "Peaceful, clean, and student-friendly environments guaranteed.",
       bgColor: "bg-gradient-to-br from-purple-500 to-pink-600",
       bgImg:
-        "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=300&fit=crop",
+        "./img/Verified.jpg",
     },
     {
-      title: "BUSINESS",
-      courseCount: 22,
+      title: "Location-Based Discovery",
+      courseCount: "Find libraries near home, coaching, or college for maximum convenience.",
       bgColor: "bg-gradient-to-br from-orange-300 to-orange-700",
       bgImg:
-        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop",
+        "./img/Location.jpg",
     },
     {
-      title: "DESIGN",
-      courseCount: 15,
+      title: "Training Halls",
+      courseCount: 48,
       bgColor: "bg-gradient-to-br from-cyan-500 to-blue-600",
       bgImg:
-        "https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=400&h=300&fit=crop",
+        "./img/Training.jpeg",
     },
     {
-      title: "PHOTOGRAPHY",
+      title: "Virtual Offices",
       courseCount: 22,
       bgColor: "bg-gradient-to-br from-red-500 to-pink-600",
       bgImg:
-        "https://images.unsplash.com/photo-1606983340126-99ab4feaa64a?w=400&h=300&fit=crop",
+        "./img/Virtual.jpg",
     },
     {
-      title: "MUSIC",
-      courseCount: 42,
+      title: "Interview Rooms",
+      courseCount: 18,
       bgColor: "bg-gradient-to-br from-pink-500 to-purple-600",
       bgImg:
-        "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&h=300&fit=crop",
+        "./img/Interview.jpg",
     },
   ];
   const [isNavVisible, setIsNavVisible] = useState(true);
@@ -246,36 +247,36 @@ function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [direction, setDirection] = useState(0);
   const IMG_URI = import.meta.env.VITE_BG_URI;
-  const testimonials = [
+    const testimonials = [
     {
       id: 1,
-      title: "High Quality Education",
+      title: "The perfect study spot",
       content:
-        "At the Training ExLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      name: "THOMAS ANDERSON",
-      role: "Web Developer",
+        "BookMySpace helped me reserve peaceful spots during exams. No more full libraries and long queues!",
+      name: "Aditi Sharma",
+      role: "B.Tech Student",
       avatar:
         "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=60&h=60&fit=crop&crop=face&auto=format",
       rating: 5,
     },
     {
       id: 2,
-      title: "Very Helpful Service",
+      title: "Book access made easy",
       content:
-        "At the Training ExLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      name: "SARAH JOHNSON",
-      role: "Web Developer",
+        "Finding and issuing books has never been easier. The search and booking features are smooth and fast.",
+      name: "Rahul Mehta",
+      role: "MCA Student",
       avatar:
         "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=60&h=60&fit=crop&crop=face&auto=format",
       rating: 5,
     },
     {
       id: 3,
-      title: "Amazing Experience",
+      title: "Love the digital interface",
       content:
-        "At the Training ExLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      name: "MIKE WILSON",
-      role: "Frontend Developer",
+        "Clean UI, responsive design, and the ability to manage my reservations from my phone – absolutely love it.",
+      name: "Priya Verma",
+      role: "Library Member",
       avatar:
         "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=60&h=60&fit=crop&crop=face&auto=format",
       rating: 5,
@@ -314,6 +315,7 @@ function Home() {
       rating: 5,
     },
   ];
+
 
   const nextSlide = () => {
     setDirection(1);
@@ -466,23 +468,23 @@ function Home() {
                   LEARN WITH BOOK MY SPACE
                 </p>
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-gray-50 leading-tight">
-                  Study Where{" "}
+                  Find Your Ideal{" "}
                   <span className="text-gray-700 dark:text-gray-200">
-                    You Want,
+                    Library Space,
                   </span>{" "}
-                  When You Want — Only Pay Per Day
+                  Anytime, Anywhere
                 </h1>
                 <p className="text-gray-600 dark:text-gray-50 text-lg leading-relaxed max-w-md">
-                  No monthly lock-ins. No boring routine. Discover new libraries
-                  across Lucknow and Delhi and book your perfect study spot,
-                  daily. I'm a Student 
+                  Explore and book top-rated libraries in your city without any
+                  monthly commitment. Just choose your preferred space and pay
+                  per day — it's that easy!
                 </p>
               </div>
 
               <div className="flex items-center space-x-4">
-                <button className="hero-signup text-white px-8 py-4 rounded-full font-semibold transition-colors">
-                  SIGN UP
-                </button>
+                <Link to="Library" className="hero-signup text-white px-8 py-4 rounded-full font-semibold transition-colors">
+                  REGISTER LIBRARY
+                </Link>
                 <button className="bg-pink-500 hover:bg-pink-600 text-white w-14 h-14 rounded-full flex items-center justify-center transition-colors">
                   <Play className="w-6 h-6 ml-1" fill="white" />
                 </button>
@@ -522,9 +524,9 @@ function Home() {
                         <span className="font-bold text-sm">Book my space</span>
                       </div>
                       <div className="flex space-x-4 text-xs">
-                        <span>YOUR COURSES</span>
+                        <span>LIBRARIES</span>
                         <span>EXPLORE</span>
-                        <span>FAST</span>
+                        <span>BOOK NOW</span>
                         <span>SUPPORT</span>
                         <div className="w-6 h-6 bg-gray-400 rounded-full"></div>
                       </div>
@@ -535,17 +537,17 @@ function Home() {
                       <img src="./img/girl-b2.png" className="w-60" alt="" />
                       <div className="flex-1">
                         <h2 className="text-2xl font-bold text-gray-800 dark:text-gray-50 mb-2">
-                          Mastering
+                          Your Study Spot
                         </h2>
                         <h3 className="text-xl font-bold text-gray-800 dark:text-gray-50 mb-1">
-                          HTML & CSS
+                          Nearby, Affordable, Peaceful
                         </h3>
                         <p className="text-lg text-gray-800 dark:text-gray-50 mb-4">
-                          in 30 Days
+                          Book Now — No Monthly Charges
                         </p>
-                        <button className="bg-pink-500 text-white px-4 py-2 rounded text-sm font-medium">
-                          Enrol Now
-                        </button>
+                        <Link to="Library" className="bg-pink-500 text-white px-4 py-2 rounded text-sm font-medium">
+                          Explore Libraries
+                        </Link>
                       </div>
                     </div>
                   </div>
@@ -578,16 +580,14 @@ function Home() {
             viewport={{ once: true }}
           >
             <p className="text-pink-500 font-semibold tracking-wider text-sm mb-4">
-              WE ARE AWESOME
+               WHY CHOOSE US
             </p>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-gray-900 dark:text-white mx-auto max-w-2xl">
-              <span className="font-black">22 Years</span> Experience in{" "}
-              <span className="font-black">Education</span> and{" "}
-              <span className="font-black">Teaching</span>
+              <span className="font-black">Simplifying</span> Your Search for{" "}
+              <span className="font-black">Perfect Spaces</span> Anytime, Anywhere
             </h2>
             <p className="text-gray-600 dark:text-gray-50 mt-6 mx-auto max-w-2xl">
-              Nullam at elementum adque auctor dui. Donec non nunc sodales massa
-              finibus impe tom aer majhe keu ralet.
+              Discover a seamless way to book co-working spaces, studios, conference rooms, and more — all in one place.
             </p>
           </motion.div>
 
@@ -610,18 +610,16 @@ function Home() {
                     <img src="./img/hm4-intro-icon1.png" alt="" />
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">
-                    Learn Everything
+                   Explore Diverse Spaces
                   </h3>
                   <p className="text-gray-600 dark:text-gray-50 mb-6">
-                    Pore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                    nostrud ullamo labo papris nisi uea
+                    From co-working desks to event halls, find the perfect space for work, meetings, shoots, or workshops.
                   </p>
-                  <a
-                    href="#"
+                  <Link to="Library"
                     className="text-pink-500 font-semibold hover:text-pink-700 transition-colors duration-300"
                   >
-                    READ MORE
-                  </a>
+                     BROWSE NOW
+                  </Link>
                 </div>
               </TiltCard>
             </motion.div>
@@ -638,18 +636,16 @@ function Home() {
                     <img src="./img/hm4-intro-icon2.png" alt="" />
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">
-                    Top Quality Education
+                    Easy & Instant Booking
                   </h3>
                   <p className="text-gray-600 dark:text-gray-50 mb-6">
-                    Pore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                    nostrud ullamo labo papris nisi uea
+                    Real-time availability, instant confirmation, and flexible schedules — booking a space has never been easier.
                   </p>
-                  <a
-                    href="#"
+                  <Link to="Library"
                     className="text-pink-500 font-semibold hover:text-pink-700 transition-colors duration-300 "
                   >
-                    READ MORE
-                  </a>
+                    BOOK A SPACE
+                  </Link>
                 </div>
               </TiltCard>
             </motion.div>
@@ -666,18 +662,16 @@ function Home() {
                     <img src="./img/hm4-intro-icon3.png" alt="" />
                   </div>
                   <h3 className="text-xl font-bold dark:text-white text-gray-900 mb-4">
-                    Get Certified
+                    Verified Listings
                   </h3>
                   <p className="text-gray-600 dark:text-gray-50 mb-6">
-                    Pore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                    nostrud ullamo labo papris nisi uea
+                    Every space is handpicked and verified to ensure a top-notch experience every time you book.
                   </p>
-                  <a
-                    href="#"
+                  <Link to="Library"
                     className="text-pink-500 font-semibold hover:text-pink-700 transition-colors duration-300"
                   >
-                    READ MORE
-                  </a>
+                     SEE LOCATIONS
+                  </Link >
                 </div>
               </TiltCard>
             </motion.div>
@@ -698,7 +692,7 @@ function Home() {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              Pick A<span className="font-black"> Course</span> By{" "}
+             Choose a<span className="font-black"> Space</span> By{" "}
               <span className="font-black">Category</span>
             </motion.h2>
             <motion.p
@@ -708,8 +702,7 @@ function Home() {
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              Nullam at elementum oditesque auctor dui. Donec non nunc sodales
-              massa finibus imperdiet.
+            Everything you need to maximize your study productivity with flexibility and convenience.
             </motion.p>
           </motion.div>
 
@@ -886,7 +879,7 @@ function Home() {
                           ✓
                         </div>
                         <span className="text-sm font-medium text-gray-700">
-                          Course Completed!
+                          Space Booked!
                         </span>
                       </div>
                     </motion.div>
@@ -946,7 +939,7 @@ function Home() {
                       transition={{ delay: 0.2 }}
                       viewport={{ once: true }}
                     >
-                      Grow Up Your Skill
+                     Flexible Study spaces
                     </motion.p>
 
                     <motion.h1
@@ -956,10 +949,10 @@ function Home() {
                       transition={{ duration: 0.8, delay: 0.3 }}
                       viewport={{ once: true }}
                     >
-                      Learn Anything You{" "}
+                       Book Your Perfect{" "}
                       <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
-                        Want Today
-                      </span>
+                         Study Space {" "}
+                      </span>in Minutes
                     </motion.h1>
                   </motion.div>
 
@@ -971,21 +964,17 @@ function Home() {
                     viewport={{ once: true }}
                   >
                     <p className="text-gray-600 dark:text-gray-50 text-lg leading-relaxed">
-                      Discover unlimited learning opportunities with our
-                      comprehensive platform. Master new skills, advance your
-                      career, and unlock your potential with expert-led courses
-                      designed for modern learners.
+                       Discover and book Study spaces, meeting rooms, or event areas with real-time availability. Perfect for remote teams, freelancers, and startups.
                     </p>
 
                     <p className="text-gray-600 dark:text-gray-50 text-lg leading-relaxed">
-                      Join thousands of successful learners who have transformed
-                      their careers through our innovative learning approach and
-                      personalized guidance.
+                      Join thousands of professionals using BookMySpace to find flexible and affordable spaces with just a few clicks.
                     </p>
                   </motion.div>
-                  <button className="hero-signup text-white px-8 py-4 rounded-full font-semibold transition-colors">
-                    SIGN UP
-                  </button>
+                  <Link to="Library" className="hero-signup text-white px-8 py-4 rounded-full font-semibold transition-colors">
+                    Get Started
+
+                  </Link>
 
                   {/* Stats */}
                   <motion.div
@@ -996,9 +985,9 @@ function Home() {
                     viewport={{ once: true }}
                   >
                     {[
-                      { number: "50K+", label: "Students" },
-                      { number: "100+", label: "Courses" },
-                      { number: "98%", label: "Success Rate" },
+                      { number: "10K+", label: "Spaces Listed" },
+                { number: "25+", label: "Cities Covered" },
+                { number: "4.9★", label: "User Rating" },
                     ].map((stat, index) => (
                       <motion.div
                         key={index}
@@ -1029,15 +1018,14 @@ function Home() {
           viewport={{ once: true }}
         >
           <p className="text-pink-500 font-semibold tracking-wider text-sm mb-4">
-            WE ARE AWESOME
+            SMART Study space SOLUTIONS
           </p>
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white  mx-auto max-w-2xl">
-            <span className="font-black">World Class</span> Educatoin for{" "}
-            <span className="font-black">Everyone</span>
+            <span className="font-black">Flexible</span> Study spaces for{" "}
+            <span className="font-black">Modern Professionals</span>
           </h2>
           <p className="text-gray-600 dark:text-gray-50 mt-6 mx-auto max-w-2xl">
-            Nullam at elementum adque auctor dui. Donec non nunc sodales massa
-            finibus impe tom aer majhe keu ralet.
+             Book My Space helps freelancers, startups, and businesses find ideal coworking spaces and meeting rooms across locations with ease and flexibility.
           </p>
         </motion.div>
         <motion.div
@@ -1052,13 +1040,10 @@ function Home() {
               <img src="./img/hm4-feature-icon1.jpg" alt="" />
             </div>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl pt-5">
-              Award winning course management
+             Seamless space booking experience
             </h1>
             <p className="pt-10 text-lg">
-              Ampor incididunt ut labore et dolore magna aliqua. Ut enim ad
-              minim Lorem ipsum dolor sit amet, consectetur adipisicing elit sed
-              do eiusmod tempor incididunt ut labore et dolore conse ctetur
-              adipisicing elit, sed do eiusmod tempor.
+               Easily discover, compare, and reserve coworking spaces, conference rooms, and private offices that suit your professional needs—all in a few clicks.
             </p>
           </div>
           <div className="w-full lg:w-[50%] mt-10 lg:mt-0">
@@ -1077,13 +1062,10 @@ function Home() {
               <img src="./img/hm4-feature-icon2.jpg" alt="" />
             </div>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl pt-5">
-              Learn anything from anywhere anytime
+             Work from anywhere, anytime
             </h1>
             <p className="pt-10 text-lg">
-              Ampor incididunt ut labore et dolore magna aliqua. Ut enim ad
-              minim Lorem ipsum dolor sit amet, consectetur adipisicing elit sed
-              do eiusmod tempor incididunt ut labore et dolore conse ctetur
-              adipisicing elit, sed do eiusmod tempor.
+              Whether you're traveling or working remotely, Book My Space lets you access a network of professional spaces anytime, anywhere—on-demand.
             </p>
           </div>
           <div className="w-full lg:w-[50%] mt-10 lg:mt-0">
@@ -1102,13 +1084,10 @@ function Home() {
               <img src="./img/hm4-feature-icon3.jpg" alt="" />
             </div>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl pt-5">
-              Certification for solid developemnt of your career
+              Boost your productivity and network
             </h1>
             <p className="pt-10 text-lg">
-              Ampor incididunt ut labore et dolore magna aliqua. Ut enim ad
-              minim Lorem ipsum dolor sit amet, consectetur adipisicing elit sed
-              do eiusmod tempor incididunt ut labore et dolore conse ctetur
-              adipisicing elit, sed do eiusmod tempor.
+              Join a vibrant community of professionals, enjoy productive environments, and enhance your career growth through flexible Study spaces tailored to your needs.
             </p>
           </div>
           <div className="w-full lg:w-[50%] mt-10 lg:mt-0">
@@ -1250,14 +1229,13 @@ function Home() {
           viewport={{ once: true }}
         >
           <p className="text-pink-500 font-semibold tracking-wider text-sm mb-4">
-            WE ARE AWESOME
+            WHAT MAKES US SPECIAL
           </p>
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mx-auto max-w-2xl">
-            Join Over <span className="font-black">5 Million</span>Students
+            Join  <span className="font-black"> Over 5 Million</span>Learners Today
           </h2>
           <p className="text-gray-600 dark:text-gray-50 mt-6 mx-auto max-w-2xl">
-            Nullam at elementum adque auctor dui. Donec non nunc sodales massa
-            finibus impe tom aer majhe keu ralet.
+            Unlock your potential with expert-led courses, flexible learning, and real-world projects tailored just for you.
           </p>
           <motion.div
             className="flex flex-col sm:flex-row justify-around mt-20 gap-8 sm:gap-0"
@@ -1274,7 +1252,7 @@ function Home() {
               <h1 className="text-4xl sm:text-5xl font-bold text-green-400">
                 1008
               </h1>
-              <p>Online Courses</p>
+              <p>Expert-Curated Courses</p>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -1284,7 +1262,7 @@ function Home() {
               <h1 className="text-4xl sm:text-5xl font-bold text-pink-400">
                 225
               </h1>
-              <p>Total Instructor</p>
+              <p>Certified Instructors</p>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -1294,7 +1272,7 @@ function Home() {
               <h1 className="text-4xl sm:text-5xl font-bold text-blue-400">
                 500K
               </h1>
-              <p>Students Worldwide</p>
+              <p>SGlobal Students</p>
             </motion.div>
           </motion.div>
         </motion.div>
@@ -1314,12 +1292,11 @@ function Home() {
       >
         <div className="text-center max-w-3xl px-4">
           <p className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-white mb-8">
-            Don't Waste Your Time. Take Admission in Larna Today and Start
-            Learning Anything You Love from Anywhere!
+            Take the first step toward your future. Enroll at Larna and start mastering the skills you love — from anywhere, anytime!!
           </p>
-          <button className="hero-signup text-white px-8 py-4 rounded-full font-semibold transition-colors">
-            SIGN UP
-          </button>
+          <Link to="Library" className="hero-signup text-white px-8 py-4 rounded-full font-semibold transition-colors">
+            SIGN UP NOW
+          </Link >
         </div>
       </motion.section>
 
@@ -1345,15 +1322,14 @@ function Home() {
               transition={{ duration: 0.8, ease: "easeOut" }}
             >
               <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4 transition-colors duration-300">
-                What Our{" "}
+                 Hear From Our{" "}
                 <span className="text-gray-900 dark:text-gray-100">
-                  Students
+                  Learners
                 </span>{" "}
-                Say
+
               </h2>
               <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto transition-colors duration-300">
-                Nullam at elementum odque auctor dui. Donec non nunc sodales
-                massa finibus impe tornaer majhe keu rdiet.
+               Discover how Larna has transformed the learning journey for thousands of students around the globe.
               </p>
             </motion.div>
 

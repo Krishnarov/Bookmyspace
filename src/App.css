@@ -8,7 +8,9 @@
     transform: translate(300px, -300px) rotate(25deg);
   }
 }
-
+.font-popins{
+  font-family: poppins;
+}
 .bg-green-element {
   position: absolute;
   top: -300px;

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Facebook, Twitter, Linkedin } from 'lucide-react';
-
+import { Link } from "react-router-dom";
 const HomeFooter = () => {
   const partners = [
     { name: 'Arillina Academy', logo: '🅰️' },
@@ -10,7 +10,12 @@ const HomeFooter = () => {
     { name: 'BrainUp', logo: '🧠' },
     { name: 'Educating Learning Center', logo: '📖' }
   ];
-
+const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
   return (
     <footer className="bg-gray-50 dark:bg-gray-950 py-16 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -34,13 +39,12 @@ const HomeFooter = () => {
               {/* <div className="w-8 h-8 bg-red-500 dark:bg-red-600 rounded-full flex items-center justify-center">
                 <span className="text-white font-bold text-sm">⚓</span>
               </div> */}
-                  <img src="./img/bookmyspace.jpeg" className="h-18 rounded-full"  alt="" />
+                  <img src="./img/bookmyspace.jpeg" className="h-18 "  alt="" />
               <h3 className="text-2xl font-bold text-gray-900 dark:text-white">Book My Space</h3>
             </div>
             
             <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
-              Aexerc itation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis 
-              aute irure dolor in repr henderit in volu ptate velit esse cillum dolore
+                Empowering libraries with smart, simple, and secure management solutions.
             </p>
 
             {/* Social Links */}
@@ -64,15 +68,13 @@ const HomeFooter = () => {
           <div className="lg:col-span-1">
             <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-6">IMPORTANT LINKS</h4>
             <div className="grid grid-cols-2 gap-y-3 gap-x-8">
-              <a href="#" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">All Courses</a>
-              <a href="#" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">About Us</a>
-              <a href="#" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">Instructors</a>
-              <a href="#" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">Careers</a>
-              <a href="#" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">Premium Plans</a>
-              <a href="#" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">FAQ & Help</a>
-              <a href="#" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">Blogs</a>
-              <a href="#" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">Certificate</a>
-              <a href="#" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">Resources</a>
+
+              <Link to="/About"className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">About Us</Link>
+              <Link to="/HowItWorks"className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">How It Works</Link>
+              <Link to="/Pricing"className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">Pricing Plans</Link>
+              <Link to="/Library"className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">Library Registration</Link>
+              <Link to="/Contact"className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">Contact Us</Link>
+
             </div>
           </div>
 
@@ -80,9 +82,9 @@ const HomeFooter = () => {
           <div className="lg:col-span-1 flex justify-center lg:justify-end">
             <div className="relative">
               {/* Student Illustration */}
-              <div className="w-64 h-64  dark:from-blue-900/30 dark:to-purple-900/30 rounded-lg flex items-center justify-center">
+              <div className="w-64 h-52  dark:from-blue-900/30 dark:to-purple-900/30 rounded-lg flex items-center justify-center">
                 {/* <div className="text-6xl opacity-50 dark:opacity-30">🎓</div> */}
- <img src="./img/home4-footer-img.png" alt="" />
+ <img src="./img/home4-footer-img.png"  alt="" />
               </div>
             </div>
           </div>
@@ -101,8 +103,8 @@ const HomeFooter = () => {
               <a href="#" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white text-sm transition-colors">Cookies</a>
             </div>
 
-            {/* Scroll to top button */}
-            <button className="w-8 h-8 bg-red-500 dark:bg-red-600 text-white rounded-sm flex items-center justify-center hover:bg-red-600 dark:hover:bg-red-500 transition-colors">
+        
+            <button  onClick={scrollToTop} className="w-8 h-8 bg-red-500 dark:bg-red-600 text-white rounded-sm flex items-center justify-center hover:bg-red-600 dark:hover:bg-red-500 transition-colors">
               ↑
             </button>
           </div>

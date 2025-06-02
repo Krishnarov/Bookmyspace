@@ -44,33 +44,33 @@ const { theme, toggleTheme } = useTheme();
   const testimonials = [
     {
       id: 1,
-      title: "High Quality Education",
+      title: "The perfect study spot",
       content:
-        "At the Training ExLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      name: "THOMAS ANDERSON",
-      role: "Web Developer",
+        "BookMySpace helped me reserve peaceful spots during exams. No more full libraries and long queues!",
+      name: "Aditi Sharma",
+      role: "B.Tech Student",
       avatar:
         "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=60&h=60&fit=crop&crop=face&auto=format",
       rating: 5,
     },
     {
       id: 2,
-      title: "Very Helpful Service",
+      title: "Book access made easy",
       content:
-        "At the Training ExLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      name: "SARAH JOHNSON",
-      role: "Web Developer",
+        "Finding and issuing books has never been easier. The search and booking features are smooth and fast.",
+      name: "Rahul Mehta",
+      role: "MCA Student",
       avatar:
         "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=60&h=60&fit=crop&crop=face&auto=format",
       rating: 5,
     },
     {
       id: 3,
-      title: "Amazing Experience",
+      title: "Love the digital interface",
       content:
-        "At the Training ExLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      name: "MIKE WILSON",
-      role: "Frontend Developer",
+        "Clean UI, responsive design, and the ability to manage my reservations from my phone – absolutely love it.",
+      name: "Priya Verma",
+      role: "Library Member",
       avatar:
         "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=60&h=60&fit=crop&crop=face&auto=format",
       rating: 5,
@@ -238,19 +238,16 @@ const { theme, toggleTheme } = useTheme();
               </div>
               
               <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
-                We Want to Change The World with Education
+                Empowering People to Discover and Book Spaces Seamlessly
               </h2>
               
               <div className="space-y-4 text-gray-600 dark:text-gray-300 leading-relaxed">
                 <p>
-                  Vore et dot enim ad minim veniam, quis nos trud exercitation ullamco 
-                  laboris nisi ut aliquip ex ea commodo consequat.
+                  At BookMySpace, our mission is to simplify the process of finding and booking workspaces, event halls, and creative venues.
                 </p>
                 
                 <p>
-                  Duis aute irure fugiat nulla pariatur. Excepteur sint occaecat cupidatat 
-                  non proident, sunt in culpa qui off icia deserunt mollit anim id est leabo 
-                  rum. Sed ut perspiciatis unde omnis
+                  Whether you're a startup, a freelancer, or a host, we strive to connect people with the perfect space to work, collaborate, and grow — all at their fingertips.
                 </p>
               </div>
             </div>
@@ -294,19 +291,16 @@ const { theme, toggleTheme } = useTheme();
               </div>
               
               <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
-                Easily Educate Every People Around You
+                Redefining Space Utilization for a Smarter Future
               </h2>
               
               <div className="space-y-4 text-gray-600 dark:text-gray-300 leading-relaxed">
                 <p>
-                  Vore et dot enim ad minim veniam, quis nos trud exercitation ullamco 
-                  laboris nisi ut aliquip ex ea commodo consequat.
+                 We envision a future where access to professional and creative spaces is easy, transparent, and tailored to every individual or business need.
                 </p>
                 
                 <p>
-                  Duis aute irure fugiat nulla pariatur. Excepteur sint occaecat cupidatat 
-                  non proident, sunt in culpa qui off icia deserunt mollit anim id est leabo 
-                  rum. Sed ut perspiciatis unde omnis
+                  Through innovation and user-centric design, BookMySpace aims to become the most trusted platform for space discovery and management across the globe.
                 </p>
               </div>
             </div>
@@ -323,25 +317,24 @@ const { theme, toggleTheme } = useTheme();
             <div className="mb-16">
               <h1 className="text-5xl md:text-6xl font-bold text-gray-800 dark:text-gray-100 mb-6">
                 <span className="text-gray-700 dark:text-gray-200">
-                  22 Years
+                  10,000+
                 </span>{" "}
                 <span className="text-gray-600 dark:text-gray-300">
-                  Experience in
+                  Books Available in
                 </span>{" "}
                 <span className="text-gray-800 dark:text-gray-100">
-                  Education
+                  BookMySpace Library
                 </span>
                 <br />
                 <span className="text-gray-600 dark:text-gray-300">
-                  and
+                  Empowering
                 </span>{" "}
                 <span className="text-gray-800 dark:text-gray-100">
-                  Teaching
+                  Readers & Learners
                 </span>
               </h1>
               <p className="text-gray-500 dark:text-gray-400 text-lg max-w-2xl mx-auto leading-relaxed">
-                Nullam at elementum odque auctor dui. Donec non nunc sodales
-                massa finibus imperdiet lorem maxime sed risus.
+                Explore a vast collection of books across genres. Manage your time, reserve your space, and enjoy a modern digital library experience tailored for students and professionals.
               </p>
             </div>
 
@@ -391,11 +384,10 @@ const { theme, toggleTheme } = useTheme();
             >
               <h2 className="text-4xl font-bold text-gray-900 dark:text-gray-100 mb-4">
                 What Our{" "}
-                <span className="text-black dark:text-white">Students</span> Say
+                <span className="text-black dark:text-white">Readers</span> Say
               </h2>
               <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-                Nullam at elementum odque auctor dui. Donec non nunc sodales
-                massa finibus impe tornaer majhe keu rdiet.
+                Thousands of students and professionals trust BookMySpace to reserve their favorite reading spot and access books with ease.
               </p>
             </motion.div>
 

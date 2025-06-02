@@ -28,15 +28,13 @@ export default function Footer() {
               {/* <div className="w-8 h-8 bg-white dark:bg-gray-800 rounded-full flex items-center justify-center"> */}
                 {/* <span className="text-purple-600 dark:text-purple-400 font-bold text-sm">L</span> */}
               {/* </div> */}
-              <img src="./img/bookmyspace.jpeg" className="h-18 rounded-full"  alt="" />
+              <img src="./img/bookmyspace.jpeg" className="h-18"  alt="" />
               <span className="text-2xl font-bold text-white dark:text-gray-100">Book my space</span>
             </div>
 
             {/* Description */}
             <p className="text-purple-100 dark:text-gray-300 leading-relaxed text-sm">
-              Aexcrc itation ullamco laboris nisl ut aliquip ex ea commodo
-              consequat. Duis aute irure dolor in repr henderit in volu ptate
-              velit esse cillum dolore
+  Empowering libraries with smart, simple, and secure management solutions.
             </p>
           </div>
 
@@ -44,64 +42,13 @@ export default function Footer() {
           <div>
             <h3 className="text-xl font-semibold mb-6 text-white dark:text-gray-100">IMPORTANT LINKS</h3>
             <div className="grid grid-cols-2 gap-8">
-              <div className="space-y-3">
-                <a
-                  href="#"
-                  className="block text-purple-100 dark:text-gray-300 hover:text-white dark:hover:text-gray-100 transition-colors text-sm"
-                >
-                  All Courses
-                </a>
-                <a
-                  href="#"
-                  className="block text-purple-100 dark:text-gray-300 hover:text-white dark:hover:text-gray-100 transition-colors text-sm"
-                >
-                  Instructors
-                </a>
-                <a
-                  href="#"
-                  className="block text-purple-100 dark:text-gray-300 hover:text-white dark:hover:text-gray-100 transition-colors text-sm"
-                >
-                  Premium Plans
-                </a>
-                <a
-                  href="#"
-                  className="block text-purple-100 dark:text-gray-300 hover:text-white dark:hover:text-gray-100 transition-colors text-sm"
-                >
-                  Blogs
-                </a>
-                <a
-                  href="#"
-                  className="block text-purple-100 dark:text-gray-300 hover:text-white dark:hover:text-gray-100 transition-colors text-sm"
-                >
-                  Resources
-                </a>
-              </div>
-              <div className="space-y-3">
-                <a
-                  href="#"
-                  className="block text-purple-100 dark:text-gray-300 hover:text-white dark:hover:text-gray-100 transition-colors text-sm"
-                >
-                  About Us
-                </a>
-                <a
-                  href="#"
-                  className="block text-purple-100 dark:text-gray-300 hover:text-white dark:hover:text-gray-100 transition-colors text-sm"
-                >
-                  Careers
-                </a>
-                <a
-                  href="#"
-                  className="block text-purple-100 dark:text-gray-300 hover:text-white dark:hover:text-gray-100 transition-colors text-sm"
-                >
-                  FAQ & Help
-                </a>
-                <a
-                  href="#"
-                  className="block text-purple-100 dark:text-gray-300 hover:text-white dark:hover:text-gray-100 transition-colors text-sm"
-                >
-                  Certificate
-                </a>
-              </div>
+              
+              <Link to="/About"className="block text-purple-100 dark:text-gray-300 hover:text-white dark:hover:text-gray-100 transition-colors text-sm">About Us</Link>
+                            <Link to="/HowItWorks"className="block text-purple-100 dark:text-gray-300 hover:text-white dark:hover:text-gray-100 transition-colors text-sm">How It Works</Link>
+                            <Link to="/Pricing"className="block text-purple-100 dark:text-gray-300 hover:text-white dark:hover:text-gray-100 transition-colors text-sm">Pricing Plans</Link>
+                            <Link to="/Library"className="block text-purple-100 dark:text-gray-300 hover:text-white dark:hover:text-gray-100 transition-colors text-sm">Library Registration</Link>
+                            <Link to="/Contact"className="block text-purple-100 dark:text-gray-300 hover:text-white dark:hover:text-gray-100 transition-colors text-sm">Contact Us</Link>
+              
             </div>
           </div>
 
@@ -184,7 +131,7 @@ export default function Footer() {
 
       {/* Background Decorative Elements */}
       <div className="absolute inset-0 opacity-5 dark:opacity-10 pointer-events-none">
-        <div className="absolute top-10 left-10 w-32 h-32 border-2 border-white dark:border-gray-400 rounded-full"></div>
+        {/* <div className="absolute top-10 left-10 w-32 h-32 border-2 border-white dark:border-gray-400 rounded-full"></div> */}
         <div className="absolute top-20 right-20 w-24 h-24 border border-white dark:border-gray-400 rounded-lg rotate-45"></div>
         <div className="absolute bottom-10 left-1/4 w-16 h-16 bg-white dark:bg-gray-600 rounded-full"></div>
         <div className="absolute bottom-20 right-10 w-20 h-20 border border-white dark:border-gray-400"></div>

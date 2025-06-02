@@ -3,6 +3,7 @@ import ContactUs from "../pages/ContactUs"
 import Home from "../pages/Home"
 import HowItWorks from "../pages/HowItWorks"
 import Library from "../pages/Library"
+import Libraryowners from "../pages/Libraryowners"
 import Pricing from "../pages/Pricing"
 
 
@@ -26,9 +27,9 @@ import Pricing from "../pages/Pricing"
       icon: "ri-dashboard-line",
     },
     {
-      path: "/Pricing",
-      component: Pricing,
-      name: "Pricing Plans",
+      path: "/libraryowners",
+      component: Libraryowners,
+      name: "Owner Onboarding",
       icon: "ri-dashboard-line",
     },
     {
