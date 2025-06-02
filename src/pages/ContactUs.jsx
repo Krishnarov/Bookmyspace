@@ -1,14 +1,8 @@
 import React, { useState } from "react";
 import {
-  MapPin,
   Phone,
   Mail,
-  Menu,
-  X,
-  Facebook,
-  Twitter,
-  Youtube,
-  Instagram,
+  
 } from "lucide-react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";

@@ -31,9 +31,10 @@ const HomeFooter = () => {
           {/* Left Section - Brand */}
           <div className="lg:col-span-1">
             <div className="flex items-center space-x-2 mb-6">
-              <div className="w-8 h-8 bg-red-500 dark:bg-red-600 rounded-full flex items-center justify-center">
+              {/* <div className="w-8 h-8 bg-red-500 dark:bg-red-600 rounded-full flex items-center justify-center">
                 <span className="text-white font-bold text-sm">⚓</span>
-              </div>
+              </div> */}
+                  <img src="./img/bookmyspace.jpeg" className="h-18 rounded-full"  alt="" />
               <h3 className="text-2xl font-bold text-gray-900 dark:text-white">Book My Space</h3>
             </div>
             

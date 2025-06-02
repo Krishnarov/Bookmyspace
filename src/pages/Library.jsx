@@ -53,18 +53,26 @@ export default function LibraryRegistrationForm() {
   ];
 
   const availableServices = [
-    "Book Lending",
-    "Digital Resources",
-    "Study Rooms",
-    "Computer Access",
-    "WiFi",
-    "Printing Services",
-    "Reference Assistance",
-    "Research Support",
-    "Children's Programs",
-    "Adult Education",
-    "Community Events",
-    "Online Catalog"
+    "News paper Hindi + English ",
+    "Currant affairs magazines (monthly) ",
+    "R-O water",
+    "fully air conditioned ",
+    "High speed wifi ",
+    "24 x 7",
+    "Clean Environment ",
+    "Power Backup ",
+    "Group Discussion room",
+    "Personal Locker ",
+    "CANTEEN ",
+    "CAFETERIA  ",
+    "PIM Board ",
+    "Seperate Space for Laptop ",
+    "Provide Some Novels and Book's  ",
+    "Power switch & Light  ",
+    "Rest Room ",
+    "CCTV Surveillance ",
+    "Parking ",
+    "Personal mentorship & Guidence "
   ];
 
   const handleInputChange = (e) => {
@@ -105,7 +113,7 @@ export default function LibraryRegistrationForm() {
         <div className=" mx-auto  sm:px-6 lg:px-8">
           <div className="bg-gray0 rounded-2xl  p-8">
             <div className="text-center mb-8">
-              <h2 className="text-3xl font-bold  mb-4">Library Registration Form</h2>
+              <h2 className="text-3xl font-bold  mb-4">Registration and no commission</h2>
               <p className="dark:text-gray-400 ">Please fill in all the required information about your library</p>
             </div>
 
@@ -145,7 +153,7 @@ export default function LibraryRegistrationForm() {
                   </select>
                 </div>
 
-                <div>
+                {/* <div>
                   <label className="block text-sm font-medium  dark:text-gray-300 mb-2">
                     Unique ID *
                   </label>
@@ -161,11 +169,11 @@ export default function LibraryRegistrationForm() {
                       placeholder="Library unique identifier"
                     />
                   </div>
-                </div>
+                </div> */}
 
                 <div>
                   <label className="block text-sm font-medium  dark:text-gray-300 mb-2">
-                    Total Number of Books *
+                    Total Number of Books 
                   </label>
                   <div className="relative">
                     <BookOpen className="absolute left-3 top-3 h-5 w-5  dark:text-gray-400" />
@@ -185,7 +193,7 @@ export default function LibraryRegistrationForm() {
               {/* Description */}
               <div>
                 <label className="block text-sm font-medium  dark:text-gray-300 mb-2">
-                  Library Description *
+                  Library Description 
                 </label>
                 <textarea
                   name="description"
@@ -202,7 +210,7 @@ export default function LibraryRegistrationForm() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label className="block text-sm font-medium  dark:text-gray-300 mb-2">
-                    Library Logo *
+                    Library Logo 
                   </label>
                   <div className="border-2 border-dashed  dark:border-gray-600 rounded-lg p-6 text-center hover:border-blue-500 transition-colors">
                     <Upload className="mx-auto h-12 w-12  dark:text-gray-400 mb-4" />
@@ -384,7 +392,7 @@ export default function LibraryRegistrationForm() {
               </div>
 
               {/* Membership Fees */}
-              <div>
+              {/* <div>
                 <label className="block text-sm font-medium t dark:ext-gray-300 mb-2">
                   Membership Fees *
                 </label>
@@ -400,7 +408,7 @@ export default function LibraryRegistrationForm() {
                     placeholder="e.g., $50/year or Free"
                   />
                 </div>
-              </div>
+              </div> */}
 
               {/* Submit Button */}
               <div className="pt-6">

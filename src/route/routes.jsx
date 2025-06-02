@@ -34,7 +34,7 @@ import Pricing from "../pages/Pricing"
     {
       path: "/Library",
       component: Library,
-      name: "Library Registration Page",
+      name: "Library Registration ",
       icon: "ri-dashboard-line",
     },
     {

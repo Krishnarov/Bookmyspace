@@ -13,11 +13,11 @@ export default function Footer() {
   return (
     <footer className="bg-gradient-to-r from-purple-600 to-indigo-700 dark:from-gray-900 dark:to-black text-white relative z-0">
       {/* Main Footer Content */}
-      <div className="absolute inset-0 opacity-10 dark:opacity-20">
-        <div className="absolute top-10 left-10 w-32 h-32 border-2 border-white dark:border-gray-400 rounded-full"></div>
-        <div className="absolute top-20 right-20 w-24 h-24 border border-white dark:border-gray-400 rounded-lg rotate-45"></div>
-        <div className="absolute bottom-10 left-1/4 w-16 h-16 bg-white dark:bg-gray-600 rounded-full"></div>
-        <div className="absolute bottom-20 right-10 w-20 h-20 border border-white dark:border-gray-400"></div>
+      <div className="">
+        <div className="absolute top-10 left-10 w-32 h-32 border-2 border-white dark:border-gray-400 rounded-full opacity-10 dark:opacity-20"></div>
+        <div className="absolute top-20 right-20 w-24 h-24 border border-white dark:border-gray-400 rounded-lg rotate-45 opacity-10 dark:opacity-20"></div>
+        <div className="absolute bottom-10 left-1/4 w-16 h-16 bg-white dark:bg-gray-600 rounded-full opacity-10 dark:opacity-20"></div>
+        <div className="absolute bottom-20 right-10 w-20 h-20 border border-white dark:border-gray-400 opacity-10 dark:opacity-20"></div>
       </div>
       <div className="max-w-7xl mx-auto px-4 py-16">
         <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-12">
@@ -25,9 +25,10 @@ export default function Footer() {
           <div className="lg:pr-8">
             {/* Logo */}
             <div className="flex items-center space-x-2 mb-6">
-              <div className="w-8 h-8 bg-white dark:bg-gray-800 rounded-full flex items-center justify-center">
-                <span className="text-purple-600 dark:text-purple-400 font-bold text-sm">L</span>
-              </div>
+              {/* <div className="w-8 h-8 bg-white dark:bg-gray-800 rounded-full flex items-center justify-center"> */}
+                {/* <span className="text-purple-600 dark:text-purple-400 font-bold text-sm">L</span> */}
+              {/* </div> */}
+              <img src="./img/bookmyspace.jpeg" className="h-18 rounded-full"  alt="" />
               <span className="text-2xl font-bold text-white dark:text-gray-100">Book my space</span>
             </div>
 

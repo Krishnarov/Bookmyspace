@@ -55,11 +55,15 @@ function Header({ calr }) {
       >
         {/* Logo */}
         <div className="flex items-center space-x-2">
+          <img src="./img/bookmyspace.jpeg" className="h-18 "  alt="" />
+          <span className="md:text-2xl font-bold ">Book My Space</span>
+        </div>
+        {/* <div className="flex items-center space-x-2">
           <div className="w-8 h-8 bg-pink-500 rounded-lg flex items-center justify-center">
             <div className="w-4 h-4 rounded-sm bg-white dark:bg-gray-800"></div>
           </div>
           <span className="text-2xl font-bold ">Book my space</span>
-        </div>
+        </div> */}
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex space-x-8">
@@ -155,9 +159,10 @@ function Header({ calr }) {
         {/* Mobile Menu Header */}
         <div className="flex items-center justify-between p-6 border-b dark:border-gray-700">
           <div className="flex items-center space-x-2">
-            <div className="w-6 h-6 bg-pink-500 rounded-lg flex items-center justify-center">
+            {/* <div className="w-6 h-6 bg-pink-500 rounded-lg flex items-center justify-center">
               <div className="w-3 h-3 rounded-sm bg-white dark:bg-gray-800"></div>
-            </div>
+            </div> */}
+                      <img src="./img/bookmyspace.jpeg" className="h-16 rounded-full" alt="" />
             <span className="text-lg font-bold text-gray-900 dark:text-white">
               Book my space
             </span>
@@ -173,8 +178,8 @@ function Header({ calr }) {
         {/* Mobile Menu Content */}
         <div className="flex flex-col h-full">
           {/* Navigation Links */}
-          <nav className="flex-1 px-6 py-8">
-            <div className="space-y-6">
+          <nav className="flex-1 px-6 py-8 overflow-y-scroll">
+            <div className="space-y-6 ">
               {routes.map((nab, index) => (
                 <Link
                   to={nab.path}

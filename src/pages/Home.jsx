@@ -463,18 +463,19 @@ function Home() {
             >
               <div className="space-y-4 ">
                 <p className="text-pink-500 font-semibold tracking-wider text-sm">
-                  LEARN WITH Book my space
+                  LEARN WITH BOOK MY SPACE
                 </p>
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-gray-50 leading-tight">
-                  Start Learning{" "}
+                  Study Where{" "}
                   <span className="text-gray-700 dark:text-gray-200">
-                    Web Design
+                    You Want,
                   </span>{" "}
-                  In Book my space Today
+                  When You Want — Only Pay Per Day
                 </h1>
                 <p className="text-gray-600 dark:text-gray-50 text-lg leading-relaxed max-w-md">
-                  Nullam at elementesque auctor dui. Donec non nunc im veniam,
-                  quis nostrud exercitation
+                  No monthly lock-ins. No boring routine. Discover new libraries
+                  across Lucknow and Delhi and book your perfect study spot,
+                  daily. I'm a Student 
                 </p>
               </div>
 
@@ -512,7 +513,12 @@ function Home() {
                     {/* Header in mockup */}
                     <div className="flex items-center justify-between mb-6">
                       <div className="flex items-center space-x-2">
-                        <div className="w-6 h-6 bg-pink-500 rounded"></div>
+                        {/* <div className="w-6 h-6 bg-pink-500 rounded"></div> */}
+                        <img
+                          src="./img/bookmyspace.jpeg"
+                          className="h-8 rounded-full"
+                          alt=""
+                        />
                         <span className="font-bold text-sm">Book my space</span>
                       </div>
                       <div className="flex space-x-4 text-xs">
@@ -1111,20 +1117,20 @@ function Home() {
         </motion.div>
       </section>
       <section
-        className=" overflow-hidden lg:h-screen mt-20"
+        className=" overflow-hidden lg:h-screen mt-20 "
         style={{
-          // backgroundImage:
-          //   Theme === "dark"
-          //     ? "none"
-          //     : `url(${import.meta.env.VITE_BG_URI}/img/home4-fact-bg.png)`,
-          backgroundImage: `url(${
-            import.meta.env.VITE_BG_URI
-          }/img/home4-fact-bg.png)`,
+          backgroundImage:
+            Theme === "dark"
+              ? "none"
+              : `url(${import.meta.env.VITE_BG_URI}/img/home4-fact-bg.png)`,
+          // backgroundImage: `url(${
+          //   import.meta.env.VITE_BG_URI
+          // }/img/home4-fact-bg.png)`,
           backgroundRepeat: "no-repeat",
         }}
       >
         <motion.div
-          className="relative mt-42 mb-20"
+          className="relative mt-42 mb-20 dark:hidden"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
@@ -1323,7 +1329,9 @@ function Home() {
           backgroundImage:
             Theme === "dark"
               ? "none"
-              : `url(${import.meta.env.VITE_BG_URI}/img/hm4-testimonial-dotted.png)`,
+              : `url(${
+                  import.meta.env.VITE_BG_URI
+                }/img/hm4-testimonial-dotted.png)`,
           backgroundRepeat: "no-repeat",
         }}
       >
@@ -1337,7 +1345,11 @@ function Home() {
               transition={{ duration: 0.8, ease: "easeOut" }}
             >
               <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4 transition-colors duration-300">
-                What Our <span className="text-gray-900 dark:text-gray-100">Students</span> Say
+                What Our{" "}
+                <span className="text-gray-900 dark:text-gray-100">
+                  Students
+                </span>{" "}
+                Say
               </h2>
               <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto transition-colors duration-300">
                 Nullam at elementum odque auctor dui. Donec non nunc sodales

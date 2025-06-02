@@ -15,12 +15,6 @@ import { useTheme } from "../context/ThemeContext";
 function About() {
 
 const { theme, toggleTheme } = useTheme(); 
-console.log(theme);
-
-
-
-  // const [Theme, setTheme] = useState("dark");
-  // useEffect(() => setTheme(localStorage.getItem("theme")));
   const stats = [
     {
       icon: <BookOpen className="w-12 h-12 text-emerald-500" />,
