@@ -1095,7 +1095,7 @@ function Home() {
           </div>
         </motion.div>
       </section>
-      <section
+      {/* <section
         className=" overflow-hidden lg:h-screen mt-20 "
         style={{
           backgroundImage:
@@ -1276,7 +1276,7 @@ function Home() {
             </motion.div>
           </motion.div>
         </motion.div>
-      </section>
+      </section> */}
       <motion.section
         className="w-full min-h-[50vh] flex items-center justify-center"
         style={{
