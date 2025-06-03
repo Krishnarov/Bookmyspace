@@ -19,8 +19,8 @@ function Libraryowners() {
   return (
     <div className="dark">
       {/* Header */}
-      <HeroHead text={"Owner Onboarding"} />
-      <div className="py-20">
+      <HeroHead text={"Owner Onboarding Benifits"} />
+      <div className="py-22">
         <motion.div
           className="text-center mb-16 mt-20 px-4"
           initial={{ opacity: 0, y: 50 }}

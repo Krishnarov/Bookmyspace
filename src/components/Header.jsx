@@ -55,8 +55,8 @@ function Header({ calr }) {
       >
         {/* Logo */}
         <div className="flex items-center space-x-2">
-          <img src="./img/bookmyspace.jpeg" className="h-18 "  alt="" />
-          <span className="md:text-2xl font-bold ">Book My Space</span>
+          <img src="./img/bookmyspace.jpeg" className="h-16 "  alt="" />
+          <span className="md:text-2xl font-bold md:block hidden">Book My Space</span>
         </div>
         {/* <div className="flex items-center space-x-2">
           <div className="w-8 h-8 bg-pink-500 rounded-lg flex items-center justify-center">
@@ -162,10 +162,10 @@ function Header({ calr }) {
             {/* <div className="w-6 h-6 bg-pink-500 rounded-lg flex items-center justify-center">
               <div className="w-3 h-3 rounded-sm bg-white dark:bg-gray-800"></div>
             </div> */}
-                      <img src="./img/bookmyspace.jpeg" className="h-16 rounded-full" alt="" />
-            <span className="text-lg font-bold text-gray-900 dark:text-white">
+                      <img src="./img/bookmyspace.jpeg" className="h-12 rounded-full" alt="" />
+            {/* <span className="text-lg font-bold text-gray-900 dark:text-white">
               Book my space
-            </span>
+            </span> */}
           </div>
           <button
             onClick={closeMobileMenu}
