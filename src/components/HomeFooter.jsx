@@ -39,7 +39,9 @@ const scrollToTop = () => {
               {/* <div className="w-8 h-8 bg-red-500 dark:bg-red-600 rounded-full flex items-center justify-center">
                 <span className="text-white font-bold text-sm">⚓</span>
               </div> */}
-                  <img src="./img/bookmyspace.jpeg" className="h-18 "  alt="" />
+<div className=" rounded-full p-1 border border-[#e1321b] bg-[#e1321b] flex items-center justify-center">
+            <img src="./img/new-logo.png" className="h-16 "  alt="" />
+          </div>
               <h3 className="text-2xl font-bold text-gray-900 dark:text-white">Book My Space</h3>
             </div>
             

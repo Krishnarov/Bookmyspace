@@ -28,7 +28,7 @@ export default function Footer() {
               {/* <div className="w-8 h-8 bg-white dark:bg-gray-800 rounded-full flex items-center justify-center"> */}
                 {/* <span className="text-purple-600 dark:text-purple-400 font-bold text-sm">L</span> */}
               {/* </div> */}
-              <img src="./img/bookmyspace.jpeg" className="h-18"  alt="" />
+              {/* <img src="./img/bookmyspace.jpeg" className="h-18"  alt="" /> */}
               <span className="text-2xl font-bold text-white dark:text-gray-100">Book my space</span>
             </div>
 

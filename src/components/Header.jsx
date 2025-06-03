@@ -55,7 +55,9 @@ function Header({ calr }) {
       >
         {/* Logo */}
         <div className="flex items-center space-x-2">
-          <img src="./img/bookmyspace.jpeg" className="h-16 "  alt="" />
+          <div className=" rounded-full p-1 border border-[#e1321b] bg-[#e1321b] flex items-center justify-center">
+            <img src="./img/new-logo.png" className="h-16 "  alt="" />
+          </div>
           <span className="md:text-2xl font-bold md:block hidden">Book My Space</span>
         </div>
         {/* <div className="flex items-center space-x-2">
