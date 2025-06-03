@@ -29,7 +29,7 @@ import Pricing from "../pages/Pricing"
     {
       path: "/libraryowners",
       component: Libraryowners,
-      name: "Owner Onboarding",
+      name: "Owner Onboarding Benifits",
       icon: "ri-dashboard-line",
     },
     {

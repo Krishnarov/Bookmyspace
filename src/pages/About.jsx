@@ -243,11 +243,12 @@ const { theme, toggleTheme } = useTheme();
               
               <div className="space-y-4 text-gray-600 dark:text-gray-300 leading-relaxed">
                 <p>
-                  At BookMySpace, our mission is to simplify the process of finding and booking workspaces, event halls, and creative venues.
+                 Your Gateway to Quiet, Inspiring Library Spaces
+At BookMySpace, we specialize in helping students, freelancers, and knowledge seekers find and book the perfect library spaces with ease. 
                 </p>
                 
                 <p>
-                  Whether you're a startup, a freelancer, or a host, we strive to connect people with the perfect space to work, collaborate, and grow — all at their fingertips.
+                Whether you need a quiet corner for focused study or a collaborative spot for group work, our platform connects you to a variety of libraries designed to fuel your learning and productivity. Discover and reserve your ideal study space — hassle-free and right at your fingertips.
                 </p>
               </div>
             </div>
@@ -296,11 +297,15 @@ const { theme, toggleTheme } = useTheme();
               
               <div className="space-y-4 text-gray-600 dark:text-gray-300 leading-relaxed">
                 <p>
-                 We envision a future where access to professional and creative spaces is easy, transparent, and tailored to every individual or business need.
+                Redefining Study Spaces for a Smarter Tomorrow
+We envision a future where access to quiet, well-equipped library spaces is effortless, transparent, and customized to every student’s or learner’s needs.
+
+
                 </p>
                 
                 <p>
-                  Through innovation and user-centric design, BookMySpace aims to become the most trusted platform for space discovery and management across the globe.
+                 
+By leveraging innovation and user-focused design, BookMySpace strives to be the most trusted platform for discovering and booking library spaces—helping learners everywhere study smarter and succeed faster.
                 </p>
               </div>
             </div>

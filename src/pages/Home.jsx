@@ -584,11 +584,10 @@ function Home() {
                WHY CHOOSE US
             </p>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-gray-900 dark:text-white mx-auto max-w-2xl">
-              <span className="font-black">Simplifying</span> Your Search for{" "}
-              <span className="font-black">Perfect Spaces</span> Anytime, Anywhere
+              Making Study Spaces Easy to Find & Book — Anytime, Anywhere
             </h2>
             <p className="text-gray-600 dark:text-gray-50 mt-6 mx-auto max-w-2xl">
-              Discover a seamless way to book co-working spaces, studios, conference rooms, and more — all in one place.
+              Find and reserve self-study libraries across Lucknow with just a few taps. Focus better, avoid distractions, and build your future — all in one app.
             </p>
           </motion.div>
 
@@ -611,10 +610,10 @@ function Home() {
                     <img src="./img/hm4-intro-icon1.png" alt="" />
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">
-                   Explore Diverse Spaces
+                   Explore Diverse Libraries
                   </h3>
                   <p className="text-gray-600 dark:text-gray-50 mb-6">
-                    From co-working desks to event halls, find the perfect space for work, meetings, shoots, or workshops.
+                    We let you explore different self-study libraries — all across the city — and book just for the days you want.
                   </p>
                   <Link to="Library"
                     className="text-pink-500 font-semibold hover:text-pink-700 transition-colors duration-300"
@@ -950,9 +949,9 @@ function Home() {
                       transition={{ duration: 0.8, delay: 0.3 }}
                       viewport={{ once: true }}
                     >
-                       Book Your Perfect{" "}
+                       Book Your {" "}
                       <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
-                         Study Space {" "}
+                         Ideal Study Spot {" "}
                       </span>in Minutes
                     </motion.h1>
                   </motion.div>
@@ -965,11 +964,11 @@ function Home() {
                     viewport={{ once: true }}
                   >
                     <p className="text-gray-600 dark:text-gray-50 text-lg leading-relaxed">
-                       Discover and book Study spaces, meeting rooms, or event areas with real-time availability. Perfect for remote teams, freelancers, and startups.
+                       Find and book peaceful, exam-ready self-study libraries in Lucknow — perfect for UPSC, NEET, SSC, CA, and other competitive exam aspirants. View real-time seat availability, explore amenities like AC, Wi-Fi, power backup, and choose hourly or daily plans that suit your schedule.
                     </p>
 
                     <p className="text-gray-600 dark:text-gray-50 text-lg leading-relaxed">
-                      Join thousands of professionals using BookMySpace to find flexible and affordable spaces with just a few clicks.
+                     Thousands of students trust BookMySpace to stay focused, consistent, and productive — anytime, anywhere.
                     </p>
                   </motion.div>
                   <Link to="Library" className="hero-signup text-white px-8 py-4 rounded-full font-semibold transition-colors">
@@ -1041,10 +1040,10 @@ function Home() {
               <img src="./img/hm4-feature-icon1.jpg" alt="" />
             </div>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl pt-5">
-             Seamless space booking experience
+             Seamless Study Space Booking
             </h1>
             <p className="pt-10 text-lg">
-               Easily discover, compare, and reserve coworking spaces, conference rooms, and private offices that suit your professional needs—all in a few clicks.
+Effortlessly find, compare, and book the perfect self-study libraries near you. Filter by location, timing, amenities, and pricing — all in just a few taps.
             </p>
           </div>
           <div className="w-full lg:w-[50%] mt-10 lg:mt-0">
@@ -1063,10 +1062,10 @@ function Home() {
               <img src="./img/hm4-feature-icon2.jpg" alt="" />
             </div>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl pt-5">
-             Work from anywhere, anytime
+             Study from Anywhere, Anytime
             </h1>
             <p className="pt-10 text-lg">
-              Whether you're traveling or working remotely, Book My Space lets you access a network of professional spaces anytime, anywhere—on-demand.
+             Whether you're at home, near your coaching center, or exploring new areas in Lucknow — BookMySpace gives you access to quiet, reliable self-study libraries on-demand. Study your way, wherever you are.
             </p>
           </div>
           <div className="w-full lg:w-[50%] mt-10 lg:mt-0">
@@ -1085,10 +1084,10 @@ function Home() {
               <img src="./img/hm4-feature-icon3.jpg" alt="" />
             </div>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl pt-5">
-              Boost your productivity and network
+             Boost Your Focus and Discipline
             </h1>
             <p className="pt-10 text-lg">
-              Join a vibrant community of professionals, enjoy productive environments, and enhance your career growth through flexible Study spaces tailored to your needs.
+             Join a community of serious students and aspirants. Study in distraction-free environments designed to keep you consistent, motivated, and exam-ready — all in flexible, student-friendly study spaces.
             </p>
           </div>
           <div className="w-full lg:w-[50%] mt-10 lg:mt-0">
@@ -1292,8 +1291,11 @@ function Home() {
         viewport={{ once: true }}
       >
         <div className="text-center max-w-3xl px-4">
-          <p className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-white mb-8">
-            Take the first step toward your future. Enroll at Larna and start mastering the skills you love — from anywhere, anytime!!
+          <p className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-white mb-4">
+            Take the First Step Toward Your Dream Exam.
+          </p>
+          <p className="text-xs sm:text-sm lg:text-md font-semibold text-white mb-8">
+           Preparing for UPSC, NEET, SSC, or any other competitive exam? BookMySpace helps you stay focused with access to the best self-study libraries in Lucknow — anytime, anywhere.
           </p>
           <Link to="Library" className="hero-signup text-white px-8 py-4 rounded-full font-semibold transition-colors">
             SIGN UP NOW
