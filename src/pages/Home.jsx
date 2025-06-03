@@ -838,13 +838,13 @@ function Home() {
                       transition={{ duration: 0.3 }}
                     >
                       <img
-                        src="./img/home4-about-img2.jpg"
+                        src="./img/librery-4.jpg"
                         alt="Woman learning with laptop"
                         className="w-80 h-96 object-cover rounded shadow"
                       />
                     </motion.div>
                     <div className=" absolute left-0 ">
-                      <img src="./img/home4-about-dots.png" alt="" />
+                      <img src="./img/librery-7.jpg" alt="" />
                     </div>
                     {/* Overlapping smaller image */}
                     <motion.div
@@ -854,7 +854,7 @@ function Home() {
                       transition={{ duration: 0.3 }}
                     >
                       <img
-                        src="./img/home4-about-img1.jpg"
+                        src="./img/librery-6.jpg"
                         alt="Student with books"
                         className="w-64 h-80 object-cover shadow border-4 border-white"
                       />
@@ -1090,7 +1090,7 @@ Effortlessly find, compare, and book the perfect self-study libraries near you. 
             </p>
           </div>
           <div className="w-full lg:w-[50%] mt-10 lg:mt-0">
-            <img src="./img/librery-2.jpg" alt="" className="w-full" />
+            <img src="./img/librery-8.jpg" alt="" className="w-full" />
           </div>
         </motion.div>
       </section>
