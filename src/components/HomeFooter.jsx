@@ -10,7 +10,7 @@ const HomeFooter = () => {
     { name: 'BrainUp', logo: '🧠' },
     { name: 'Educating Learning Center', logo: '📖' }
   ];
-const scrollToTop = () => {
+  const scrollToTop = () => {
     window.scrollTo({
       top: 0,
       behavior: "smooth",
@@ -39,14 +39,14 @@ const scrollToTop = () => {
               {/* <div className="w-8 h-8 bg-red-500 dark:bg-red-600 rounded-full flex items-center justify-center">
                 <span className="text-white font-bold text-sm">⚓</span>
               </div> */}
-<div className=" rounded-full p-1 border border-[#e1321b] bg-[#e1321b] flex items-center justify-center">
-            <img src="./img/new-logo.png" className="h-16 "  alt="" />
-          </div>
+              <div className=" rounded-full p-1 border border-[#e1321b] bg-[#e1321b] flex items-center justify-center">
+                <img src="./img/new-logo.png" className="h-16 " alt="" />
+              </div>
               <h3 className="text-2xl font-bold text-gray-900 dark:text-white">Book My Space</h3>
             </div>
-            
+
             <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
-                Empowering libraries with smart, simple, and secure management solutions.
+              Empowering libraries with smart, simple, and secure management solutions.
             </p>
 
             {/* Social Links */}
@@ -71,11 +71,11 @@ const scrollToTop = () => {
             <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-6">IMPORTANT LINKS</h4>
             <div className="grid grid-cols-2 gap-y-3 gap-x-8">
 
-              <Link to="/About"className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">About Us</Link>
-              <Link to="/HowItWorks"className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">How It Works</Link>
-              <Link to="/Pricing"className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">Pricing Plans</Link>
-              <Link to="/Library"className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">Library Registration</Link>
-              <Link to="/Contact"className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">Contact Us</Link>
+              <Link to="/About" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">About Us</Link>
+              <Link to="/HowItWorks" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">How It Works</Link>
+              <Link to="/Pricing" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">Pricing Plans</Link>
+              <Link to="/Library" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">Library Registration</Link>
+              <Link to="/Contact" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">Contact Us</Link>
 
             </div>
           </div>
@@ -86,7 +86,7 @@ const scrollToTop = () => {
               {/* Student Illustration */}
               <div className="w-64 h-52  dark:from-blue-900/30 dark:to-purple-900/30 rounded-lg flex items-center justify-center">
                 {/* <div className="text-6xl opacity-50 dark:opacity-30">🎓</div> */}
- <img src="./img/home4-footer-img.png"  alt="" />
+                <img src="./img/home4-footer-img.png" alt="" />
               </div>
             </div>
           </div>
@@ -98,15 +98,15 @@ const scrollToTop = () => {
             <p className="text-gray-600 dark:text-gray-300 text-sm">
               All rights reserved <span className="font-semibold">Bookmyspace</span> © 2025  Desined & Developed by <a href="https://digicoders.in/" className='font-bold'>Digicoders.in</a>
             </p>
-            
+
             <div className="flex space-x-6">
               <a href="#" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white text-sm transition-colors">Terms & Condition</a>
               <a href="#" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white text-sm transition-colors">Privacy</a>
               <a href="#" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white text-sm transition-colors">Cookies</a>
             </div>
 
-        
-            <button  onClick={scrollToTop} className="w-8 h-8 bg-red-500 dark:bg-red-600 text-white rounded-sm flex items-center justify-center hover:bg-red-600 dark:hover:bg-red-500 transition-colors">
+
+            <button onClick={scrollToTop} className="w-8 h-8 bg-red-500 dark:bg-red-600 text-white rounded-sm flex items-center justify-center hover:bg-red-600 dark:hover:bg-red-500 transition-colors">
               ↑
             </button>
           </div>

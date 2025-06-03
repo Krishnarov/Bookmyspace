@@ -47,16 +47,15 @@ function Header({ calr }) {
     <div>
       {/* Header */}
       <header
-        className={`fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-4 transition-all duration-300 ${
-          scrolled
+        className={`fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-4 transition-all duration-300 ${scrolled
             ? "bg-white dark:bg-gray-950 shadow-md"
             : `bg-transparent ${calr} `
-        }`}
+          }`}
       >
         {/* Logo */}
         <div className="flex items-center space-x-2">
           <div className=" rounded-full p-1 border border-[#e1321b] bg-[#e1321b] flex items-center justify-center">
-            <img src="./img/new-logo.png" className="h-16 "  alt="" />
+            <img src="./img/new-logo.png" className="h-16 " alt="" />
           </div>
           <span className="md:text-2xl font-bold md:block hidden">Book My Space</span>
         </div>
@@ -121,17 +120,17 @@ function Header({ calr }) {
         {/* Mobile Menu Button */}
         <div className="md:hidden flex items-center space-x-2">
           {/* Mobile Dark Mode Toggle */}
-         <button
-        onClick={toggleTheme}
-        className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
-        aria-label="Toggle dark mode"
-      >
-        {theme === "dark" ? (
-          <Sun className="w-5 h-5 text-orange-400" />
-        ) : (
-          <Moon className="w-5 h-5 text-gray-950 dark:text-gray-300" />
-        )}
-      </button>
+          <button
+            onClick={toggleTheme}
+            className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+            aria-label="Toggle dark mode"
+          >
+            {theme === "dark" ? (
+              <Sun className="w-5 h-5 text-orange-400" />
+            ) : (
+              <Moon className="w-5 h-5 text-gray-950 dark:text-gray-300" />
+            )}
+          </button>
 
 
           <button
@@ -154,9 +153,8 @@ function Header({ calr }) {
 
       {/* Mobile Side Navigation */}
       <div
-        className={`fixed top-0 right-0 h-full w-80 bg-white dark:bg-gray-900 shadow-2xl transform transition-transform duration-300 ease-in-out z-[70] md:hidden ${
-          isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
-        }`}
+        className={`fixed top-0 right-0 h-full w-80 bg-white dark:bg-gray-900 shadow-2xl transform transition-transform duration-300 ease-in-out z-[70] md:hidden ${isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
+          }`}
       >
         {/* Mobile Menu Header */}
         <div className="flex items-center justify-between p-6 border-b dark:border-gray-700">
@@ -164,7 +162,7 @@ function Header({ calr }) {
             {/* <div className="w-6 h-6 bg-pink-500 rounded-lg flex items-center justify-center">
               <div className="w-3 h-3 rounded-sm bg-white dark:bg-gray-800"></div>
             </div> */}
-                      <img src="./img/bookmyspace.jpeg" className="h-12 rounded-full" alt="" />
+            <img src="./img/bookmyspace.jpeg" className="h-12 rounded-full" alt="" />
             {/* <span className="text-lg font-bold text-gray-900 dark:text-white">
               Book my space
             </span> */}

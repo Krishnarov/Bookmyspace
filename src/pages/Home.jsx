@@ -171,12 +171,12 @@ function Home() {
     },
     {
       title: "Guaranteed seat reservation",
-      courseCount:"Reserve your seat in advance and never worry about availability, even during peak hours.",
+      courseCount: "Reserve your seat in advance and never worry about availability, even during peak hours.",
       bgColor: "bg-gradient-to-br from-red-500 to-pink-600",
       bgImg:
         "./img/Virtual.jpg",
     },
-    
+
   ];
   const [isNavVisible, setIsNavVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
@@ -248,7 +248,7 @@ function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [direction, setDirection] = useState(0);
   const IMG_URI = import.meta.env.VITE_BG_URI;
-    const testimonials = [
+  const testimonials = [
     {
       id: 1,
       title: "The perfect study spot",
@@ -346,9 +346,8 @@ function Home() {
     return Array.from({ length: 5 }, (_, i) => (
       <Star
         key={i}
-        className={`w-4 h-4 transition-colors duration-300 ${
-          i < rating ? "fill-yellow-400 text-yellow-400" : "text-gray-300"
-        }`}
+        className={`w-4 h-4 transition-colors duration-300 ${i < rating ? "fill-yellow-400 text-yellow-400" : "text-gray-300"
+          }`}
       />
     ));
   };
@@ -470,7 +469,7 @@ function Home() {
                 </p>
                 <h1 className="text-5xl sm:text-5xl lg:text-7xl font-bold text-gray-900 dark:text-gray-50 leading-tight">
                   Find Your  <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
-                  Ideal Library Space
+                    Ideal Library Space
                   </span>{" "},
                   Anytime, Anywhere
                 </h1>
@@ -580,7 +579,7 @@ function Home() {
             viewport={{ once: true }}
           >
             <p className="text-pink-500 font-semibold tracking-wider text-sm mb-4">
-               WHY CHOOSE US
+              WHY CHOOSE US
             </p>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-gray-900 dark:text-white mx-auto max-w-2xl">
               Making Study Spaces Easy to Find & Book — Anytime, Anywhere
@@ -609,7 +608,7 @@ function Home() {
                     <img src="./img/hm4-intro-icon1.png" alt="" />
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">
-                   Explore Diverse Libraries
+                    Explore Diverse Libraries
                   </h3>
                   <p className="text-gray-600 dark:text-gray-50 mb-6">
                     We let you explore different self-study libraries — all across the city — and book just for the days you want.
@@ -617,7 +616,7 @@ function Home() {
                   <Link to="Library"
                     className="text-pink-500 font-semibold hover:text-pink-700 transition-colors duration-300"
                   >
-                     BROWSE NOW
+                    BROWSE NOW
                   </Link>
                 </div>
               </TiltCard>
@@ -669,7 +668,7 @@ function Home() {
                   <Link to="Library"
                     className="text-pink-500 font-semibold hover:text-pink-700 transition-colors duration-300"
                   >
-                     SEE LOCATIONS
+                    SEE LOCATIONS
                   </Link >
                 </div>
               </TiltCard>
@@ -691,7 +690,7 @@ function Home() {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-             Choose a<span className="font-black"> Space</span> By{" "}
+              Choose a<span className="font-black"> Space</span> By{" "}
               <span className="font-black">Category</span>
             </motion.h2>
             <motion.p
@@ -701,7 +700,7 @@ function Home() {
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
             >
-            Everything you need to maximize your study productivity with flexibility and convenience.
+              Everything you need to maximize your study productivity with flexibility and convenience.
             </motion.p>
           </motion.div>
 
@@ -938,7 +937,7 @@ function Home() {
                       transition={{ delay: 0.2 }}
                       viewport={{ once: true }}
                     >
-                     Flexible Study spaces
+                      Flexible Study spaces
                     </motion.p>
 
                     <motion.h1
@@ -948,9 +947,9 @@ function Home() {
                       transition={{ duration: 0.8, delay: 0.3 }}
                       viewport={{ once: true }}
                     >
-                       Book Your {" "}
+                      Book Your {" "}
                       <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
-                         Ideal Study Spot {" "}
+                        Ideal Study Spot {" "}
                       </span>in Minutes
                     </motion.h1>
                   </motion.div>
@@ -963,11 +962,11 @@ function Home() {
                     viewport={{ once: true }}
                   >
                     <p className="text-gray-600 dark:text-gray-50 text-lg leading-relaxed">
-                       Find and book peaceful, exam-ready self-study libraries in Lucknow — perfect for UPSC, NEET, SSC, CA, and other competitive exam aspirants. View real-time seat availability, explore amenities like AC, Wi-Fi, power backup, and choose hourly or daily plans that suit your schedule.
+                      Find and book peaceful, exam-ready self-study libraries in Lucknow — perfect for UPSC, NEET, SSC, CA, and other competitive exam aspirants. View real-time seat availability, explore amenities like AC, Wi-Fi, power backup, and choose hourly or daily plans that suit your schedule.
                     </p>
 
                     <p className="text-gray-600 dark:text-gray-50 text-lg leading-relaxed">
-                     Thousands of students trust BookMySpace to stay focused, consistent, and productive — anytime, anywhere.
+                      Thousands of students trust BookMySpace to stay focused, consistent, and productive — anytime, anywhere.
                     </p>
                   </motion.div>
                   <Link to="Library" className="hero-signup text-white px-8 py-4 rounded-full font-semibold transition-colors">
@@ -985,8 +984,8 @@ function Home() {
                   >
                     {[
                       { number: "10K+", label: "Spaces Listed" },
-                { number: "25+", label: "Cities Covered" },
-                { number: "4.9★", label: "User Rating" },
+                      { number: "25+", label: "Cities Covered" },
+                      { number: "4.9★", label: "User Rating" },
                     ].map((stat, index) => (
                       <motion.div
                         key={index}
@@ -1024,7 +1023,7 @@ function Home() {
             <span className="font-black">Modern Professionals</span>
           </h2>
           <p className="text-gray-600 dark:text-gray-50 mt-6 mx-auto max-w-2xl">
-             Book My Space helps freelancers, startups, and businesses find ideal coworking spaces and meeting rooms across locations with ease and flexibility.
+            Book My Space helps freelancers, startups, and businesses find ideal coworking spaces and meeting rooms across locations with ease and flexibility.
           </p>
         </motion.div>
         <motion.div
@@ -1039,10 +1038,10 @@ function Home() {
               <img src="./img/hm4-feature-icon1.jpg" alt="" />
             </div>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl pt-5">
-             Seamless Study Space Booking
+              Seamless Study Space Booking
             </h1>
             <p className="pt-10 text-lg">
-Effortlessly find, compare, and book the perfect self-study libraries near you. Filter by location, timing, amenities, and pricing — all in just a few taps.
+              Effortlessly find, compare, and book the perfect self-study libraries near you. Filter by location, timing, amenities, and pricing — all in just a few taps.
             </p>
           </div>
           <div className="w-full lg:w-[50%] mt-10 lg:mt-0">
@@ -1061,10 +1060,10 @@ Effortlessly find, compare, and book the perfect self-study libraries near you. 
               <img src="./img/hm4-feature-icon2.jpg" alt="" />
             </div>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl pt-5">
-             Study from Anywhere, Anytime
+              Study from Anywhere, Anytime
             </h1>
             <p className="pt-10 text-lg">
-             Whether you're at home, near your coaching center, or exploring new areas in Lucknow — BookMySpace gives you access to quiet, reliable self-study libraries on-demand. Study your way, wherever you are.
+              Whether you're at home, near your coaching center, or exploring new areas in Lucknow — BookMySpace gives you access to quiet, reliable self-study libraries on-demand. Study your way, wherever you are.
             </p>
           </div>
           <div className="w-full lg:w-[50%] mt-10 lg:mt-0">
@@ -1083,10 +1082,10 @@ Effortlessly find, compare, and book the perfect self-study libraries near you. 
               <img src="./img/hm4-feature-icon3.jpg" alt="" />
             </div>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl pt-5">
-             Boost Your Focus and Discipline
+              Boost Your Focus and Discipline
             </h1>
             <p className="pt-10 text-lg">
-             Join a community of serious students and aspirants. Study in distraction-free environments designed to keep you consistent, motivated, and exam-ready — all in flexible, student-friendly study spaces.
+              Join a community of serious students and aspirants. Study in distraction-free environments designed to keep you consistent, motivated, and exam-ready — all in flexible, student-friendly study spaces.
             </p>
           </div>
           <div className="w-full lg:w-[50%] mt-10 lg:mt-0">
@@ -1294,7 +1293,7 @@ Effortlessly find, compare, and book the perfect self-study libraries near you. 
             Take the First Step Toward Your Dream Exam.
           </p>
           <p className="text-xs sm:text-sm lg:text-md font-semibold text-white mb-8">
-           Preparing for UPSC, NEET, SSC, or any other competitive exam? BookMySpace helps you stay focused with access to the best self-study libraries in Lucknow — anytime, anywhere.
+            Preparing for UPSC, NEET, SSC, or any other competitive exam? BookMySpace helps you stay focused with access to the best self-study libraries in Lucknow — anytime, anywhere.
           </p>
           <Link to="Library" className="hero-signup text-white px-8 py-4 rounded-full font-semibold transition-colors">
             SIGN UP NOW
@@ -1308,9 +1307,8 @@ Effortlessly find, compare, and book the perfect self-study libraries near you. 
           backgroundImage:
             Theme === "dark"
               ? "none"
-              : `url(${
-                  import.meta.env.VITE_BG_URI
-                }/img/hm4-testimonial-dotted.png)`,
+              : `url(${import.meta.env.VITE_BG_URI
+              }/img/hm4-testimonial-dotted.png)`,
           backgroundRepeat: "no-repeat",
         }}
       >
@@ -1324,14 +1322,14 @@ Effortlessly find, compare, and book the perfect self-study libraries near you. 
               transition={{ duration: 0.8, ease: "easeOut" }}
             >
               <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4 transition-colors duration-300">
-                 Hear From Our{" "}
+                Hear From Our{" "}
                 <span className="text-gray-900 dark:text-gray-100">
                   Learners
                 </span>{" "}
 
               </h2>
               <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto transition-colors duration-300">
-               Discover how Larna has transformed the learning journey for thousands of students around the globe.
+                Discover how Larna has transformed the learning journey for thousands of students around the globe.
               </p>
             </motion.div>
 
@@ -1499,11 +1497,10 @@ Effortlessly find, compare, and book the perfect self-study libraries near you. 
                     <motion.button
                       key={index}
                       onClick={() => goToSlide(index)}
-                      className={`h-3 rounded-full transition-all duration-300 ${
-                        index === currentSlide
+                      className={`h-3 rounded-full transition-all duration-300 ${index === currentSlide
                           ? "bg-gray-800 dark:bg-gray-300 w-8"
                           : "bg-gray-300 dark:bg-gray-600 w-3 hover:bg-gray-400 dark:hover:bg-gray-500"
-                      }`}
+                        }`}
                       whileHover={{ scale: 1.2 }}
                       whileTap={{ scale: 0.9 }}
                       aria-label={`Go to slide ${index + 1}`}

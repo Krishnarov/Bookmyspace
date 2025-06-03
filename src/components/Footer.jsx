@@ -26,15 +26,17 @@ export default function Footer() {
             {/* Logo */}
             <div className="flex items-center space-x-2 mb-6">
               {/* <div className="w-8 h-8 bg-white dark:bg-gray-800 rounded-full flex items-center justify-center"> */}
-                {/* <span className="text-purple-600 dark:text-purple-400 font-bold text-sm">L</span> */}
+              {/* <span className="text-purple-600 dark:text-purple-400 font-bold text-sm">L</span> */}
               {/* </div> */}
-              {/* <img src="./img/bookmyspace.jpeg" className="h-18"  alt="" /> */}
+              <div className=" rounded-full p-1 border border-[#e1321b] bg-[#e1321b] flex items-center justify-center">
+                <img src="./img/new-logo.png" className="h-16 " alt="" />
+              </div>
               <span className="text-2xl font-bold text-white dark:text-gray-100">Book my space</span>
             </div>
 
             {/* Description */}
             <p className="text-purple-100 dark:text-gray-300 leading-relaxed text-sm">
-  Empowering libraries with smart, simple, and secure management solutions.
+              Empowering libraries with smart, simple, and secure management solutions.
             </p>
           </div>
 
@@ -42,13 +44,13 @@ export default function Footer() {
           <div>
             <h3 className="text-xl font-semibold mb-6 text-white dark:text-gray-100">IMPORTANT LINKS</h3>
             <div className="grid grid-cols-2 gap-8">
-              
-              <Link to="/About"className="block text-purple-100 dark:text-gray-300 hover:text-white dark:hover:text-gray-100 transition-colors text-sm">About Us</Link>
-                            <Link to="/HowItWorks"className="block text-purple-100 dark:text-gray-300 hover:text-white dark:hover:text-gray-100 transition-colors text-sm">How It Works</Link>
-                            <Link to="/Pricing"className="block text-purple-100 dark:text-gray-300 hover:text-white dark:hover:text-gray-100 transition-colors text-sm">Pricing Plans</Link>
-                            <Link to="/Library"className="block text-purple-100 dark:text-gray-300 hover:text-white dark:hover:text-gray-100 transition-colors text-sm">Library Registration</Link>
-                            <Link to="/Contact"className="block text-purple-100 dark:text-gray-300 hover:text-white dark:hover:text-gray-100 transition-colors text-sm">Contact Us</Link>
-              
+
+              <Link to="/About" className="block text-purple-100 dark:text-gray-300 hover:text-white dark:hover:text-gray-100 transition-colors text-sm">About Us</Link>
+              <Link to="/HowItWorks" className="block text-purple-100 dark:text-gray-300 hover:text-white dark:hover:text-gray-100 transition-colors text-sm">How It Works</Link>
+              <Link to="/Pricing" className="block text-purple-100 dark:text-gray-300 hover:text-white dark:hover:text-gray-100 transition-colors text-sm">Pricing Plans</Link>
+              <Link to="/Library" className="block text-purple-100 dark:text-gray-300 hover:text-white dark:hover:text-gray-100 transition-colors text-sm">Library Registration</Link>
+              <Link to="/Contact" className="block text-purple-100 dark:text-gray-300 hover:text-white dark:hover:text-gray-100 transition-colors text-sm">Contact Us</Link>
+
             </div>
           </div>
 
@@ -57,7 +59,7 @@ export default function Footer() {
             <h3 className="text-xl font-semibold mb-6 text-white dark:text-gray-100">CONNECT WITH US</h3>
             <div className="flex space-x-4 z-30">
               <a
-              href="https://facebook.com" target="_blank" rel="noopener noreferrer"
+                href="https://facebook.com" target="_blank" rel="noopener noreferrer"
                 className="w-10 h-10 bg-blue-600 dark:bg-blue-700 text-white rounded-full flex items-center justify-center hover:bg-blue-700 dark:hover:bg-blue-800 transition-colors"
               >
                 <Facebook size={18} />
