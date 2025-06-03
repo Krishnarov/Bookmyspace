@@ -1046,7 +1046,7 @@ Effortlessly find, compare, and book the perfect self-study libraries near you. 
             </p>
           </div>
           <div className="w-full lg:w-[50%] mt-10 lg:mt-0">
-            <img src="./img/home4-feature-img1.png" alt="" className="w-full" />
+            <img src="./img/librery-1.jpg" alt="" className="w-full" />
           </div>
         </motion.div>
         <motion.div
@@ -1068,7 +1068,7 @@ Effortlessly find, compare, and book the perfect self-study libraries near you. 
             </p>
           </div>
           <div className="w-full lg:w-[50%] mt-10 lg:mt-0">
-            <img src="./img/hm4-feature-img2.png" alt="" className="w-full" />
+            <img src="./img/Interview.jpg" alt="" className="w-full" />
           </div>
         </motion.div>
         <motion.div
@@ -1090,7 +1090,7 @@ Effortlessly find, compare, and book the perfect self-study libraries near you. 
             </p>
           </div>
           <div className="w-full lg:w-[50%] mt-10 lg:mt-0">
-            <img src="./img/hm4-feature-img3.png" alt="" className="w-full" />
+            <img src="./img/librery-2.jpg" alt="" className="w-full" />
           </div>
         </motion.div>
       </section>
