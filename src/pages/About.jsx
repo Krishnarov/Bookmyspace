@@ -315,10 +315,10 @@ By leveraging innovation and user-focused design, BookMySpace strives to be the 
       </div>
     </div>
       </section>
-      <section>
+            {/* Header Section */}
+      {/* <section>
         <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800 flex items-center justify-center px-4 py-12">
           <div className="max-w-6xl mx-auto text-center">
-            {/* Header Section */}
             <div className="mb-16">
               <h1 className="text-5xl md:text-6xl font-bold text-gray-800 dark:text-gray-100 mb-6">
                 <span className="text-gray-700 dark:text-gray-200">
@@ -343,7 +343,7 @@ By leveraging innovation and user-focused design, BookMySpace strives to be the 
               </p>
             </div>
 
-            {/* Stats Grid */}
+
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
               {stats.map((stat, index) => (
                 <div
@@ -364,7 +364,7 @@ By leveraging innovation and user-focused design, BookMySpace strives to be the 
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       <section
         className="dark:bg-gray-800"

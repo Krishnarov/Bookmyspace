@@ -104,7 +104,7 @@ const CourseCard = ({
           animate={{ scale: isHovered ? 1.05 : 1 }}
           transition={{ duration: 0.2 }}
         >
-          {courseCount} COURSE
+          {courseCount}
         </motion.p>
       </motion.div>
 
@@ -468,11 +468,10 @@ function Home() {
                 <p className="text-pink-500 font-semibold tracking-wider text-sm">
                   LEARN WITH BOOK MY SPACE
                 </p>
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-gray-50 leading-tight">
-                  Find Your Ideal{" "}
-                  <span className="text-gray-700 dark:text-gray-200">
-                    Library Space,
-                  </span>{" "}
+                <h1 className="text-5xl sm:text-5xl lg:text-7xl font-bold text-gray-900 dark:text-gray-50 leading-tight">
+                  Find Your  <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
+                  Ideal Library Space
+                  </span>{" "},
                   Anytime, Anywhere
                 </h1>
                 <p className="text-gray-600 dark:text-gray-50 text-lg leading-relaxed max-w-md">
