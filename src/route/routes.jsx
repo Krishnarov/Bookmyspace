@@ -44,6 +44,7 @@ import Pricing from "../pages/Pricing"
       name: "Contact Us",
       icon: "ri-dashboard-line",
     },
+    
 
 
 ]

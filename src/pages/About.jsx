@@ -214,7 +214,7 @@ const { theme, toggleTheme } = useTheme();
             <div className="relative flex-shrink-0">
               <div className="w-80 h-80 rounded-full overflow-hidden shadow-2xl dark:shadow-gray-800">
                 <img 
-                  src="https://images.unsplash.com/photo-1544717297-fa95b6ee9643?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                  src="./img/librery-10.jpg"
                   alt="Teacher helping student"
                   className="w-full h-full object-cover"
                 />
@@ -243,12 +243,12 @@ const { theme, toggleTheme } = useTheme();
               
               <div className="space-y-4 text-gray-600 dark:text-gray-300 leading-relaxed">
                 <p>
-                 Your Gateway to Quiet, Inspiring Library Spaces
-At BookMySpace, we specialize in helping students, freelancers, and knowledge seekers find and book the perfect library spaces with ease. 
+                BookMySpace is a smart booking platform designed for students who are looking for peaceful, distraction-free private study spaces across Lucknow. Whether you're preparing for competitive exams, college tests, or simply want a focused environment, BookMySpace connects you with the best self-study libraries in the city — instantly and effortlessly.
                 </p>
                 
                 <p>
-                Whether you need a quiet corner for focused study or a collaborative spot for group work, our platform connects you to a variety of libraries designed to fuel your learning and productivity. Discover and reserve your ideal study space — hassle-free and right at your fingertips.
+               We believe every student deserves access to a productive study environment. With just a few taps, you can discover, compare, and book libraries
+that match your timing, location, and budget — all in one place.
                 </p>
               </div>
             </div>
@@ -366,7 +366,7 @@ By leveraging innovation and user-focused design, BookMySpace strives to be the 
         </div>
       </section> */}
 
-      <section
+      {/* <section
         className="dark:bg-gray-800"
         style={{
           backgroundImage:
@@ -380,7 +380,7 @@ By leveraging innovation and user-focused design, BookMySpace strives to be the 
       >
         <div className="py-20 px-4 overflow-hidden">
           <div className="max-w-7xl mx-auto">
-            {/* Header */}
+
             <motion.div
               className="text-center mb-12"
               initial={{ opacity: 0, y: -30 }}
@@ -396,9 +396,9 @@ By leveraging innovation and user-focused design, BookMySpace strives to be the 
               </p>
             </motion.div>
 
-            {/* Testimonials Container */}
+ 
             <div className="relative">
-              {/* Navigation Arrows */}
+    
               <motion.button
                 onClick={prevSlide}
                 className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-20 bg-white dark:bg-gray-700 rounded-full p-3 shadow-lg dark:shadow-gray-900/50"
@@ -435,7 +435,7 @@ By leveraging innovation and user-focused design, BookMySpace strives to be the 
                 <ChevronRight className="w-6 h-6 text-gray-600 dark:text-gray-300" />
               </motion.button>
 
-              {/* Testimonials Slider */}
+    
               <div className="relative h-96 px-8">
                 <AnimatePresence mode="wait" custom={direction}>
                   <motion.div
@@ -462,14 +462,14 @@ By leveraging innovation and user-focused design, BookMySpace strives to be the 
                         whileHover="hover"
                         className="bg-white dark:bg-gray-700 rounded-xl p-8 shadow-lg dark:shadow-gray-900/50 relative cursor-pointer group"
                       >
-                        {/* Animated Background Gradient */}
+
                         <motion.div
                           className="absolute inset-0 bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-600 dark:to-gray-800 rounded-xl opacity-0 group-hover:opacity-100"
                           transition={{ duration: 0.3 }}
                         />
 
                         <div className="relative z-10">
-                          {/* Animated Quote Icon */}
+
                           <motion.div
                             className="text-6xl text-gray-200 dark:text-gray-600 font-serif mb-4 leading-none"
                             initial={{ scale: 0, rotate: -180 }}
@@ -483,7 +483,7 @@ By leveraging innovation and user-focused design, BookMySpace strives to be the 
                             "
                           </motion.div>
 
-                          {/* Title */}
+
                           <motion.h3
                             className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-4"
                             initial={{ opacity: 0, x: -20 }}
@@ -493,7 +493,7 @@ By leveraging innovation and user-focused design, BookMySpace strives to be the 
                             {testimonial.title}
                           </motion.h3>
 
-                          {/* Content */}
+
                           <motion.p
                             className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed"
                             initial={{ opacity: 0 }}
@@ -503,7 +503,6 @@ By leveraging innovation and user-focused design, BookMySpace strives to be the 
                             {testimonial.content}
                           </motion.p>
 
-                          {/* Rating */}
                           <motion.div
                             className="flex gap-1 mb-6"
                             initial={{ opacity: 0, scale: 0.5 }}
@@ -516,7 +515,7 @@ By leveraging innovation and user-focused design, BookMySpace strives to be the 
                             {renderStars(testimonial.rating)}
                           </motion.div>
 
-                          {/* Author */}
+                
                           <motion.div
                             className="flex items-center gap-4"
                             initial={{ opacity: 0, y: 20 }}
@@ -548,7 +547,7 @@ By leveraging innovation and user-focused design, BookMySpace strives to be the 
                   </motion.div>
                 </AnimatePresence>
               </div>
-              {/* Animated Dots Indicator */}
+        
 
               <motion.div
                 className="flex justify-center gap-3 mt-8"
@@ -577,9 +576,9 @@ By leveraging innovation and user-focused design, BookMySpace strives to be the 
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
-      <section className="px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 py-6 sm:py-8 md:py-10 dark:bg-gray-900">
+      {/* <section className="px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 py-6 sm:py-8 md:py-10 dark:bg-gray-900">
       <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 sm:gap-6 md:gap-8 items-center justify-items-center">
         <div className="w-full flex justify-center">
           <img
@@ -624,7 +623,7 @@ By leveraging innovation and user-focused design, BookMySpace strives to be the 
           />
         </div>
       </div>
-    </section>
+    </section> */}
 
 
       <Footer />

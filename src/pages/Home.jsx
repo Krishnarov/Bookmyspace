@@ -163,7 +163,7 @@ function Home() {
         "./img/Location.jpg",
     },
     {
-      title: "Qr Base Checkin",
+      title: "QR Base Checkin",
       courseCount: "Seamless entry with QR scans—fast, secure, and touch-free access to your reserved space.",
       bgColor: "bg-gradient-to-br from-cyan-500 to-blue-600",
       bgImg:
@@ -533,7 +533,7 @@ function Home() {
 
                     {/* Main content in mockup */}
                     <div className="flex items-center space-x-6">
-                      <img src="./img/girl-b2.png" className="w-60" alt="" />
+                      <img src="./img/librery-1.jpg" className="w-60" alt="" />
                       <div className="flex-1">
                         <h2 className="text-2xl font-bold text-gray-800 dark:text-gray-50 mb-2">
                           Your Study Spot
@@ -975,7 +975,7 @@ function Home() {
                   </Link>
 
                   {/* Stats */}
-                  <motion.div
+                  {/* <motion.div
                     className="flex flex-wrap gap-8 pt-8"
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -1001,7 +1001,7 @@ function Home() {
                         </div>
                       </motion.div>
                     ))}
-                  </motion.div>
+                  </motion.div> */}
                 </motion.div>
               </div>
             </div>
@@ -1023,7 +1023,7 @@ function Home() {
             <span className="font-black">Modern Professionals</span>
           </h2>
           <p className="text-gray-600 dark:text-gray-50 mt-6 mx-auto max-w-2xl">
-            Book My Space helps freelancers, startups, and businesses find ideal coworking spaces and meeting rooms across locations with ease and flexibility.
+            Effortlessly find, compare, and book the perfect self-study libraries near you. Filter by location, timing, amenities, and pricing — all in just a few taps.
           </p>
         </motion.div>
         <motion.div
@@ -1301,7 +1301,7 @@ function Home() {
         </div>
       </motion.section>
 
-      <section
+      {/* <section
         className="bg-white dark:bg-gray-900 transition-colors duration-300"
         style={{
           backgroundImage:
@@ -1314,7 +1314,7 @@ function Home() {
       >
         <div className="py-16 px-4 overflow-hidden">
           <div className="max-w-7xl mx-auto">
-            {/* Header */}
+    
             <motion.div
               className="text-center mb-12 px-4"
               initial={{ opacity: 0, y: -30 }}
@@ -1333,9 +1333,8 @@ function Home() {
               </p>
             </motion.div>
 
-            {/* Testimonials Container */}
             <div className="relative">
-              {/* Navigation Arrows */}
+          
               <motion.button
                 onClick={prevSlide}
                 className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-20 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 rounded-full p-3 shadow-lg transition-colors duration-300"
@@ -1370,7 +1369,6 @@ function Home() {
                 <ChevronRight className="w-6 h-6 text-gray-600 dark:text-gray-300" />
               </motion.button>
 
-              {/* Testimonials Slider */}
               <div className="relative h-96 px-8">
                 <AnimatePresence mode="wait" custom={direction}>
                   <motion.div
@@ -1397,14 +1395,14 @@ function Home() {
                         whileHover="hover"
                         className="bg-white dark:bg-gray-800 rounded-xl p-8 shadow-lg hover:shadow-xl dark:shadow-gray-900/20 relative cursor-pointer group transition-all duration-300 border border-gray-100 dark:border-gray-700"
                       >
-                        {/* Animated Background Gradient */}
+         
                         <motion.div
                           className="absolute inset-0 bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-700/50 dark:to-gray-600/50 rounded-xl opacity-0 group-hover:opacity-100"
                           transition={{ duration: 0.3 }}
                         />
 
                         <div className="relative z-10">
-                          {/* Animated Quote Icon */}
+                  
                           <motion.div
                             className="text-6xl text-gray-200 dark:text-gray-600 font-serif mb-4 leading-none transition-colors duration-300"
                             initial={{ scale: 0, rotate: -180 }}
@@ -1418,7 +1416,7 @@ function Home() {
                             "
                           </motion.div>
 
-                          {/* Title */}
+                
                           <motion.h3
                             className="text-xl font-semibold text-gray-900 dark:text-white mb-4 transition-colors duration-300"
                             initial={{ opacity: 0, x: -20 }}
@@ -1428,7 +1426,6 @@ function Home() {
                             {testimonial.title}
                           </motion.h3>
 
-                          {/* Content */}
                           <motion.p
                             className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed transition-colors duration-300"
                             initial={{ opacity: 0 }}
@@ -1438,7 +1435,7 @@ function Home() {
                             {testimonial.content}
                           </motion.p>
 
-                          {/* Rating */}
+                  
                           <motion.div
                             className="flex gap-1 mb-6"
                             initial={{ opacity: 0, scale: 0.5 }}
@@ -1451,7 +1448,6 @@ function Home() {
                             {renderStars(testimonial.rating)}
                           </motion.div>
 
-                          {/* Author */}
                           <motion.div
                             className="flex items-center gap-4"
                             initial={{ opacity: 0, y: 20 }}
@@ -1484,7 +1480,6 @@ function Home() {
                 </AnimatePresence>
               </div>
 
-              {/* Animated Dots Indicator */}
               <motion.div
                 className="flex justify-center gap-3 mt-8"
                 initial={{ opacity: 0, y: 20 }}
@@ -1511,7 +1506,7 @@ function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       <HomeFooter />
     </div>

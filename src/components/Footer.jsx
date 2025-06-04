@@ -1,5 +1,5 @@
 import React from "react";
-import { Facebook, Twitter, Plus, Linkedin, ChevronUp } from "lucide-react";
+import { Facebook, Twitter, Plus, Linkedin, ChevronUp, Instagram } from "lucide-react";
 import { Link } from "react-router-dom";
 
 export default function Footer() {
@@ -58,30 +58,20 @@ export default function Footer() {
           <div>
             <h3 className="text-xl font-semibold mb-6 text-white dark:text-gray-100">CONNECT WITH US</h3>
             <div className="flex space-x-4 z-30">
-              <a
-                href="https://facebook.com" target="_blank" rel="noopener noreferrer"
-                className="w-10 h-10 bg-blue-600 dark:bg-blue-700 text-white rounded-full flex items-center justify-center hover:bg-blue-700 dark:hover:bg-blue-800 transition-colors"
-              >
+                       
+              <a href="https://www.facebook.com/share/16fHXYEAMd/" target='_blank' className="w-10 h-10 bg-blue-600 dark:bg-blue-700 text-white rounded-full flex items-center justify-center hover:bg-blue-700 dark:hover:bg-blue-600 transition-colors">
                 <Facebook size={18} />
               </a>
-              <a
-                href="#"
-                className="w-10 h-10 bg-blue-400 dark:bg-blue-500 text-white rounded-full flex items-center justify-center hover:bg-blue-500 dark:hover:bg-blue-600 transition-colors"
-              >
+              <a href="https://www.instagram.com/book_my_space?igsh=MWlzYmJ3d3ZieXY5dg==" target='_blank' className="w-10 h-10 bg-red-500 dark:bg-red-600 text-white rounded-full flex items-center justify-center hover:bg-red-600 dark:hover:bg-red-500 transition-colors">
+                <Instagram size={18} />
+              </a>
+              <a href="#" target='_blank' className="w-10 h-10 bg-blue-400 dark:bg-blue-500 text-white rounded-full flex items-center justify-center hover:bg-blue-500 dark:hover:bg-blue-400 transition-colors">
                 <Twitter size={18} />
               </a>
-              <a
-                href="#"
-                className="w-10 h-10 bg-red-500 dark:bg-red-600 text-white rounded-full flex items-center justify-center hover:bg-red-600 dark:hover:bg-red-700 transition-colors"
-              >
-                <span className="text-sm font-bold">G+</span>
-              </a>
-              <a
-                href="#"
-                className="w-10 h-10 bg-blue-700 dark:bg-blue-800 text-white rounded-full flex items-center justify-center hover:bg-blue-800 dark:hover:bg-blue-900 transition-colors"
-              >
+              <a href="#" target='_blank' className="w-10 h-10 bg-blue-700 dark:bg-blue-800 text-white rounded-full flex items-center justify-center hover:bg-blue-800 dark:hover:bg-blue-700 transition-colors">
                 <Linkedin size={18} />
               </a>
+          
             </div>
           </div>
         </div>
@@ -94,29 +84,29 @@ export default function Footer() {
             {/* Copyright */}
             <div className="text-purple-100 dark:text-gray-300 text-sm z-30">
               All rights reserved{" "}
-              <span className="font-semibold">Book my space</span> © 2025 Desined & Developed by <a href="https://www.digicoders.in" target="_blank" className="font-bold z-10 text-white dark:text-gray-100 hover:text-purple-200 dark:hover:text-gray-200 transition-colors" >Digicoders.in</a>
+              <span className="font-semibold">Book my space</span> © {new Date().getFullYear()} Desined & Developed by <a href="https://www.digicoders.in" target="_blank" className="font-bold z-10 text-white dark:text-gray-100 hover:text-purple-200 dark:hover:text-gray-200 transition-colors" >Digicoders.in</a>
             </div>
 
             {/* Footer Links */}
             <div className="flex space-x-8 text-sm">
               <a
-                href="#"
+                href="terms-conditions"
                 className="text-purple-100 dark:text-gray-300 hover:text-white dark:hover:text-gray-100 transition-colors"
               >
                 Terms & Condition
               </a>
               <a
-                href="#"
+                href="/privacy-policy"
                 className="text-purple-100 dark:text-gray-300 hover:text-white dark:hover:text-gray-100 transition-colors"
               >
-                Privacy
+                Privacy & Policy
               </a>
-              <a
+              {/* <a
                 href="#"
                 className="text-purple-100 dark:text-gray-300 hover:text-white dark:hover:text-gray-100 transition-colors"
               >
                 Cookies
-              </a>
+              </a> */}
             </div>
           </div>
         </div>

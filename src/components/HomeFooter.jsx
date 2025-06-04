@@ -1,5 +1,5 @@
 import React from 'react';
-import { Facebook, Twitter, Linkedin } from 'lucide-react';
+import { Facebook, Twitter, Linkedin, Instagram } from 'lucide-react';
 import { Link } from "react-router-dom";
 const HomeFooter = () => {
   const partners = [
@@ -20,7 +20,7 @@ const HomeFooter = () => {
     <footer className="bg-gray-50 dark:bg-gray-950 py-16 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Partner Logos */}
-        <div className="mb-16">
+        {/* <div className="mb-16">
           <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
             {partners.map((partner, index) => (
               <div key={index} className="flex items-center space-x-2 text-gray-600 dark:text-gray-300">
@@ -29,7 +29,7 @@ const HomeFooter = () => {
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
 
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-16">
@@ -51,16 +51,16 @@ const HomeFooter = () => {
 
             {/* Social Links */}
             <div className="flex space-x-4">
-              <a href="#" className="w-10 h-10 bg-blue-600 dark:bg-blue-700 text-white rounded-full flex items-center justify-center hover:bg-blue-700 dark:hover:bg-blue-600 transition-colors">
+              <a href="https://www.facebook.com/share/16fHXYEAMd/" target='_blank' className="w-10 h-10 bg-blue-600 dark:bg-blue-700 text-white rounded-full flex items-center justify-center hover:bg-blue-700 dark:hover:bg-blue-600 transition-colors">
                 <Facebook size={18} />
               </a>
-              <a href="#" className="w-10 h-10 bg-blue-400 dark:bg-blue-500 text-white rounded-full flex items-center justify-center hover:bg-blue-500 dark:hover:bg-blue-400 transition-colors">
+              <a href="https://www.instagram.com/book_my_space?igsh=MWlzYmJ3d3ZieXY5dg==" target='_blank' className="w-10 h-10 bg-red-500 dark:bg-red-600 text-white rounded-full flex items-center justify-center hover:bg-red-600 dark:hover:bg-red-500 transition-colors">
+                <Instagram size={18} />
+              </a>
+              <a href="#" target='_blank' className="w-10 h-10 bg-blue-400 dark:bg-blue-500 text-white rounded-full flex items-center justify-center hover:bg-blue-500 dark:hover:bg-blue-400 transition-colors">
                 <Twitter size={18} />
               </a>
-              <a href="#" className="w-10 h-10 bg-red-500 dark:bg-red-600 text-white rounded-full flex items-center justify-center hover:bg-red-600 dark:hover:bg-red-500 transition-colors">
-                <span className="text-sm font-bold">G+</span>
-              </a>
-              <a href="#" className="w-10 h-10 bg-blue-700 dark:bg-blue-800 text-white rounded-full flex items-center justify-center hover:bg-blue-800 dark:hover:bg-blue-700 transition-colors">
+              <a href="#" target='_blank' className="w-10 h-10 bg-blue-700 dark:bg-blue-800 text-white rounded-full flex items-center justify-center hover:bg-blue-800 dark:hover:bg-blue-700 transition-colors">
                 <Linkedin size={18} />
               </a>
             </div>
@@ -96,13 +96,12 @@ const HomeFooter = () => {
         <div className="mt-16 pt-8 border-t border-gray-200 dark:border-gray-700">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-gray-600 dark:text-gray-300 text-sm">
-              All rights reserved <span className="font-semibold">Bookmyspace</span> © 2025  Desined & Developed by <a href="https://digicoders.in/" className='font-bold'>Digicoders.in</a>
+              All rights reserved <span className="font-semibold">Bookmyspace</span> © {new Date().getFullYear()}  Desined & Developed by <a href="https://digicoders.in/" className='font-bold'>Digicoders.in</a>
             </p>
 
             <div className="flex space-x-6">
-              <a href="#" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white text-sm transition-colors">Terms & Condition</a>
-              <a href="#" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white text-sm transition-colors">Privacy</a>
-              <a href="#" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white text-sm transition-colors">Cookies</a>
+              <a href="/terms-conditions" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white text-sm transition-colors">Terms & Condition</a>
+              <a href="/privacy-policy" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white text-sm transition-colors">Privacy & Policy</a>
             </div>
 
 

@@ -62,7 +62,7 @@ export default function ContactUs() {
                 <Mail className="w-8 h-8 text-pink-500 dark:text-pink-400" />
               </div>
               <h3 className="text-xl font-semibold mb-3">Email</h3>
-              <p className="text-pink-50 dark:text-pink-100">Bookmyspace.today@gmail.com</p>
+              <p className="text-pink-50 dark:text-pink-100">bookmyspace.today@gmail.com</p>
             </div>
             </TiltCard>
           </div>
