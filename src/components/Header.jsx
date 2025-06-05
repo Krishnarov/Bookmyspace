@@ -107,9 +107,9 @@ function Header({ calr }) {
             )}
           </button>
 
-          <button className="hover:text-pink-500 font-medium  transition-colors">
+          <Link to={"/login"} className="hover:text-pink-500 font-medium  transition-colors">
             Login
-          </button>
+          </Link>
 
           <button className="hero-signup text-white px-8 py-4 rounded-full font-semibold transition-colors">
             SIGN UP

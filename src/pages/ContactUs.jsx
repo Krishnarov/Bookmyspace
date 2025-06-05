@@ -1,15 +1,14 @@
 import React, { useState } from "react";
-import {
-  Phone,
-  Mail,
-  
-} from "lucide-react";
+import { Phone, Mail } from "lucide-react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import HeroHead from "../components/HeroHead";
 import TiltCard from "../components/TiltCard";
+import axios from "axios";
+import { toast } from "react-toastify";
 
 export default function ContactUs() {
+  const Base_Api = import.meta.env.VITE_BASE_API;
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
@@ -24,11 +23,18 @@ export default function ContactUs() {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     console.log("Form submitted:", formData);
-    // Handle form submission here
-    alert("Thank you for your message! We will respond within 24 hours.");
+    try {
+      const res = await axios.post(`${Base_Api}/api/inquiries`, formData);
+      if (res.data.success){
+        toast.success(res?.data?.message);
+      }
+    } catch (error) {
+      console.log(error);
+      toast.error("enquiry send fail!")
+    }
     setFormData({ name: "", email: "", query: "" });
   };
 
@@ -43,27 +49,26 @@ export default function ContactUs() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
             {/* Address Card */}
             <TiltCard>
-              <div  className="bg-gradient-to-br from-green-300 to-green-600 dark:from-green-400 dark:to-green-700 h-full p-8 text-center text-white shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <div className="bg-gradient-to-br from-green-300 to-green-600 dark:from-green-400 dark:to-green-700 h-full p-8 text-center text-white shadow-lg hover:shadow-xl transition-shadow duration-300">
                 <div className="w-16 h-16 bg-white dark:bg-gray-800 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Phone className="w-8 h-8 text-green-500 dark:text-green-400" />
                 </div>
                 <h3 className="text-xl font-semibold mb-3">Phone</h3>
-                <p className="text-green-50 dark:text-green-100">
-                  7800080503
-
-                </p>
+                <p className="text-green-50 dark:text-green-100">7800080503</p>
               </div>
             </TiltCard>
 
             {/* Email Card */}
             <TiltCard>
-            <div className="bg-gradient-to-br from-pink-300 to-pink-600 dark:from-pink-400 dark:to-pink-700  p-8 h-full text-center text-white shadow-lg hover:shadow-xl transition-shadow duration-300">
-              <div className="w-16 h-16 bg-white dark:bg-gray-800 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Mail className="w-8 h-8 text-pink-500 dark:text-pink-400" />
+              <div className="bg-gradient-to-br from-pink-300 to-pink-600 dark:from-pink-400 dark:to-pink-700  p-8 h-full text-center text-white shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <div className="w-16 h-16 bg-white dark:bg-gray-800 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Mail className="w-8 h-8 text-pink-500 dark:text-pink-400" />
+                </div>
+                <h3 className="text-xl font-semibold mb-3">Email</h3>
+                <p className="text-pink-50 dark:text-pink-100">
+                  bookmyspace.today@gmail.com
+                </p>
               </div>
-              <h3 className="text-xl font-semibold mb-3">Email</h3>
-              <p className="text-pink-50 dark:text-pink-100">bookmyspace.today@gmail.com</p>
-            </div>
             </TiltCard>
           </div>
 
@@ -126,7 +131,6 @@ export default function ContactUs() {
           </div>
         </div>
       </div>
-
 
       <Footer />
     </div>

@@ -17,18 +17,20 @@ import {
   Library,
   CreditCard,
   Eye,
-  EyeOff
+  EyeOff,
 } from "lucide-react";
 import HeroHead from "../components/HeroHead";
 import Footer from "../components/Footer";
+import axios from "axios";
+import { toast } from "react-toastify";
 
 export default function LibraryRegistrationForm() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
+  const Base_Api = import.meta.env.VITE_BASE_API;
   const [formData, setFormData] = useState({
     libraryName: "",
     libraryType: "",
-    uniqueId: "",
     description: "",
     logo: null,
     images: [],
@@ -39,17 +41,16 @@ export default function LibraryRegistrationForm() {
     timingFrom: "",
     timingTo: "",
     services: [],
-    membershipFees: "",
-    totalBooks: ""
+    totalBooks: "",
   });
 
   const libraryTypes = [
     "Public Library",
-    "Academic Library", 
+    "Academic Library",
     "School Library",
     "Special Library",
     "Digital Library",
-    "Research Library"
+    "Research Library",
   ];
 
   const availableServices = [
@@ -65,56 +66,111 @@ export default function LibraryRegistrationForm() {
     "Personal Locker ",
     "CANTEEN ",
     "CAFETERIA  ",
-    "PIM Board ",
+    "PIN Board ",
     "Seperate Space for Laptop ",
     "Provide Some Novels and Book's  ",
     "Power switch & Light  ",
     "Rest Room ",
     "CCTV Surveillance ",
     "Parking ",
-    "Personal mentorship & Guidence "
+    "Personal mentorship & Guidence ",
   ];
 
   const handleInputChange = (e) => {
     const { name, value, type, files } = e.target;
-    
+
     if (type === "file") {
       if (name === "logo") {
-        setFormData(prev => ({ ...prev, [name]: files[0] }));
+        setFormData((prev) => ({ ...prev, [name]: files[0] }));
       } else if (name === "images") {
-        setFormData(prev => ({ ...prev, [name]: Array.from(files) }));
+        setFormData((prev) => ({ ...prev, [name]: Array.from(files) }));
       }
     } else {
-      setFormData(prev => ({ ...prev, [name]: value }));
+      setFormData((prev) => ({ ...prev, [name]: value }));
     }
   };
 
   const handleServiceChange = (service) => {
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
       services: prev.services.includes(service)
-        ? prev.services.filter(s => s !== service)
-        : [...prev.services, service]
+        ? prev.services.filter((s) => s !== service)
+        : [...prev.services, service],
     }));
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Library Registration Data:", formData);
-    alert("Library registration submitted successfully! We will review and contact you soon.");
-  };
+  const handleSubmit = async (e) => {
+  e.preventDefault();
+  try {
+    const formDataToSend = new FormData();
+    formDataToSend.append("libraryName", formData.libraryName);
+    formDataToSend.append("libraryType", formData.libraryType);
+    formDataToSend.append("description", formData.description);
+    formDataToSend.append("logo", formData.logo);
+    formDataToSend.append("location", formData.location);
+    formDataToSend.append("totalBooks", formData.totalBooks);
+    formDataToSend.append("contactNumber", formData.contactNumber);
+    formDataToSend.append("email", formData.email);
+    formDataToSend.append("password", formData.password);
+    formDataToSend.append("timingFrom", formData.timingFrom);
+    formDataToSend.append("timingTo", formData.timingTo);
+
+    // Loop through image files and append
+    formData.images.forEach((img) => {
+      formDataToSend.append("images", img);
+    });
+
+    // Convert services array to string
+    formDataToSend.append("services", JSON.stringify(formData.services));
+
+    const res = await axios.post(`${Base_Api}/api/libraries`, formDataToSend, {
+      headers: {
+        "Content-Type": "multipart/form-data",
+      },
+    });
+
+    if (res.data.success) {
+      toast.success(res?.data?.message);
+    }
+  } catch (error) {
+    console.log(error);
+    toast.error("Library registration failed!");
+  }
+
+  // Reset form
+  setFormData({
+    libraryName: "",
+    libraryType: "",
+    description: "",
+    logo: null,
+    images: [],
+    location: "",
+    contactNumber: "",
+    email: "",
+    password: "",
+    timingFrom: "",
+    timingTo: "",
+    services: [],
+    totalBooks: "",
+  });
+};
+
 
   return (
     <div className="min-h-screen dark:bg-gray-900  dark:text-white">
-     <HeroHead text={"Library Registration "} />
+      <HeroHead text={"Library Registration "} />
 
       {/* Registration Form */}
       <section className="py-16">
         <div className=" mx-auto  sm:px-6 lg:px-8">
           <div className="bg-gray0 rounded-2xl  p-8">
             <div className="text-center mb-8">
-              <h2 className="text-3xl font-bold  mb-4">Registration and no commission</h2>
-              <p className="dark:text-gray-400 ">Please fill in all the required information about your library</p>
+              <h2 className="text-3xl font-bold  mb-4">
+                Registration and no commission
+              </h2>
+              <p className="dark:text-gray-400 ">
+                Please fill in all the required information about your library
+              </p>
             </div>
 
             <div onSubmit={handleSubmit} className="space-y-8">
@@ -147,8 +203,10 @@ export default function LibraryRegistrationForm() {
                     className="w-full px-4 py-3  dark:bg-gray-700 border  dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent  dark:text-white"
                   >
                     <option value="">Select library type</option>
-                    {libraryTypes.map(type => (
-                      <option key={type} value={type}>{type}</option>
+                    {libraryTypes.map((type) => (
+                      <option key={type} value={type}>
+                        {type}
+                      </option>
                     ))}
                   </select>
                 </div>
@@ -173,7 +231,7 @@ export default function LibraryRegistrationForm() {
 
                 <div>
                   <label className="block text-sm font-medium  dark:text-gray-300 mb-2">
-                    Total Number of Books 
+                    Total Number of Books
                   </label>
                   <div className="relative">
                     <BookOpen className="absolute left-3 top-3 h-5 w-5  dark:text-gray-400" />
@@ -193,7 +251,7 @@ export default function LibraryRegistrationForm() {
               {/* Description */}
               <div>
                 <label className="block text-sm font-medium  dark:text-gray-300 mb-2">
-                  Library Description 
+                  Library Description
                 </label>
                 <textarea
                   name="description"
@@ -210,7 +268,7 @@ export default function LibraryRegistrationForm() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label className="block text-sm font-medium  dark:text-gray-300 mb-2">
-                    Library Logo 
+                    Library Logo
                   </label>
                   <div className="border-2 border-dashed  dark:border-gray-600 rounded-lg p-6 text-center hover:border-blue-500 transition-colors">
                     <Upload className="mx-auto h-12 w-12  dark:text-gray-400 mb-4" />
@@ -224,8 +282,12 @@ export default function LibraryRegistrationForm() {
                       id="logo-upload"
                     />
                     <label htmlFor="logo-upload" className="cursor-pointer">
-                      <span className="text-blue-400 hover:text-blue-300">Upload logo</span>
-                      <p className=" dark:text-gray-400 text-sm mt-1">PNG, JPG up to 5MB</p>
+                      <span className="text-blue-400 hover:text-blue-300">
+                        Upload logo
+                      </span>
+                      <p className=" dark:text-gray-400 text-sm mt-1">
+                        PNG, JPG up to 5MB
+                      </p>
                     </label>
                   </div>
                 </div>
@@ -246,8 +308,12 @@ export default function LibraryRegistrationForm() {
                       id="images-upload"
                     />
                     <label htmlFor="images-upload" className="cursor-pointer">
-                      <span className="text-blue-400 hover:text-blue-300">Upload images</span>
-                      <p className=" dark:text-gray-400 text-sm mt-1">Multiple images allowed</p>
+                      <span className="text-blue-400 hover:text-blue-300">
+                        Upload images
+                      </span>
+                      <p className=" dark:text-gray-400 text-sm mt-1">
+                        Multiple images allowed
+                      </p>
                     </label>
                   </div>
                 </div>
@@ -328,7 +394,11 @@ export default function LibraryRegistrationForm() {
                       onClick={() => setShowPassword(!showPassword)}
                       className="absolute right-3 top-3  dark:text-gray-400  dark:hover:text-white"
                     >
-                      {showPassword ? <EyeOff className="h-5 w-5" /> : <Eye className="h-5 w-5" />}
+                      {showPassword ? (
+                        <EyeOff className="h-5 w-5" />
+                      ) : (
+                        <Eye className="h-5 w-5" />
+                      )}
                     </button>
                   </div>
                 </div>
@@ -351,7 +421,9 @@ export default function LibraryRegistrationForm() {
                         required
                         className="w-full pl-12 pr-4 py-3  dark:bg-gray-700 border  dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent  dark:text-white"
                       />
-                      <label className="absolute -top-2 left-4  dark:bg-gray-800 bg-white px-2 text-xs  dark:text-gray-400">From</label>
+                      <label className="absolute -top-2 left-4  dark:bg-gray-800 bg-white px-2 text-xs  dark:text-gray-400">
+                        From
+                      </label>
                     </div>
                   </div>
                   <div>
@@ -365,7 +437,9 @@ export default function LibraryRegistrationForm() {
                         required
                         className="w-full pl-12 pr-4 py-3  dark:bg-gray-700 border  dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent  dark:text-white"
                       />
-                      <label className="absolute -top-2 left-4  dark:bg-gray-800 bg-white px-2 text-xs  dark:text-gray-400">To</label>
+                      <label className="absolute -top-2 left-4  dark:bg-gray-800 bg-white px-2 text-xs  dark:text-gray-400">
+                        To
+                      </label>
                     </div>
                   </div>
                 </div>
@@ -377,15 +451,20 @@ export default function LibraryRegistrationForm() {
                   Services Offered *
                 </label>
                 <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
-                  {availableServices.map(service => (
-                    <label key={service} className="flex items-center space-x-3 cursor-pointer">
+                  {availableServices.map((service) => (
+                    <label
+                      key={service}
+                      className="flex items-center space-x-3 cursor-pointer"
+                    >
                       <input
                         type="checkbox"
                         checked={formData.services.includes(service)}
                         onChange={() => handleServiceChange(service)}
                         className="w-4 h-4 text-blue-600  dark:bg-gray-700  dark:border-gray-600 rounded focus:ring-blue-500 focus:ring-2"
                       />
-                      <span className="text-sm  dark:text-gray-300">{service}</span>
+                      <span className="text-sm  dark:text-gray-300">
+                        {service}
+                      </span>
                     </label>
                   ))}
                 </div>
@@ -423,7 +502,7 @@ export default function LibraryRegistrationForm() {
           </div>
         </div>
       </section>
-      <Footer/>
+      <Footer />
     </div>
   );
 }
