@@ -8,7 +8,7 @@ import Layout from "./dashboard/Layout";
 import Login from "./pages/Login";
 import { useSelector } from "react-redux";
 import { ToastContainer } from "react-toastify";
-
+import 'remixicon/fonts/remixicon.css'
 function App() {
   const user = useSelector((state) => state.auth.isLoggedIn);
   console.log(user);

@@ -2,19 +2,22 @@
 import React, { useEffect, useRef } from "react";
 import { logout } from "../redux/features/authSlice.jsx";
 import { useNavigate } from "react-router-dom";
-import { useTheme } from "../context/ThemeContext.jsx";
+
 import { useDispatch, useSelector } from "react-redux";
+import { LogOut, Menu, Moon, MoreHorizontal, Search, Sun, SunIcon, User } from "lucide-react";
+import { useTheme } from "../context/ThemeContext.jsx";
 
 function Heade({ setIsOpen, IsOpen }) {
   const Dispatch = useDispatch();
   const navigate = useNavigate();
 
   // Theme context से isDark और setIsDark को get करें
-  const { theme, toggleTheme } = useTheme();
+
+   const { theme, toggleTheme } = useTheme(); 
   const VITE_BG_URI = import.meta.env.VITE_BG_URI;
   const profileref = useRef(null);
-const user = useSelector((state)=>state.auth.user.user)
-console.log(user);
+  const user = useSelector((state) => state.auth.user.user);
+  // console.log(user);
 
   useEffect(() => {
     if (!user) {
@@ -40,7 +43,7 @@ console.log(user);
             onClick={() => setIsOpen({ ...IsOpen, menu: !IsOpen.menu })}
             aria-label="Toggle menu"
           >
-            <i className="ri-menu-2-line"></i>
+            <Menu size={24} color="black" />
           </button>
           <div>
             <img
@@ -57,7 +60,11 @@ console.log(user);
             onClick={() => setIsOpen({ ...IsOpen, dots: !IsOpen.dots })}
             aria-label="Toggle menu"
           >
-            {IsOpen?.dots ? <span>✕</span> : <i className="ri-more-2-fill"></i>}
+            {IsOpen?.dots ? (
+              <span>✕</span>
+            ) : (
+              <MoreHorizontal size={20} className="text-gray-600" />
+            )}
           </button>
           <div
             className={`px-2 py-2 absolute top-14 right-0 dark:bg-slate-900 bg-white shadow-lg rounded-lg w-48 z-50 transition-all duration-300 ${
@@ -69,14 +76,14 @@ console.log(user);
             <button
               onClick={() => {
                 setIsOpen({ ...IsOpen, dots: false });
-                navigate("/admin/dashboard");
+                navigate("/dashboard");
               }}
               className="w-full text-left text-gray-500 dark:text-gray-300 hover:bg-orange-100 dark:hover:bg-slate-700 rounded px-3 py-2 transition-colors duration-300 flex items-center text-sm"
             >
-              <i className="ri-user-line mr-2"></i> Dashboard
+              <User size={20} color="gray" className="mr-2" /> Dashboard
             </button>
             <button
-              // onClick={toggleTheme}
+              onClick={toggleTheme}
               className="w-full text-left text-gray-500 dark:text-gray-300 hover:bg-orange-100 dark:hover:bg-slate-700 rounded px-3 py-2 transition-colors duration-300 flex items-center text-sm"
               aria-label="Toggle dark mode"
             >
@@ -95,7 +102,8 @@ console.log(user);
               onClick={handalLogout}
               className="w-full text-left text-red-500 hover:bg-orange-100 dark:hover:bg-slate-700 rounded px-3 py-2 text-lg transition-colors duration-300 flex items-center text-sm"
             >
-              <i className="ri-logout-circle-line"></i> Log out
+              <LogOut size={20} color="gray" className="mr-2" />
+              Log out
             </button>
           </div>
         </div>
@@ -103,18 +111,18 @@ console.log(user);
         {/* Desktop view */}
         <div className="hidden md:flex items-center gap-4">
           <button className="flex justify-center items-center rounded-full hover:bg-slate-100 dark:hover:bg-slate-700 px-2 py-1 cursor-pointer transition-colors duration-300">
-            <i className="ri-search-line"></i>
+            <Search size={20} className="text-gray-600" />
           </button>
 
           <button
-            // onClick={toggleTheme}
+            onClick={toggleTheme}
             className="px-2 py-1 text-lg rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors items-center"
             aria-label="Toggle dark mode"
           >
             {theme === "dark" ? (
-              <i className="ri-sun-line "></i>
+              <SunIcon className="text-gray-600" size={20} />
             ) : (
-              <i className="ri-moon-line "></i>
+              <Moon className="text-gray-600" size={20} />
             )}
           </button>
           <div className="relative">
@@ -148,7 +156,7 @@ console.log(user);
                 />
                 <div className="ml-3 text-base font-inter overflow-hidden">
                   <h6 className="font-medium truncate text-gray-900 dark:text-white">
-                   {user?.name}
+                    {user?.name}
                   </h6>
                   <p className="text-slate-500 dark:text-slate-400 text-sm truncate">
                     {user?.email}
@@ -156,7 +164,7 @@ console.log(user);
                 </div>
               </div>
 
-              <button
+              {/* <button
                 onClick={() => {
                   setIsOpen({ ...IsOpen, dots: false });
                   navigate("/profile");
@@ -175,7 +183,7 @@ console.log(user);
               >
                 <i className="ri-settings-4-line text-xl w-6"></i>
                 <span className="ml-2">Setting</span>
-              </button>
+              </button> */}
               {/* <button
                 onClick={() => {
                   setIsOpen({ ...IsOpen, dots: false });
@@ -191,7 +199,7 @@ console.log(user);
                 onClick={handalLogout}
                 className="w-full cursor-pointer text-white bg-red-500/70 dark:bg-red-600 hover:bg-red-500/90 mt-2 text-sm rounded-lg px-3 py-2 font-semibold transition-colors duration-300 flex items-center justify-center"
               >
-                <i className="ri-logout-box-r-line mr-2"></i> Log out
+                <LogOut size={20} color="gray" className="mr-2" /> Log out
               </button>
             </div>
           </div>

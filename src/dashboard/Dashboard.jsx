@@ -36,8 +36,8 @@ function Dashboard() {
 
   return (
     <div className="">
-      <div className="mt-10 px-8 ">
-        <div className=" grid grid-cols-3 gap-8">
+      <div className="mt-10 md:px-8 ">
+        <div className=" grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="bg-blue-50 rounded-lg p-4 border-l-4 border-blue-500">
             <div className="flex items-center justify-between">
               <div>

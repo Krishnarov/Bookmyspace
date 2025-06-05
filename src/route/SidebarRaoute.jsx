@@ -13,13 +13,13 @@ const routes = [
       path: "/dashboard/RegisterLibrary",
       component: RegisterLibrary,
       name: "Registerd Libraries",
-      icon: "ri-dashboard-line",
+      icon: "ri-book-line",
     },
      {
       path: "/dashboard/ContactUs",
       component: ContactUs,
       name: "Enquiries",
-      icon: "ri-dashboard-line",
+      icon: "ri-survey-line",
     },
 ]
 

@@ -23,7 +23,7 @@ const user = useSelector((state)=>state.auth.user.user)
 
   return (
     <div
-      className={`h-full md:w-[18%] w-[70%] fixed bg-white dark:bg-[#212529] z-30 font-inter py-1 overflow-auto scrollbar-custom transition-all duration-500 ${
+      className={`h-full md:w-[18%] w-full fixed bg-white dark:bg-[#212529] z-30 font-inter py-1 overflow-auto scrollbar-custom transition-all duration-500 ${
         IsOpen?.menu ? "left-0" : "-left-full md:left-0"
       }`}
     >
